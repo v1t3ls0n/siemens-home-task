@@ -1,6 +1,6 @@
 # Siemens Dynamo — what Siemens looks for (scraped from the official page)
 
-Source: https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/ (scraped 2026-07-16T21:49:37.043420+00:00)
+Source: https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/ (scraped 2026-07-16T21:53:55.716576+00:00)
 
 
 ## Siemens Dynamo program
