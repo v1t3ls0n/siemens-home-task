@@ -91,6 +91,23 @@ Then in `config.yaml`: point both routing tiers at `ollama:qwen2.5:7b` and set
 embeddings to `provider: ollama, model: nomic-embed-text, dim: 768`
 (dimension change requires re-creating the index — delete it and re-seed).
 
+### Evaluation harness
+
+A labelled set (`scripts/eval_set.json`) verifies the system *discriminates*
+— not that it merely returns plausible prose:
+
+```bash
+python -m scripts.batch_eval            # app must be running
+```
+
+Categories and what they assert: **partner** (existing Dynamo partners — must
+score high *and* show a ~1.0 self-similarity, proving the embedding+metric
+path is sound), **good** (real Industry-4.0 candidates — high fit), **weak**
+(real tech outside Siemens' domain, e.g. healthcare AI — mid/low fit),
+**bad** (consumer apps — low fit). The harness writes per-site JSON logs plus
+`eval_results/summary.md` and flags any result that contradicts its expected
+label for review.
+
 ---
 
 ## Architecture

@@ -16,6 +16,10 @@ localstore.json
 # OpenSearch / docker volumes (if ever mounted locally)
 osdata/
 
+# Batch-eval output (regenerable). To showcase a run:
+#   git add -f eval_results/summary.md
+eval_results/
+
 # IDE / OS noise
 .vscode/
 .idea/
