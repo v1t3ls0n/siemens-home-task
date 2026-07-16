@@ -22,10 +22,11 @@ any of them.
 - [Task requirements → implementation map](#task-requirements--implementation-map)
 - [Quick start](#quick-start)
 - [Architecture](#architecture)
+- [Data & storage layers](#data--storage-layers) — *what is stored where, and what a vector DB even is*
 - [Cost engineering](#cost-engineering)
-- [Data model & freshness](#data-model--freshness)
 - [Grounding: the official Dynamo data](#grounding-the-official-dynamo-data)
 - [Match metrics & visualizations](#match-metrics--visualizations)
+- [Evaluation](#evaluation) — *how we verified the system discriminates, with results*
 - [Configuration](#configuration)
 - [HTTP API](#http-api)
 - [Project structure](#project-structure)
@@ -101,12 +102,13 @@ python -m scripts.batch_eval            # app must be running
 ```
 
 Categories and what they assert: **partner** (existing Dynamo partners — must
-score high *and* show a ~1.0 self-similarity, proving the embedding+metric
-path is sound), **good** (real Industry-4.0 candidates — high fit), **weak**
-(real tech outside Siemens' domain, e.g. healthcare AI — mid/low fit),
-**bad** (consumer apps — low fit). The harness writes per-site JSON logs plus
-`eval_results/summary.md` and flags any result that contradicts its expected
-label for review.
+score high *and* surface themselves as a separated self-match peak, proving
+the embedding+metric path is sound), **good** (real Industry-4.0 candidates —
+high fit), **weak** (real tech outside Siemens' domain, e.g. healthcare AI —
+mid/low fit), **bad** (consumer apps — low fit). The harness writes per-site
+JSON logs plus `eval_results/summary.md` and flags any result that contradicts
+its expected label. See [Evaluation](#evaluation) for the methodology and the
+actual results.
 
 ---
 
@@ -154,6 +156,106 @@ from **model-driven analysis** (what it means). Everything the LLM asserts is
 traceable: profile claims cite `evidence_urls`, scores reference numeric
 similarities the UI also displays raw.
 
+## Data & storage layers
+
+This section explains every place data lives — from first principles, assuming
+no prior familiarity with vector databases.
+
+### First: what is a vector database, and why do we need one?
+
+Computers can't compare *meaning* directly. A keyword search for "robot arm
+programming" would miss a page that says "automating motion planning for
+industrial manipulators" — same concept, no shared words.
+
+An **embedding model** solves this. It turns a piece of text into a long list
+of numbers (a **vector** — here 1,536 numbers) that represents the text's
+*meaning*. Texts about similar things get similar vectors. "How similar?" is
+measured by **cosine similarity**: a number from -1 to 1, where 1 means the
+two texts point in the same semantic direction. In this project every cosine
+number you see in the UI is exactly this.
+
+A **vector database** stores these vectors and answers one question extremely
+fast: *"given a query vector, which stored vectors are the most similar?"*
+That's a **k-nearest-neighbours (kNN)** search. Doing it naively means
+comparing the query against every stored vector; a vector DB uses an index
+(here **HNSW** — a navigable graph that finds close neighbours without
+checking everything) to do it in milliseconds even over millions of vectors.
+
+We use it for two things: **retrieval** (pull the Siemens products most
+relevant to *this* startup, so only they go into the analysis prompt — this is
+RAG, retrieval-augmented generation) and **similarity metrics** (score how
+close the startup is to each Siemens product and each existing partner).
+
+We use **OpenSearch** as the vector DB — a real, production-grade, horizontally
+scalable search engine with a native kNN index. A small **numpy fallback**
+implements the exact same interface for zero-infrastructure runs (see
+[design decision 7](#design-decisions)).
+
+### The four storage layers
+
+| # | Layer | Technology | Lives in | Holds | Keyed by |
+|---|---|---|---|---|---|
+| 1 | **Vector index** | OpenSearch (kNN, HNSW, cosine) | Docker volume `osdata` | Every text chunk — startup pages, Siemens portfolio, partners — each with its embedding vector + provenance + freshness metadata | `sha1(source_url)#chunk_no` |
+| 2 | **Embedding cache** | SQLite `embed_cache.db` | app container → `/data` volume | Embedding vectors already computed, so identical text is never sent to the embedding API twice | `sha256(model + text)` |
+| 3 | **Analysis cache & history** | SQLite `analyses.db` | app container → `/data` volume | Finished analysis results (for instant repeat + the `/api/analyses` history) | `url` |
+| 4 | **Provider-side prompt cache** | OpenAI Responses API | OpenAI's servers (not ours) | Recently-seen prompt prefixes, billed at a reduced rate | (managed by OpenAI) |
+
+*(Layer 1 has a drop-in alternative, `localstore.json` (numpy), used only when
+`search.backend: local` — the same data, no OpenSearch required.)*
+
+### What each vector-index record looks like
+
+Every **chunk** (a ~1,200-character slice of a source document) is one record:
+
+```
+doc_type      startup | siemens | partner   (which corpus it belongs to)
+group_id      startup domain / "siemens" / "partners"
+source_url    provenance — the page URL or a reference:// pseudo-URL
+chunk         the text itself
+chunk_no      its position within the source document
+checksum      sha256 of the FULL source document it came from
+fetched_at    when that source's content last CHANGED
+last_checked  when we last LOOKED at that source
+embedding     the 1,536-number vector (this is what kNN searches)
+```
+
+### Freshness: `checksum` + two timestamps
+
+The two timestamps answer different questions, and keeping them separate is
+what makes incremental re-indexing possible:
+
+- **`fetched_at`** — when the *content* last changed.
+- **`last_checked`** — when we last *looked*, changed or not.
+
+On every re-crawl the indexer hashes the freshly fetched document and compares
+it to the stored `checksum`:
+
+- **checksum identical** → content unchanged → just update `last_checked`.
+  **No re-chunking, no re-embedding, zero API cost.**
+- **checksum differs / source is new** → re-chunk, re-embed, and replace that
+  source's chunks in the index.
+
+So re-analysing an unchanged site is effectively free, and "is this record
+stale, or merely unchanged since we last checked?" is answerable per document.
+
+### Persistence: what survives which command
+
+The distinction that bit us during development (and is worth knowing):
+
+| Command | Vector index (`osdata`) | SQLite caches (`/data`) |
+|---|---|---|
+| `docker compose restart` | ✅ survives | ✅ survives |
+| `docker compose up --build` | ✅ survives | ✅ survives¹ |
+| `docker compose down` | ✅ survives | ✅ survives¹ |
+| `docker compose down -v` | ❌ wiped | ❌ wiped |
+
+¹ Because the SQLite caches are written to the `appdata` named volume via
+`STATE_DIR=/data`. (Wipe everything for a clean slate with `down -v`; the app
+re-seeds the reference data automatically on the next analysis.)
+
+The application's own files — source code and `data/` — are **not** in Docker
+at all; they live in the repository.
+
 ## Cost engineering
 
 LLM spend is treated as a first-class engineering constraint, controlled at
@@ -163,31 +265,20 @@ four layers:
 |---|---|---|
 | **Model routing** | Pipeline stages request a *tier* (`light` / `heavy`), `config.yaml` maps tiers to models with cross-provider fallback chains (OpenAI → Anthropic → local Ollama) | Page reading runs on a cheap model; only final scoring pays for a frontier model. Provider outage degrades gracefully instead of failing |
 | **Provider-side prompt caching** | OpenAI Responses API (automatic for prompts >1K tokens) | Repeated prefixes billed at cached rates |
-| **Content-hash caches** | Embeddings cached by `sha256(text)`; pages cached; finished analyses cached (SQLite) | Unchanged content is never re-embedded or re-analyzed — re-runs cost ≈ $0 |
+| **Embedding cache** | Embedding vectors cached by `sha256(text)` (storage layer 2) | Identical text is never embedded twice — across restarts and across startups |
+| **Checksum-gated re-indexing** | Unchanged sources (same checksum) are not re-chunked or re-embedded | Re-analysing an unchanged site skips the entire embedding cost |
+| **Analysis cache** | Finished analyses cached by URL (storage layer 3) | A repeat request returns instantly at $0 |
 | **Observability** | `/api/usage` — tokens + estimated USD per model; each analysis response carries its own `cost_usd` | You can't optimize what you don't measure |
 
-A full analysis is 3-6 LLM calls. The all-Ollama configuration runs the entire
-pipeline at zero marginal cost (with reduced quality — the tradeoff is yours
-per tier).
+A full analysis of a fresh site is a handful of LLM calls — on the measured
+[evaluation run](#evaluation), **≈ $0.013–0.024 per startup** with the default
+OpenAI tiers. The all-Ollama configuration runs the entire pipeline at zero
+marginal cost (with reduced quality — the tradeoff is yours per tier).
 
-## Data model & freshness
-
-Every indexed chunk carries provenance and freshness metadata:
-
-```
-doc_type      startup | siemens | partner
-group_id      startup domain / "siemens" / "partners"
-source_url    provenance (page URL or reference:// pseudo-URL)
-checksum      sha256 of the FULL source document
-fetched_at    when the content last CHANGED
-last_checked  when we last LOOKED
-embedding     kNN vector (HNSW, cosine)
-```
-
-On re-crawl, the indexer compares checksums: **unchanged → touch
-`last_checked` only (zero tokens); changed → re-chunk, re-embed, replace.**
-The distinction between `fetched_at` and `last_checked` makes "is this stale
-or just unchanged?" answerable per document.
+> **Note on the crawler:** pages *are* re-fetched on each analysis (a handful
+> of cheap HTTP GETs, which also keeps content fresh); what the caches above
+> eliminate is the expensive part — embeddings and LLM calls — for unchanged
+> content.
 
 ## Grounding: the official Dynamo data
 
@@ -224,6 +315,73 @@ interprets them, it does not invent them. The UI shows:
 
 Each analysis also reports runtime, LLM cost, and ingest stats
 (new / updated / unchanged pages).
+
+## Evaluation
+
+An LLM that returns a plausible-sounding partnership analysis for *every* input
+is useless — the whole value is in **discriminating** a real fit from a
+non-fit. So the system ships with a small evaluation harness
+(`scripts/batch_eval.py` + a labelled set in `scripts/eval_set.json`) that
+runs a curated list of URLs through the live API and checks the results
+against expectations.
+
+### Methodology
+
+Each URL is labelled with the outcome we expect:
+
+| Label | Meaning | Expectation |
+|---|---|---|
+| **partner** | An **existing** Dynamo partner (Cybord, Realtime Robotics, Portcast, Retrocausal) | High fit **and** a *self-match peak*: because the partner is already in the reference list, analysing it must surface itself as the clearly-separated top partner-similarity hit — this is a direct sanity check on the whole embedding + cosine path |
+| **good** | Strong non-listed Industry-4.0 candidate (Protex AI, Augury) | High fit |
+| **weak** | Real technology, but outside Siemens' domain (Viz.ai — healthcare AI; Notion — B2B productivity) | Middling-to-low fit — tests the *domain boundary* |
+| **bad** | Clearly out of domain (Airbnb) | Low fit — the core discrimination test |
+
+The harness flags any result that contradicts its label, plus structural
+checks (evidence URLs present, exactly five fit dimensions, runtime sane). It
+exits non-zero if any flag fires, so it can gate CI.
+
+### On the self-match check (a note on doing this honestly)
+
+The first calibration of the self-match test used an **absolute** threshold
+(self-similarity ≥ 0.85). It fired false alarms: every existing partner
+correctly ranked *itself* #1, but at ~0.79–0.83, not ≥ 0.85. The reason is
+sound — the "self" comparison is between the LLM-written *summary of the
+crawled site* and the *Dynamo-page description* of the same company: two
+different texts about one company embed to ~0.8, not ~1.0 (unrelated companies
+sit at ~0.3–0.5). The fix was to test the right property — a **dominant,
+separated peak** (top hit ≥ 0.70 **and** ≥ 0.08 above the next partner) rather
+than an absolute value. This same first run also surfaced a **real bug**:
+partners with long descriptions were split into several chunks and appeared
+multiple times in the similarity ranking; the metric now aggregates by partner
+name (max over chunks). Both are in the git history.
+
+### Results
+
+Latest run (`eval_results/summary.md`, 9 sites, ✅ **no anomalies**, total LLM
+cost ≈ $0.17):
+
+| Category | Company | Fit /10 | Partner-sim /10 | Self-match peak | Cost |
+|---|---|---|---|---|---|
+| partner | Realtime Robotics | 9 | 9 | 0.79 | $0.019 |
+| partner | Retrocausal | 9 | 9 | 0.82 | $0.023 |
+| partner | Cybord | 8 | 8 | 0.80 | $0.024 |
+| partner | Portcast | 7 | 7 | 0.82 | $0.019 |
+| good | Protex AI | 8 | 7 | — | $0.019 |
+| good | Augury | 7 | 7 | — | $0.018 |
+| weak | Notion | 5 | 4 | — | $0.015 |
+| weak | Viz.ai | 3 | 4 | — | $0.017 |
+| bad | Airbnb | 2 | 2 | — | $0.013 |
+
+The scores form a clean monotonic gradient — **existing partners and strong
+candidates 7–9, out-of-domain tech in the low single digits, Airbnb at the
+floor.** The system rewards genuine Industry-4.0 fit and is not fooled into
+producing a high score for a consumer travel site. Note the nuance between the
+two "weak" cases: Notion (a B2B tool with a thin low-code thread) lands at 5
+with a measured justification, correctly *above* Viz.ai's healthcare-AI 3 and
+well above Airbnb's 2.
+
+Reproduce with `python -m scripts.batch_eval` (app running); per-site JSON and
+the summary land in `eval_results/`.
 
 ## Configuration
 

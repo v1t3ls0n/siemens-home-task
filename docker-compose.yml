@@ -22,6 +22,9 @@ services:
     env_file: .env
     environment:
       - OPENSEARCH_URL=http://opensearch:9200
+      # persist the SQLite caches (embeddings + analyses) on the named volume
+      # so they survive `up --build` / container recreation, not just restart.
+      - STATE_DIR=/data
     depends_on:
       opensearch:
         condition: service_healthy

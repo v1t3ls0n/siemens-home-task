@@ -188,8 +188,12 @@ def main() -> None:
                   f"{r['sim']} | {r['self_sim']} | {r['cost']} | "
                   f"{'⚠ ' + '; '.join(r['flags']) if r['flags'] else 'ok'} |")
     md += ["", "## Reading the table",
-           "- **partner** rows: fit and partner-sim should be high; "
-           "**self-sim ≈ 1.0** confirms the embedding+metric path is sound.",
+           "- **partner** rows: fit and partner-sim should be high; **self-sim** "
+           "is the top partner-similarity hit — an existing partner matching "
+           "its own reference entry. It sits at ~0.75-0.85 (two different texts "
+           "about the same company, not ~1.0) and must be a separated PEAK, "
+           "well above unrelated partners (~0.3-0.5); this confirms the "
+           "embedding+metric path is sound.",
            "- **good** rows: fit high — the system rewards genuine Industry-4.0 fit.",
            "- **weak/bad** rows: fit low — the system DISCRIMINATES, it does "
            "not just produce plausible prose for everything.",
