@@ -14,10 +14,10 @@ class OpenSearchStore:
 
     # -- setup --------------------------------------------------------------
     def ensure_ready(self, dim: int) -> None:
-        if self.client.indices.exists(self.index):
+        if self.client.indices.exists(index=self.index):
             return
         self.client.indices.create(
-            self.index,
+            index=self.index,
             body={
                 "settings": {"index": {"knn": True}},
                 "mappings": {
