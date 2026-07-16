@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>partner-scout pro</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+ body{font-family:system-ui,sans-serif;max-width:980px;margin:2rem auto;padding:0 1rem;color:#1c2733}
+ input{width:60%;padding:.55rem} button{padding:.55rem 1.2rem}
+ .grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem}
+ .card{border:1px solid #dde4ea;border-radius:8px;padding:1rem}
+ .score{font-size:2.2rem;font-weight:700}
+ table{border-collapse:collapse;font-size:.75rem}
+ td,th{border:1px solid #eee;padding:.25rem .4rem;text-align:center}
+ th.rowh{text-align:left;max-width:220px}
+ .muted{color:#68778a;font-size:.85rem}
+ #status{margin:1rem 0;color:#68778a}
+</style>
+</head>
+<body>
+<h2>partner-scout pro — Siemens DISW technology-partner fit</h2>
+<input id="url" placeholder="https://www.protex.ai/">
+<button onclick="run()">Analyze</button>
+<label class="muted"><input type="checkbox" id="force"> force re-crawl + re-analyze</label>
+<div id="status"></div>
+<div id="result" style="display:none">
+  <h3 id="company"></h3>
+  <p id="summary"></p>
+  <div class="grid">
+    <div class="card"><div class="muted">Partner-fit score</div>
+      <div class="score" id="fit"></div><p id="fitwhy" class="muted"></p></div>
+    <div class="card"><div class="muted">Similarity to existing partners</div>
+      <div class="score" id="sim"></div><p id="simwhy" class="muted"></p></div>
+  </div>
+  <div class="card" style="margin-top:1.5rem"><b>Comparison with Siemens DISW</b>
+    <p id="comparison"></p></div>
+  <div class="grid">
+    <div class="card"><b>Fit dimensions</b><canvas id="radar"></canvas></div>
+    <div class="card"><b>Correlation per Siemens product (cosine)</b>
+      <canvas id="products"></canvas></div>
+  </div>
+  <div class="card" style="margin-top:1.5rem"><b>Closest existing partners (cosine)</b>
+    <canvas id="partners" height="110"></canvas></div>
+  <div class="card" style="margin-top:1.5rem">
+    <b>Correlation heatmap — startup content &times; Siemens products</b>
+    <div class="muted">where exactly the overlap lives: each cell = max cosine
+      similarity between a crawled startup chunk and a product's chunks</div>
+    <div id="heatmap" style="overflow-x:auto;margin-top:.5rem"></div></div>
+  <div class="card" style="margin-top:1.5rem"><b>Dimension explanations</b>
+    <ul id="dims"></ul>
+    <p class="muted" id="meta"></p></div>
+</div>
+<script>
+let charts = [];
+function chart(id, cfg){ charts.push(new Chart(document.getElementById(id), cfg)); }
+
+async function run(){
+  const st = document.getElementById('status');
+  document.getElementById('result').style.display = 'none';
+  charts.forEach(c => c.destroy()); charts = [];
+  st.textContent = 'Crawling site → research agent → metrics → analyst agent... (1-2 min)';
+  const r = await fetch('/api/analyze', {method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({url: document.getElementById('url').value.trim(),
+                          force: document.getElementById('force').checked})});
+  const d = await r.json();
+  if (!r.ok){ st.textContent = 'Error: ' + (d.detail || JSON.stringify(d)); return; }
+  st.textContent = d.cached ? 'Served from cache.' :
+    `Done in ${d.runtime_s}s, LLM cost ≈ $${d.cost_usd}`;
+  render(d);
+}
+
+function render(d){
+  const p = d.profile, rep = d.report, m = d.metrics;
+  document.getElementById('result').style.display = 'block';
+  company.textContent = p.company_name;
+  summary.textContent = p.summary;
+  fit.textContent = rep.partnership_score + '/10';
+  fitwhy.textContent = rep.partnership_justification;
+  sim.textContent = rep.partner_similarity_score + '/10';
+  simwhy.textContent = rep.partner_similarity_justification;
+  comparison.textContent = rep.comparison;
+  dims.innerHTML = rep.dimensions.map(x =>
+    `<li><b>${x.name}</b> — ${x.score}/10: ${x.explanation}</li>`).join('');
+  meta.textContent = `Evidence: ${p.evidence_urls.join(', ')}`;
+
+  chart('radar', {type:'radar',
+    data:{labels: rep.dimensions.map(x=>x.name),
+      datasets:[{label:'score (1-10)', data: rep.dimensions.map(x=>x.score),
+                 fill:true, backgroundColor:'rgba(0,120,180,.18)',
+                 borderColor:'rgb(0,120,180)'}]},
+    options:{scales:{r:{min:0,max:10,ticks:{stepSize:2}}}}});
+
+  chart('products', {type:'bar',
+    data:{labels: m.product_correlation.map(x=>x.product),
+      datasets:[{label:'cosine similarity',
+                 data: m.product_correlation.map(x=>x.similarity),
+                 backgroundColor:'rgba(0,150,110,.5)'}]},
+    options:{indexAxis:'y', scales:{x:{min:0,max:1}}, plugins:{legend:{display:false}}}});
+
+  chart('partners', {type:'bar',
+    data:{labels: m.partner_similarity.map(x=>x.name),
+      datasets:[{label:'cosine similarity',
+                 data: m.partner_similarity.map(x=>x.similarity),
+                 backgroundColor:'rgba(150,90,200,.5)'}]},
+    options:{indexAxis:'y', scales:{x:{min:0,max:1}}, plugins:{legend:{display:false}}}});
+
+  const h = m.heatmap;
+  let html = '<table><tr><th></th>' +
+    h.cols.map(c=>`<th>${c}</th>`).join('') + '</tr>';
+  h.values.forEach((row,i)=>{
+    html += `<tr><th class="rowh">${h.rows[i]}</th>` + row.map(v=>{
+      const a = Math.max(0, (v - .2) / .6);   // visual scaling
+      return `<td style="background:rgba(220,90,40,${a.toFixed(2)})">${v}</td>`;
+    }).join('') + '</tr>';
+  });
+  document.getElementById('heatmap').innerHTML = html + '</table>';
+}
+</script>
+</body>
+</html>

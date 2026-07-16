@@ -1,0 +1,22 @@
+# Secrets — never commit
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Runtime state (caches, local vector store, analysis history)
+*.db
+localstore.json
+.chroma/
+
+# OpenSearch / docker volumes (if ever mounted locally)
+osdata/
+
+# IDE / OS noise
+.vscode/
+.idea/
+.DS_Store

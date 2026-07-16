@@ -1,0 +1,30 @@
+[
+  {
+    "name": "NVIDIA",
+    "description": "GPU computing and AI platforms. Partners with Siemens on the industrial metaverse: NVIDIA Omniverse integrated with Siemens Xcelerator for photorealistic, physics-based digital twins of factories and products."
+  },
+  {
+    "name": "AWS (Amazon Web Services)",
+    "description": "Cloud infrastructure provider. Siemens delivers Xcelerator as a Service and Insights Hub industrial IoT workloads on AWS; joint go-to-market for cloud PLM and manufacturing analytics."
+  },
+  {
+    "name": "Microsoft",
+    "description": "Cloud (Azure) and productivity software. Teamcenter integrates with Microsoft Teams and Azure OpenAI for industrial AI copilots; Azure hosts Siemens cloud offerings."
+  },
+  {
+    "name": "SAP",
+    "description": "Enterprise ERP software. Long-standing integration partner: Teamcenter PLM connected to SAP ERP/S4HANA so engineering BOMs flow into manufacturing, procurement and finance processes."
+  },
+  {
+    "name": "IBM",
+    "description": "Enterprise software and services. Collaboration around service lifecycle management and systems engineering, connecting IBM's asset management (Maximo) with Siemens Xcelerator."
+  },
+  {
+    "name": "Sony",
+    "description": "Consumer electronics and imaging. Partnered with Siemens on an immersive engineering solution: NX combined with Sony's XR head-mounted display for immersive product design."
+  },
+  {
+    "name": "Zel X / startup ecosystem examples",
+    "description": "Illustrative placeholder for smaller technology partners: niche simulation, AI quality inspection, robotics orchestration and IIoT-sensor startups that integrate with Xcelerator via APIs and are validated through pilots and POCs."
+  }
+]

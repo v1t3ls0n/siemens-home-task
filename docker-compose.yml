@@ -1,0 +1,43 @@
+services:
+  opensearch:
+    image: opensearchproject/opensearch:2.17.0
+    environment:
+      - discovery.type=single-node
+      - plugins.security.disabled=true          # dev only — no auth
+      - OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m
+      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=Dev-Only-Pass1!
+    ports:
+      - "9200:9200"
+    volumes:
+      - osdata:/usr/share/opensearch/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:9200 >/dev/null"]
+      interval: 5s
+      retries: 30
+
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file: .env
+    environment:
+      - OPENSEARCH_URL=http://opensearch:9200
+    depends_on:
+      opensearch:
+        condition: service_healthy
+    volumes:
+      - appdata:/data
+
+  # optional local LLM: docker compose --profile local up
+  ollama:
+    image: ollama/ollama:latest
+    profiles: ["local"]
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama:/root/.ollama
+
+volumes:
+  osdata:
+  appdata:
+  ollama:
