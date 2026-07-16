@@ -13,15 +13,20 @@ def seed_reference_data(store: VectorStore) -> dict:
     store.ensure_ready(cfg()["embeddings"]["dim"])
     stats = {"new": 0, "updated": 0, "unchanged": 0}
 
-    text = (DATA_DIR / "siemens_portfolio.md").read_text(encoding="utf-8")
-    for section in text.split("\n## ")[1:]:
-        title, _, body = section.partition("\n")
-        title = title.strip()
-        status = index_document(
-            store, doc_type="siemens", group_id="siemens", title=title,
-            source_url=f"portfolio://siemens/{title}", text=body.strip(),
-        )
-        stats[status] += 1
+    # every data/*.md file is Siemens reference material: the DISW product
+    # portfolio, plus scraped pages (e.g. siemens_dynamo.md from
+    # scripts/scrape_dynamo.py). One "## " section = one chunk source.
+    for md_file in sorted(DATA_DIR.glob("*.md")):
+        text = md_file.read_text(encoding="utf-8")
+        for section in text.split("\n## ")[1:]:
+            title, _, body = section.partition("\n")
+            title = title.strip()
+            status = index_document(
+                store, doc_type="siemens", group_id="siemens", title=title,
+                source_url=f"reference://{md_file.stem}/{title}",
+                text=body.strip(),
+            )
+            stats[status] += 1
 
     partners = json.loads((DATA_DIR / "partners.json").read_text("utf-8"))
     for p in partners:
