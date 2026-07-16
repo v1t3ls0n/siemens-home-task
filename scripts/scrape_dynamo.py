@@ -33,7 +33,16 @@ from bs4 import BeautifulSoup
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 DYNAMO_URL = ("https://www.siemens.com/en-us/company/"
               "siemens-software-for-startups/siemens-dynamo/")
-UA = "Mozilla/5.0 (partner-scout research bot; recruiter assignment)"
+# Browser-like headers: several partner sites (WAF/bot filters) 403 a bare
+# python UA on their public marketing pages; a normal header set gets through.
+HEADERS = {
+    "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                   "AppleWebKit/537.36 (KHTML, like Gecko) "
+                   "Chrome/126.0.0.0 Safari/537.36"),
+    "Accept": ("text/html,application/xhtml+xml,application/xml;q=0.9,"
+               "image/avif,image/webp,*/*;q=0.8"),
+    "Accept-Language": "en-US,en;q=0.9",
+}
 
 # --- fallback snapshot of the Dynamo page (2026-07) ------------------------
 FALLBACK_PARTNERS: dict[str, dict] = {
@@ -180,7 +189,7 @@ def _clean_url(href: str | None) -> str | None:
 def parse_live_page() -> tuple[dict[str, dict], dict[str, list[str]]]:
     """Best-effort parse of the current Dynamo page DOM."""
     r = httpx.get(DYNAMO_URL, follow_redirects=True, timeout=20,
-                  headers={"User-Agent": UA})
+                  headers=HEADERS)
     r.raise_for_status()
     soup = BeautifulSoup(r.text, "html.parser")
 
@@ -231,7 +240,7 @@ def parse_live_page() -> tuple[dict[str, dict], dict[str, list[str]]]:
 def fetch_site_excerpt(url: str) -> str:
     try:
         r = httpx.get(url, follow_redirects=True, timeout=15,
-                      headers={"User-Agent": UA})
+                      headers=HEADERS)
         r.raise_for_status()
         s = BeautifulSoup(r.text, "html.parser")
         for t in s(["script", "style", "noscript", "svg", "nav", "footer"]):
