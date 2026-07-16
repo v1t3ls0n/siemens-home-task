@@ -1,0 +1,421 @@
+{
+  "url": "https://rtr.ai/",
+  "profile": {
+    "company_name": "Realtime Robotics",
+    "summary": "Realtime Robotics provides cloud-based and real-time motion-planning and optimization software for robotic workcells—using Industrial AI to generate collision-free paths, interlocks, task allocation and optimized cycle times rapidly for manufacturing and automation teams.",
+    "products": [
+      "Resolver — cloud-based path planning & Industrial AI optimization for robot workcells",
+      "RapidPlan — real-time, robot-agnostic motion planning and control (dynamic collision avoidance, autohoming)",
+      "Demo access / trial of Resolver"
+    ],
+    "technologies": [
+      "Industrial AI / optimization",
+      "Cloud computing and scalable parallel studies",
+      "Motion planning and collision avoidance",
+      "Real-time dynamic motion planning and robot control",
+      "Sensor integration and real-time 3D data",
+      "Digital twins / simulation integration"
+    ],
+    "target_industries": [
+      "Manufacturing / factory automation",
+      "Robotics system integrators and OEMs",
+      "Proposal, design and simulation engineering teams"
+    ],
+    "evidence_urls": [
+      "https://rtr.ai/",
+      "https://rtr.ai/resolver/",
+      "https://rtr.ai/rapidplan/",
+      "https://rtr.ai/demo/"
+    ]
+  },
+  "report": {
+    "comparison": "Realtime Robotics offers cloud and real‑time motion‑planning/optimization for robotic workcells, strongly aligned with Siemens DISW’s digital manufacturing and automation stack (Tecnomatix, NX/Simcenter, Opcenter, Insights Hub). Their software focuses on robot‑agnostic collision‑free path planning, dynamic avoidance, and cycle‑time optimization, which is complementary to Siemens’ existing simulation, planning, and execution tools rather than duplicative. The high similarity with Tecnomatix and strategic technology directions suggests clear fit in factory automation and robotic cell design, with potential integration as an AI motion‑planning engine inside Siemens’ digital twin workflows and shop‑floor orchestration. Risk of direct competition is limited because Siemens does not currently provide equally advanced, vendor‑agnostic real‑time motion‑planning across robots and controllers; instead, Realtime Robotics can enhance Siemens’ value proposition for robotics and flexible automation within Xcelerator.",
+    "partnership_score": 9,
+    "partnership_justification": "Very strong complementarity to Siemens’ digital manufacturing, robotics, and industrial AI strategies. High correlation with Tecnomatix, Teamcenter, Opcenter, Insights Hub and Siemens strategic directions indicates both technology and market fit. Clear integration pathways exist: (1) as an embedded/connected capability in Tecnomatix Process Simulate and NX/Simcenter robotics for generating and validating collision‑free, optimized paths; (2) as a runtime optimization layer linked with Opcenter/Insights Hub for adaptive robotic workcells and closed‑loop optimization; (3) as a portfolio partner on Xcelerator addressing robot‑agnostic motion planning. Shared target customers (manufacturing, system integrators, OEMs) and Siemens’ existing roster of similar partners (e.g., Artiminds, Instrumental, Teamviewer, etc. with moderate–high similarity) further validate the model. The only reason it is not a 10 is the need to validate maturity, scale, and overlap with any internal Siemens robotics initiatives, but evidence points strongly towards a portfolio partnership opportunity.",
+    "partner_similarity_score": 9,
+    "partner_similarity_justification": "The startup shows a very high cosine similarity to existing partners in adjacent domains (top match at 0.791; several between 0.45–0.56 such as Retrocausal, SkillReal, Razor Labs, ScopeAR, Instrumental, Teamviewer, Artiminds). These are mostly AI, manufacturing, robotics, or AR/automation orchestration partners, which indicates Realtime Robotics fits well into Siemens’ existing partner archetypes: specialized Industrial AI providers that enhance digital manufacturing and shop‑floor automation. The correlation with collaboration models (Portfolio Partners, Startups as Suppliers, Ecosystem Partners) is moderate‑high, further suggesting alignment with how Siemens typically engages such companies. Overall, it strongly resembles successful past partners in technology focus, go‑to‑market, and integration potential.",
+    "dimensions": [
+      {
+        "name": "technology_overlap",
+        "score": 8,
+        "explanation": "High overlap with Siemens’ digital manufacturing/robotics technology stack (Tecnomatix 0.519, Teamcenter 0.421, NX 0.363, Simcenter 0.359, Xcelerator 0.348). Both sides focus on digital twins, simulation integration, and Industrial AI. However, the core Realtime Robotics value—real‑time, robot‑agnostic motion planning and dynamic collision avoidance—is not yet a fully commoditized capability inside Siemens products, making it more complementary than redundant. Overlap is mainly in problem domain (robotic workcells, simulation) rather than identical feature sets."
+      },
+      {
+        "name": "market_fit",
+        "score": 9,
+        "explanation": "Target industries—manufacturing/factory automation, robotics OEMs and integrators, engineering teams for proposal/design/simulation—map almost 1:1 to Siemens DISW’s core manufacturing and automation customer base. Strong similarity with Tecnomatix (digital manufacturing), Opcenter (MES, 0.375), Insights Hub (IoT, 0.422) and strategic technology directions (0.525) signals alignment with Siemens’ go‑to‑market and customer priorities, especially as factories adopt more flexible, robot‑dense automation."
+      },
+      {
+        "name": "integration_potential",
+        "score": 9,
+        "explanation": "Multiple, concrete integration paths: (1) Upfront planning/simulation: integrate Resolver into Tecnomatix Process Simulate and NX/Simcenter robotics for automatic collision‑free path generation and cycle‑time optimization in digital twins. (2) Runtime: connect RapidPlan to Opcenter and Insights Hub for real‑time execution, monitoring, and closed‑loop optimization on the shop floor. (3) Data/PLM context: tie optimization studies to Teamcenter for configuration management of robot cells. Cloud‑based architecture and focus on simulation integration are well aligned with Xcelerator, Mendix‑enabled extension, and portfolio partnership models (0.413 similarity)."
+      },
+      {
+        "name": "competitive_risk",
+        "score": 4,
+        "explanation": "Some overlap with Siemens’ own robotics/digital manufacturing features (robot programming, collision checking, path optimization) could create perceptions of competition, particularly inside Tecnomatix and Simcenter teams. Nonetheless, Realtime Robotics emphasizes real‑time, robot‑agnostic control and advanced motion‑planning AI, which Siemens mostly does not offer as deeply specialized, standalone capabilities. Positioning it as an advanced robotics optimization engine and complement to Tecnomatix/Opcenter rather than a replacement for Siemens tools keeps competitive risk relatively low to moderate."
+      },
+      {
+        "name": "maturity_signals",
+        "score": 7,
+        "explanation": "The profile indicates a focused product portfolio (Resolver, RapidPlan, demo access), cloud delivery, and industrial‑grade capabilities (real‑time collision avoidance, sensor integration, 3D data, digital twin integration). High similarity scores to existing, credible partners and to strategic Siemens domains are positive maturity indicators. However, the data provided does not explicitly confirm scale of deployments, enterprise references, or financial robustness, so maturity appears solid but not fully verified at large‑scale, mission‑critical rollouts."
+      }
+    ]
+  },
+  "metrics": {
+    "product_correlation": [
+      {
+        "product": "Strategic technology directions (public statements)",
+        "similarity": 0.525
+      },
+      {
+        "product": "Tecnomatix (Digital Manufacturing)",
+        "similarity": 0.519
+      },
+      {
+        "product": "Dynamo focus areas",
+        "similarity": 0.455
+      },
+      {
+        "product": "Altair (Simulation, HPC & AI — acquired 2025)",
+        "similarity": 0.439
+      },
+      {
+        "product": "Insights Hub (Industrial IoT, formerly MindSphere)",
+        "similarity": 0.422
+      },
+      {
+        "product": "Teamcenter (PLM)",
+        "similarity": 0.421
+      },
+      {
+        "product": "Collaboration model: Portfolio Partners",
+        "similarity": 0.413
+      },
+      {
+        "product": "Collaboration model: Research Partners",
+        "similarity": 0.384
+      },
+      {
+        "product": "Collaboration model: Startups as Suppliers",
+        "similarity": 0.378
+      },
+      {
+        "product": "Opcenter (MES / Manufacturing Operations)",
+        "similarity": 0.375
+      },
+      {
+        "product": "NX (CAD / Product Engineering)",
+        "similarity": 0.363
+      },
+      {
+        "product": "Simcenter (Simulation & Test)",
+        "similarity": 0.359
+      },
+      {
+        "product": "Xcelerator Platform",
+        "similarity": 0.348
+      },
+      {
+        "product": "Polarion (Application Lifecycle Management)",
+        "similarity": 0.343
+      },
+      {
+        "product": "Collaboration model: Ecosystem Partners",
+        "similarity": 0.337
+      },
+      {
+        "product": "Eligibility and engagement process",
+        "similarity": 0.329
+      },
+      {
+        "product": "Solid Edge (Mainstream CAD)",
+        "similarity": 0.325
+      },
+      {
+        "product": "Mendix (Low-Code Application Platform)",
+        "similarity": 0.317
+      },
+      {
+        "product": "Capital (Electrical / E-E Systems)",
+        "similarity": 0.309
+      },
+      {
+        "product": "Siemens Dynamo program",
+        "similarity": 0.291
+      },
+      {
+        "product": "Siemens EDA (Electronic Design Automation, formerly Mentor Graphics)",
+        "similarity": 0.284
+      },
+      {
+        "product": "Collaboration model: Investment Opportunities",
+        "similarity": 0.242
+      }
+    ],
+    "partner_similarity": [
+      {
+        "name": "Realtime Robotics",
+        "similarity": 0.791
+      },
+      {
+        "name": "Retrocausal",
+        "similarity": 0.563
+      },
+      {
+        "name": "SkillReal",
+        "similarity": 0.562
+      },
+      {
+        "name": "Razor Labs",
+        "similarity": 0.56
+      },
+      {
+        "name": "Goodly Innovation",
+        "similarity": 0.491
+      },
+      {
+        "name": "ScopeAR",
+        "similarity": 0.488
+      },
+      {
+        "name": "Instrumental",
+        "similarity": 0.467
+      },
+      {
+        "name": "Teamviewer",
+        "similarity": 0.459
+      },
+      {
+        "name": "Cybord",
+        "similarity": 0.441
+      },
+      {
+        "name": "Inspekto",
+        "similarity": 0.441
+      },
+      {
+        "name": "Boardera",
+        "similarity": 0.417
+      },
+      {
+        "name": "ioTech",
+        "similarity": 0.367
+      },
+      {
+        "name": "Portcast",
+        "similarity": 0.357
+      },
+      {
+        "name": "Percepto",
+        "similarity": 0.35
+      },
+      {
+        "name": "Cybellum",
+        "similarity": 0.349
+      },
+      {
+        "name": "Early product validation and use of Siemens technology",
+        "similarity": 0.321
+      },
+      {
+        "name": "Updates on the latest technology trends",
+        "similarity": 0.319
+      },
+      {
+        "name": "Ability to expand your product portfolio with external solutions",
+        "similarity": 0.304
+      },
+      {
+        "name": "Access to Siemens' internal network of experts",
+        "similarity": 0.295
+      },
+      {
+        "name": "Innovation leadership",
+        "similarity": 0.295
+      },
+      {
+        "name": "Hands-on support with: Ventures validation, startups scouting and building first prototypes",
+        "similarity": 0.282
+      },
+      {
+        "name": "Access to Siemens' ecosystem of customers and partners",
+        "similarity": 0.278
+      },
+      {
+        "name": "First to market with innovative solutions",
+        "similarity": 0.275
+      },
+      {
+        "name": "Artiminds",
+        "similarity": 0.273
+      },
+      {
+        "name": "Early-stage investment opportunities",
+        "similarity": 0.25
+      }
+    ],
+    "heatmap": {
+      "rows": [
+        "Realtime Robotics #0",
+        "Realtime Robotics #1",
+        "Realtime Robotics #2",
+        "Realtime Robotics #3",
+        "Realtime Robotics #4",
+        "Contact Us - Realtime Robotics #0",
+        "Demo - Realtime Robotics #0",
+        "Demo - Realtime Robotics #1",
+        "Resolver - Realtime Robotics #0",
+        "Resolver - Realtime Robotics #1",
+        "Resolver - Realtime Robotics #2",
+        "Resolver - Realtime Robotics #3"
+      ],
+      "cols": [
+        "Strategic technology directions (public statements)",
+        "Tecnomatix (Digital Manufacturing)",
+        "Dynamo focus areas",
+        "Altair (Simulation, HPC & AI — acquired 2025)",
+        "Insights Hub (Industrial IoT, formerly MindSphere)",
+        "Teamcenter (PLM)",
+        "Collaboration model: Portfolio Partners",
+        "Collaboration model: Research Partners"
+      ],
+      "values": [
+        [
+          0.427,
+          0.517,
+          0.405,
+          0.36,
+          0.313,
+          0.398,
+          0.384,
+          0.356
+        ],
+        [
+          0.497,
+          0.481,
+          0.465,
+          0.406,
+          0.36,
+          0.391,
+          0.45,
+          0.37
+        ],
+        [
+          0.487,
+          0.479,
+          0.419,
+          0.441,
+          0.374,
+          0.368,
+          0.401,
+          0.316
+        ],
+        [
+          0.386,
+          0.403,
+          0.413,
+          0.317,
+          0.308,
+          0.302,
+          0.382,
+          0.348
+        ],
+        [
+          0.382,
+          0.371,
+          0.382,
+          0.319,
+          0.305,
+          0.327,
+          0.336,
+          0.29
+        ],
+        [
+          0.335,
+          0.371,
+          0.374,
+          0.255,
+          0.248,
+          0.306,
+          0.336,
+          0.326
+        ],
+        [
+          0.376,
+          0.401,
+          0.421,
+          0.307,
+          0.292,
+          0.297,
+          0.399,
+          0.345
+        ],
+        [
+          0.43,
+          0.432,
+          0.4,
+          0.337,
+          0.326,
+          0.357,
+          0.356,
+          0.287
+        ],
+        [
+          0.384,
+          0.467,
+          0.427,
+          0.391,
+          0.346,
+          0.368,
+          0.397,
+          0.387
+        ],
+        [
+          0.416,
+          0.497,
+          0.456,
+          0.432,
+          0.331,
+          0.418,
+          0.45,
+          0.394
+        ],
+        [
+          0.363,
+          0.498,
+          0.399,
+          0.364,
+          0.286,
+          0.38,
+          0.406,
+          0.354
+        ],
+        [
+          0.351,
+          0.446,
+          0.373,
+          0.368,
+          0.255,
+          0.35,
+          0.387,
+          0.357
+        ]
+      ]
+    }
+  },
+  "ingest": {
+    "group_id": "rtr.ai",
+    "new": 6,
+    "updated": 0,
+    "unchanged": 0
+  },
+  "runtime_s": 37.6,
+  "cost_usd": 0.0185,
+  "cached": false,
+  "_eval": {
+    "category": "partner",
+    "note": "Existing Dynamo partner (robot motion planning, Process Simulate plug-in). High fit, high similarity.",
+    "wall_s": 37.8
+  }
+}

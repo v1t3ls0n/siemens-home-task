@@ -1,0 +1,430 @@
+{
+  "url": "https://www.augury.com/",
+  "profile": {
+    "company_name": "Augury",
+    "summary": "Augury offers an Industrial AI Workforce: a platform that combines machine and operational data, AI-powered sensors, and context-aware AI agents to provide predictive, prescriptive machine diagnostics (Machine Health) and process optimization (Process Health) to reduce downtime, improve yield, and guide operational actions.",
+    "products": [
+      "Industrial AI Workforce",
+      "Machine Health (prescriptive AI machine diagnostics)",
+      "Process Health (prescriptive AI process optimization, previously Seebo)",
+      "Auguscope"
+    ],
+    "technologies": [
+      "Industrial AI",
+      "AI agents / context-aware agents",
+      "Predictive intelligence / predictive analytics",
+      "AI-powered sensors",
+      "Machine diagnostics"
+    ],
+    "target_industries": [
+      "Food & Beverage",
+      "Consumer Packaged Goods",
+      "Chemicals",
+      "Building Materials & Cement",
+      "Metals & Mining",
+      "Pulp & Paper",
+      "Glass",
+      "Pharmaceutical",
+      "Plastics",
+      "Steel",
+      "Forest Products",
+      "Oil & Gas",
+      "Energy",
+      "Commercial Services"
+    ],
+    "evidence_urls": [
+      "https://www.augury.com/",
+      "https://www.augury.com/use-cases/industries/food-and-beverage/"
+    ]
+  },
+  "report": {
+    "comparison": "Augury provides industrial AI for machine and process health on top of operational and sensor data. This is adjacent to Siemens DISW’s industrial IoT/operations stack (Insights Hub, Opcenter, Tecnomatix) rather than to core engineering tools. It could serve as a specialized analytics and prescriptive layer leveraging data from Siemens-connected assets and manufacturing systems. Technology and market focus overlap with Siemens’ digitalization and industrial AI strategy, but Augury is more vertically focused on reliability, maintenance, and process optimization in discrete/continuous industries. Overlap with Siemens’ own APM/condition monitoring capabilities creates some competitive tension, yet the per‑product correlations (notably Insights Hub 0.55, Opcenter 0.35, Tecnomatix 0.37, Xcelerator 0.32) suggest clear integration potential as a portfolio or ecosystem partner where Siemens provides data infrastructure and Augury provides advanced machine/process health services.",
+    "partnership_score": 7,
+    "partnership_justification": "Strong thematic alignment with Siemens’ industrial IoT and industrial AI directions and good similarity to existing AI/operations partners (e.g., Razor Labs 0.589). Clear integration points into Insights Hub/Opcenter/Tecnomatix as an advanced analytics/prescriptive layer, and strong coverage of core Siemens verticals (F&B, CPG, chemicals, pharma, materials). However, Siemens already has in-house condition monitoring and analytics capabilities, so cooperation must be framed to avoid direct competition on APM/maintenance stacks. Partnership potential is solid, especially as a portfolio or ecosystem partner, but not a perfect complement due to partial overlap of offerings and likely scale/maturity on Augury’s side that may reduce dependency on Siemens.",
+    "partner_similarity_score": 7,
+    "partner_similarity_justification": "Top similarity to Razor Labs (0.589) and other AI/vision/industrial analytics partners (Inspekto 0.473, Instrumental 0.457, Cybord 0.45) indicates Augury resembles DISW’s existing AI-focused ecosystem: applied industrial AI on top of manufacturing/operations data with domain specificity. Similarity to Teamviewer (0.434) and ScopeAR (0.529) also points to an industrial operations support/worker-enablement context, consistent with an “Industrial AI Workforce” positioning. This pattern matches partners Siemens positions as complementary analytics/operations solutions rather than core PLM/CAD/EDA, supporting a fairly high similarity score.",
+    "dimensions": [
+      {
+        "name": "technology_overlap",
+        "score": 7,
+        "explanation": "Core overlap in industrial AI, predictive analytics, and operations optimization aligns directly with Siemens’ Insights Hub and industrial AI strategy (correlation 0.55 with Insights Hub, 0.52 with strategic technology directions, 0.44 with Dynamo focus areas). Augury’s ML/AI models for machine/process health are complementary and more prescriptive, but Siemens also offers condition monitoring and analytics, so there is partial functional overlap rather than pure complementarity."
+      },
+      {
+        "name": "market_fit",
+        "score": 8,
+        "explanation": "Augury targets F&B, CPG, chemicals, pharma, building materials, metals/mining, pulp & paper, oil & gas and energy—many of Siemens’ key verticals for Opcenter, Tecnomatix, and IoT offerings. Their value props—reduced downtime, improved yield, process optimization—map well to Siemens’ customer pain points. Evidence of focus on production environments aligns strongly with DISW manufacturing and process-industry customers, suggesting a strong shared customer base."
+      },
+      {
+        "name": "integration_potential",
+        "score": 8,
+        "explanation": "Per‑product correlations highlight concrete hooks: Insights Hub (0.55) as data ingestion/IIoT platform for Augury’s sensors and analytics; Opcenter (0.35) and Tecnomatix (0.37) for feeding machine/process health insights into MES and digital manufacturing workflows; Xcelerator (0.32) as a commercialization wrapper. Existing partner analogs (Razor Labs, Instrumental) show Siemens already integrates AI analytics partners in similar roles. Technically, Augury can consume equipment data from Siemens PLCs/IoT and push back prescriptive recommendations into Siemens operations tools, enabling relatively straightforward API-level integrations."
+      },
+      {
+        "name": "competitive_risk",
+        "score": 5,
+        "explanation": "Augury’s machine health and process health solutions compete conceptually with Siemens’ own APM, condition monitoring, and industrial analytics offerings within the broader Siemens portfolio, though less so with DISW’s core engineering tools. Their ‘Industrial AI Workforce’ framing overlaps with Siemens’ narrative around AI-enabled operations. This creates medium competitive risk, mitigated if positioned as a specialized analytics/service layer on top of Siemens IoT/MES rather than as a replacement for Siemens monitoring stacks."
+      },
+      {
+        "name": "maturity_signals",
+        "score": 7,
+        "explanation": "The portfolio (Machine Health, Process Health/Seebo acquisition, Auguscope) and broad industry coverage suggest a commercially mature player with deployed solutions in multiple verticals. Strong thematic alignment with Siemens’ strategic directions and correlation with Dynamo focus areas (0.44) signal that they are in a space Siemens actively prioritizes. Lack of direct listing as a current Siemens product/partner in the input and no explicit scale metrics here slightly limit confidence, but overall indicators point to a well-established, later-stage startup/scale-up rather than an early experiment."
+      }
+    ]
+  },
+  "metrics": {
+    "product_correlation": [
+      {
+        "product": "Insights Hub (Industrial IoT, formerly MindSphere)",
+        "similarity": 0.55
+      },
+      {
+        "product": "Strategic technology directions (public statements)",
+        "similarity": 0.52
+      },
+      {
+        "product": "Dynamo focus areas",
+        "similarity": 0.441
+      },
+      {
+        "product": "Altair (Simulation, HPC & AI — acquired 2025)",
+        "similarity": 0.421
+      },
+      {
+        "product": "Tecnomatix (Digital Manufacturing)",
+        "similarity": 0.366
+      },
+      {
+        "product": "Collaboration model: Portfolio Partners",
+        "similarity": 0.358
+      },
+      {
+        "product": "Collaboration model: Startups as Suppliers",
+        "similarity": 0.354
+      },
+      {
+        "product": "Opcenter (MES / Manufacturing Operations)",
+        "similarity": 0.35
+      },
+      {
+        "product": "Eligibility and engagement process",
+        "similarity": 0.346
+      },
+      {
+        "product": "Polarion (Application Lifecycle Management)",
+        "similarity": 0.334
+      },
+      {
+        "product": "Collaboration model: Research Partners",
+        "similarity": 0.323
+      },
+      {
+        "product": "Xcelerator Platform",
+        "similarity": 0.321
+      },
+      {
+        "product": "Collaboration model: Ecosystem Partners",
+        "similarity": 0.317
+      },
+      {
+        "product": "Mendix (Low-Code Application Platform)",
+        "similarity": 0.305
+      },
+      {
+        "product": "Siemens Dynamo program",
+        "similarity": 0.297
+      },
+      {
+        "product": "NX (CAD / Product Engineering)",
+        "similarity": 0.289
+      },
+      {
+        "product": "Siemens EDA (Electronic Design Automation, formerly Mentor Graphics)",
+        "similarity": 0.267
+      },
+      {
+        "product": "Collaboration model: Investment Opportunities",
+        "similarity": 0.26
+      },
+      {
+        "product": "Capital (Electrical / E-E Systems)",
+        "similarity": 0.257
+      },
+      {
+        "product": "Simcenter (Simulation & Test)",
+        "similarity": 0.244
+      },
+      {
+        "product": "Teamcenter (PLM)",
+        "similarity": 0.242
+      },
+      {
+        "product": "Solid Edge (Mainstream CAD)",
+        "similarity": 0.207
+      }
+    ],
+    "partner_similarity": [
+      {
+        "name": "Razor Labs",
+        "similarity": 0.589
+      },
+      {
+        "name": "ScopeAR",
+        "similarity": 0.529
+      },
+      {
+        "name": "SkillReal",
+        "similarity": 0.5
+      },
+      {
+        "name": "Retrocausal",
+        "similarity": 0.486
+      },
+      {
+        "name": "Goodly Innovation",
+        "similarity": 0.483
+      },
+      {
+        "name": "Inspekto",
+        "similarity": 0.473
+      },
+      {
+        "name": "Instrumental",
+        "similarity": 0.457
+      },
+      {
+        "name": "Cybord",
+        "similarity": 0.45
+      },
+      {
+        "name": "Teamviewer",
+        "similarity": 0.434
+      },
+      {
+        "name": "Percepto",
+        "similarity": 0.419
+      },
+      {
+        "name": "Realtime Robotics",
+        "similarity": 0.418
+      },
+      {
+        "name": "Boardera",
+        "similarity": 0.384
+      },
+      {
+        "name": "Portcast",
+        "similarity": 0.379
+      },
+      {
+        "name": "ioTech",
+        "similarity": 0.353
+      },
+      {
+        "name": "Updates on the latest technology trends",
+        "similarity": 0.317
+      },
+      {
+        "name": "Early product validation and use of Siemens technology",
+        "similarity": 0.305
+      },
+      {
+        "name": "Ability to expand your product portfolio with external solutions",
+        "similarity": 0.289
+      },
+      {
+        "name": "Hands-on support with: Ventures validation, startups scouting and building first prototypes",
+        "similarity": 0.281
+      },
+      {
+        "name": "Access to Siemens' internal network of experts",
+        "similarity": 0.28
+      },
+      {
+        "name": "Innovation leadership",
+        "similarity": 0.28
+      },
+      {
+        "name": "Early-stage investment opportunities",
+        "similarity": 0.267
+      },
+      {
+        "name": "Cybellum",
+        "similarity": 0.265
+      },
+      {
+        "name": "Access to Siemens' ecosystem of customers and partners",
+        "similarity": 0.262
+      },
+      {
+        "name": "First to market with innovative solutions",
+        "similarity": 0.255
+      },
+      {
+        "name": "Artiminds",
+        "similarity": 0.209
+      }
+    ],
+    "heatmap": {
+      "rows": [
+        "Industrial AI for Uptime & Productivity  #0",
+        "Industrial AI for Uptime & Productivity  #1",
+        "Industrial AI for Uptime & Productivity  #2",
+        "Industrial AI for Uptime & Productivity  #3",
+        "Industrial AI for Uptime & Productivity  #4",
+        "Industrial AI for Uptime & Productivity  #5",
+        "Industrial AI for Uptime & Productivity  #6",
+        "Industrial AI for Uptime & Productivity  #7",
+        "Industrial AI for Uptime & Productivity  #8",
+        "Industrial AI for Uptime & Productivity  #9",
+        "Industrial AI for Uptime & Productivity  #10",
+        "Cut downtime with AI for forest products #0"
+      ],
+      "cols": [
+        "Insights Hub (Industrial IoT, formerly MindSphere)",
+        "Strategic technology directions (public statements)",
+        "Dynamo focus areas",
+        "Altair (Simulation, HPC & AI — acquired 2025)",
+        "Tecnomatix (Digital Manufacturing)",
+        "Collaboration model: Portfolio Partners",
+        "Collaboration model: Startups as Suppliers",
+        "Opcenter (MES / Manufacturing Operations)"
+      ],
+      "values": [
+        [
+          0.558,
+          0.501,
+          0.468,
+          0.403,
+          0.426,
+          0.309,
+          0.359,
+          0.383
+        ],
+        [
+          0.514,
+          0.516,
+          0.499,
+          0.413,
+          0.452,
+          0.398,
+          0.431,
+          0.389
+        ],
+        [
+          0.475,
+          0.445,
+          0.446,
+          0.408,
+          0.392,
+          0.346,
+          0.374,
+          0.365
+        ],
+        [
+          0.485,
+          0.5,
+          0.433,
+          0.421,
+          0.398,
+          0.314,
+          0.359,
+          0.357
+        ],
+        [
+          0.574,
+          0.522,
+          0.478,
+          0.427,
+          0.462,
+          0.384,
+          0.402,
+          0.485
+        ],
+        [
+          0.526,
+          0.504,
+          0.47,
+          0.448,
+          0.43,
+          0.347,
+          0.402,
+          0.39
+        ],
+        [
+          0.397,
+          0.419,
+          0.399,
+          0.37,
+          0.304,
+          0.325,
+          0.373,
+          0.316
+        ],
+        [
+          0.394,
+          0.483,
+          0.465,
+          0.428,
+          0.349,
+          0.324,
+          0.439,
+          0.312
+        ],
+        [
+          0.358,
+          0.392,
+          0.358,
+          0.305,
+          0.38,
+          0.304,
+          0.386,
+          0.347
+        ],
+        [
+          0.479,
+          0.496,
+          0.428,
+          0.405,
+          0.387,
+          0.32,
+          0.377,
+          0.357
+        ],
+        [
+          0.451,
+          0.384,
+          0.382,
+          0.304,
+          0.426,
+          0.316,
+          0.317,
+          0.303
+        ],
+        [
+          0.494,
+          0.478,
+          0.426,
+          0.396,
+          0.435,
+          0.289,
+          0.349,
+          0.383
+        ]
+      ]
+    }
+  },
+  "ingest": {
+    "group_id": "www.augury.com",
+    "new": 6,
+    "updated": 0,
+    "unchanged": 0
+  },
+  "runtime_s": 57.7,
+  "cost_usd": 0.0183,
+  "cached": false,
+  "_eval": {
+    "category": "good",
+    "note": "Machine health / predictive maintenance (IIoT + AI). Strong Industry 4.0 fit. Expect fit 7-9.",
+    "wall_s": 58.0
+  }
+}

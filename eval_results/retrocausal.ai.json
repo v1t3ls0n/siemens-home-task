@@ -1,0 +1,424 @@
+{
+  "url": "https://retrocausal.ai/",
+  "profile": {
+    "company_name": "Retrocausal",
+    "summary": "Retrocausal builds AI 'Copilot' software for manufacturing that uses patented computer-vision and machine‑learning (including generative AI) to provide real‑time worker guidance, step verification, video traceability, analytics, time‑studies, and ergonomics to boost quality, productivity, and safety on assembly lines.",
+    "products": [
+      "Assembly Copilot",
+      "Kaizen Copilot",
+      "Ergo Copilot"
+    ],
+    "technologies": [
+      "Computer vision",
+      "Machine learning",
+      "Generative AI (Copilot software)",
+      "Video analytics & object detection",
+      "Time-and-motion / PMTS generation",
+      "MES and IIoT integrations",
+      "Cloud security (ISO 27001, AWS, SSO integrations)"
+    ],
+    "target_industries": [
+      "Manufacturing / Assembly lines",
+      "Automotive",
+      "Electronics",
+      "Medical devices",
+      "Hardware & kit packing"
+    ],
+    "evidence_urls": [
+      "https://retrocausal.ai/",
+      "https://retrocausal.ai/about-us/",
+      "https://retrocausal.ai/patents/",
+      "https://retrocausal.ai/schedule-demo/"
+    ]
+  },
+  "report": {
+    "comparison": "Retrocausal is an AI/vision copilot for manual and semi‑manual assembly operations, delivering real‑time work‑instruction guidance, step verification, video traceability, time studies, ergonomics and analytics. This sits directly on top of, and complements, Siemens’ digital manufacturing and MES stack (Tecnomatix, Opcenter, Teamcenter, Insights Hub) by closing the loop from planning (process engineering and work instructions) to actual shop‑floor execution at the human workstation level. There is minimal overlap with core Siemens DISW products (which today are stronger in planning, simulation, MES orchestration, IIoT and standard work‑instruction delivery, but less in patented CV‑based operator guidance and granular video analytics). The per‑product correlations with Tecnomatix (0.477), Opcenter (0.402), Teamcenter (0.403), Insights Hub (0.347) and Xcelerator (0.331) indicate clear integration hooks via: (1) consuming process plans/BOMs and work instructions from Teamcenter/Tecnomatix; (2) feeding execution data, cycle times, quality and ergonomic KPIs back into Opcenter/Teamcenter for closed‑loop optimization; (3) exposing their “copilots” as Xcelerator‑aligned, potentially packaged apps or connectors. Existing partner similarities (SkillReal, ScopeAR, TeamViewer, Instrumental, Inspekto) show Retrocausal fits a known partner pattern: advanced shop‑floor guidance/inspection using CV/AR, often integrated into Tecnomatix/Opcenter. Competitive risk is primarily indirect (Siemens or large MES players could expand into similar AI guidance), but currently Retrocausal is more a deep specialist than a direct competitor. Overall, it looks like a strong portfolio/solution partner candidate for Siemens Xcelerator, especially for automotive, electronics, medical devices and high‑mix assembly clients.",
+    "partnership_score": 9,
+    "partnership_justification": "High correlation to Tecnomatix, Opcenter, Teamcenter and strategic tech directions, plus strong similarity to existing AI/vision shop‑floor partners, suggests a near‑ideal complement to Siemens’ planning/MES stack. Their AI copilot closes a recognized gap in human‑centric assembly execution, with clear data and workflow integration points into Xcelerator. Market focus (automotive, electronics, med‑devices) matches Siemens’ core manufacturing base. Competitive overlap with Siemens’ own work‑instruction/MES offerings exists but is limited and can be positioned as an advanced, specialized layer rather than a replacement. This combination of complementarity, integration feasibility, and market alignment supports a partnership score of 9 rather than 10 (reserved for already‑proven co‑sell/ OEM relationships and explicit shared customer references, which are not provided here).",
+    "partner_similarity_score": 9,
+    "partner_similarity_justification": "The top similarity is to existing partner SkillReal (0.609) and other Siemens collaborators in CV/AR and shop‑floor analytics (Instrumental, Inspekto, ScopeAR, TeamViewer) in the 0.43–0.61 range, which is strong. These are established Xcelerator / DISW ecosystem players delivering visual guidance, inspection and remote support on the factory floor. Retrocausal’s positioning — computer‑vision‑driven assistance, real‑time guidance/verification, and analytics on manual assembly — is highly analogous, just focused more on “copilot” AI and time‑study/ergonomics. This pattern and the mid‑to‑high product correlations to Tecnomatix and Opcenter indicate Retrocausal looks very similar to known good partners in terms of technology domain, value proposition, and go‑to‑market context.",
+    "dimensions": [
+      {
+        "name": "technology_overlap",
+        "score": 7,
+        "explanation": "Strong complement in AI/computer vision for human‑in‑the‑loop assembly. Siemens DISW covers digital manufacturing (Tecnomatix), MES (Opcenter), PLM (Teamcenter), IIoT (Insights Hub), with some work‑instruction and quality modules, but less depth in patented CV‑based step verification, real‑time worker guidance, PMTS generation and ergonomics analytics. The Tecnomatix (0.477), Opcenter (0.402) and Teamcenter (0.403) correlations show shared domains (process planning, MES, PLM), yet Retrocausal’s core tech is an execution‑level CV copilot that Siemens mostly lacks. There is some overlap around electronic work instructions and basic operator guidance, but Retrocausal’s video‑centric, AI‑first stack is largely additive rather than duplicative."
+      },
+      {
+        "name": "market_fit",
+        "score": 9,
+        "explanation": "Target industries — automotive, electronics, medical devices, general assembly and kit packing — match Siemens DISW’s strongest manufacturing verticals. The focus on discrete/assembly lines aligns directly with Tecnomatix and Opcenter customer bases. Correlation with Siemens ‘Strategic technology directions’ (0.539) and ‘Dynamo focus areas’ (0.469) suggests alignment with Siemens’ publicly stated priorities around AI, advanced operations optimization, and human‑centric automation. Use cases (quality improvement, productivity, safety, ergonomics) are top‑of‑mind pain points for Siemens’ existing customers, positioning Retrocausal as a high‑value add‑on in existing accounts."
+      },
+      {
+        "name": "integration_potential",
+        "score": 9,
+        "explanation": "Per‑product correlations show multiple integration touchpoints: (1) Tecnomatix: import process plans, work instructions, and time standards; feed back real cycle times and operator performance for continuous improvement and digital twin calibration. (2) Opcenter: integrate CV‑based step verification and traceability into MES workflows; push inspection results and deviations into Opcenter Quality. (3) Teamcenter: store video traceability and analytics as part of the product/manufacturing data backbone; link to engineering change workflows. (4) Insights Hub: stream ergonomics, cycle time and quality metrics as IIoT data for dashboards and analytics. Their stated MES/IIoT integration experience and enterprise‑grade security (ISO 27001, SSO, AWS) further reduce integration friction and suit Xcelerator‑ready packaging. This breadth and feasibility justify a high score, slightly below 10 due to lack of explicit existing Siemens integrations in the provided data."
+      },
+      {
+        "name": "competitive_risk",
+        "score": 4,
+        "explanation": "Retrocausal touches domains that Siemens also addresses (work instructions, quality, analytics within MES/MOM and digital manufacturing), so there is some competitive overlap, especially if positioned as a standalone execution layer. However, their differentiation lies in deep CV/AI for human workers, time‑and‑motion analytics, and ergonomics on manual assembly — areas where Siemens offerings are more generic and often require partners. Existing partner similarities (SkillReal, Instrumental, Inspekto, ScopeAR, TeamViewer) indicate Siemens’ preferred strategy is to partner rather than build all such specialized capabilities in‑house. Risk is therefore moderate, manageable via clear positioning as a complementary AI copilot embedded in Tecnomatix/Opcenter use cases, rather than a full MES or PLM alternative."
+      },
+      {
+        "name": "maturity_signals",
+        "score": 7,
+        "explanation": "They show multiple positive maturity indicators: a focused product suite (Assembly, Kaizen, Ergo Copilot), patents, clear vertical use cases, and enterprise‑grade security/compliance (ISO 27001, SSO, AWS), plus stated MES and IIoT integrations. Similarity to established partners (0.5–0.6 range) and correlation with research/portfolio collaboration models (0.44, 0.367) point to readiness for structured partnerships. However, the provided data does not include customer counts, named reference accounts, funding information, or deployment scale, so while they appear beyond prototype stage and partner‑ready, the evidence is not sufficient to assume very high enterprise scale; hence a solid but not maximal maturity score."
+      }
+    ]
+  },
+  "metrics": {
+    "product_correlation": [
+      {
+        "product": "Strategic technology directions (public statements)",
+        "similarity": 0.539
+      },
+      {
+        "product": "Tecnomatix (Digital Manufacturing)",
+        "similarity": 0.477
+      },
+      {
+        "product": "Dynamo focus areas",
+        "similarity": 0.469
+      },
+      {
+        "product": "Collaboration model: Research Partners",
+        "similarity": 0.44
+      },
+      {
+        "product": "NX (CAD / Product Engineering)",
+        "similarity": 0.44
+      },
+      {
+        "product": "Altair (Simulation, HPC & AI — acquired 2025)",
+        "similarity": 0.413
+      },
+      {
+        "product": "Teamcenter (PLM)",
+        "similarity": 0.403
+      },
+      {
+        "product": "Opcenter (MES / Manufacturing Operations)",
+        "similarity": 0.402
+      },
+      {
+        "product": "Collaboration model: Startups as Suppliers",
+        "similarity": 0.374
+      },
+      {
+        "product": "Collaboration model: Portfolio Partners",
+        "similarity": 0.367
+      },
+      {
+        "product": "Siemens EDA (Electronic Design Automation, formerly Mentor Graphics)",
+        "similarity": 0.363
+      },
+      {
+        "product": "Simcenter (Simulation & Test)",
+        "similarity": 0.362
+      },
+      {
+        "product": "Capital (Electrical / E-E Systems)",
+        "similarity": 0.353
+      },
+      {
+        "product": "Polarion (Application Lifecycle Management)",
+        "similarity": 0.348
+      },
+      {
+        "product": "Insights Hub (Industrial IoT, formerly MindSphere)",
+        "similarity": 0.347
+      },
+      {
+        "product": "Collaboration model: Ecosystem Partners",
+        "similarity": 0.346
+      },
+      {
+        "product": "Eligibility and engagement process",
+        "similarity": 0.341
+      },
+      {
+        "product": "Xcelerator Platform",
+        "similarity": 0.331
+      },
+      {
+        "product": "Mendix (Low-Code Application Platform)",
+        "similarity": 0.31
+      },
+      {
+        "product": "Solid Edge (Mainstream CAD)",
+        "similarity": 0.308
+      },
+      {
+        "product": "Siemens Dynamo program",
+        "similarity": 0.272
+      },
+      {
+        "product": "Collaboration model: Investment Opportunities",
+        "similarity": 0.218
+      }
+    ],
+    "partner_similarity": [
+      {
+        "name": "Retrocausal",
+        "similarity": 0.819
+      },
+      {
+        "name": "SkillReal",
+        "similarity": 0.609
+      },
+      {
+        "name": "Realtime Robotics",
+        "similarity": 0.541
+      },
+      {
+        "name": "Razor Labs",
+        "similarity": 0.533
+      },
+      {
+        "name": "Inspekto",
+        "similarity": 0.53
+      },
+      {
+        "name": "Cybord",
+        "similarity": 0.512
+      },
+      {
+        "name": "Instrumental",
+        "similarity": 0.505
+      },
+      {
+        "name": "ScopeAR",
+        "similarity": 0.5
+      },
+      {
+        "name": "Goodly Innovation",
+        "similarity": 0.461
+      },
+      {
+        "name": "Teamviewer",
+        "similarity": 0.431
+      },
+      {
+        "name": "Percepto",
+        "similarity": 0.422
+      },
+      {
+        "name": "Boardera",
+        "similarity": 0.399
+      },
+      {
+        "name": "Cybellum",
+        "similarity": 0.381
+      },
+      {
+        "name": "Portcast",
+        "similarity": 0.372
+      },
+      {
+        "name": "Early product validation and use of Siemens technology",
+        "similarity": 0.344
+      },
+      {
+        "name": "ioTech",
+        "similarity": 0.34
+      },
+      {
+        "name": "Hands-on support with: Ventures validation, startups scouting and building first prototypes",
+        "similarity": 0.34
+      },
+      {
+        "name": "Ability to expand your product portfolio with external solutions",
+        "similarity": 0.297
+      },
+      {
+        "name": "Access to Siemens' internal network of experts",
+        "similarity": 0.288
+      },
+      {
+        "name": "Innovation leadership",
+        "similarity": 0.288
+      },
+      {
+        "name": "Updates on the latest technology trends",
+        "similarity": 0.277
+      },
+      {
+        "name": "Access to Siemens' ecosystem of customers and partners",
+        "similarity": 0.251
+      },
+      {
+        "name": "First to market with innovative solutions",
+        "similarity": 0.248
+      },
+      {
+        "name": "Early-stage investment opportunities",
+        "similarity": 0.225
+      },
+      {
+        "name": "Artiminds",
+        "similarity": 0.175
+      }
+    ],
+    "heatmap": {
+      "rows": [
+        "AI Copilots for Smarter Manufacturing Op #0",
+        "AI Copilots for Smarter Manufacturing Op #1",
+        "AI Copilots for Smarter Manufacturing Op #2",
+        "AI Copilots for Smarter Manufacturing Op #3",
+        "AI Copilots for Smarter Manufacturing Op #4",
+        "AI Copilots for Smarter Manufacturing Op #5",
+        "AI Copilots for Smarter Manufacturing Op #6",
+        "AI Copilots for Smarter Manufacturing Op #7",
+        "AI Copilots for Smarter Manufacturing Op #8",
+        "AI Copilots for Smarter Manufacturing Op #9",
+        "AI Copilots for Smarter Manufacturing Op #10",
+        "AI Copilots for Smarter Manufacturing Op #11"
+      ],
+      "cols": [
+        "Strategic technology directions (public statements)",
+        "Tecnomatix (Digital Manufacturing)",
+        "Dynamo focus areas",
+        "Collaboration model: Research Partners",
+        "NX (CAD / Product Engineering)",
+        "Altair (Simulation, HPC & AI — acquired 2025)",
+        "Teamcenter (PLM)",
+        "Opcenter (MES / Manufacturing Operations)"
+      ],
+      "values": [
+        [
+          0.519,
+          0.486,
+          0.498,
+          0.435,
+          0.451,
+          0.403,
+          0.404,
+          0.414
+        ],
+        [
+          0.43,
+          0.506,
+          0.384,
+          0.307,
+          0.401,
+          0.372,
+          0.431,
+          0.45
+        ],
+        [
+          0.435,
+          0.457,
+          0.413,
+          0.294,
+          0.334,
+          0.397,
+          0.355,
+          0.387
+        ],
+        [
+          0.455,
+          0.5,
+          0.489,
+          0.367,
+          0.42,
+          0.368,
+          0.475,
+          0.445
+        ],
+        [
+          0.485,
+          0.309,
+          0.393,
+          0.393,
+          0.303,
+          0.393,
+          0.298,
+          0.238
+        ],
+        [
+          0.439,
+          0.308,
+          0.483,
+          0.445,
+          0.344,
+          0.348,
+          0.325,
+          0.291
+        ],
+        [
+          0.464,
+          0.368,
+          0.499,
+          0.431,
+          0.361,
+          0.34,
+          0.362,
+          0.347
+        ],
+        [
+          0.438,
+          0.451,
+          0.388,
+          0.342,
+          0.361,
+          0.372,
+          0.354,
+          0.406
+        ],
+        [
+          0.465,
+          0.462,
+          0.398,
+          0.267,
+          0.353,
+          0.382,
+          0.393,
+          0.403
+        ],
+        [
+          0.46,
+          0.481,
+          0.345,
+          0.304,
+          0.354,
+          0.368,
+          0.382,
+          0.418
+        ],
+        [
+          0.393,
+          0.406,
+          0.335,
+          0.282,
+          0.349,
+          0.321,
+          0.337,
+          0.33
+        ],
+        [
+          0.337,
+          0.338,
+          0.325,
+          0.264,
+          0.256,
+          0.233,
+          0.23,
+          0.247
+        ]
+      ]
+    }
+  },
+  "ingest": {
+    "group_id": "retrocausal.ai",
+    "new": 5,
+    "updated": 0,
+    "unchanged": 0
+  },
+  "runtime_s": 58.4,
+  "cost_usd": 0.0234,
+  "cached": false,
+  "_eval": {
+    "category": "partner",
+    "note": "Existing Dynamo partner (AI assembly copilots). High similarity.",
+    "wall_s": 58.6
+  }
+}

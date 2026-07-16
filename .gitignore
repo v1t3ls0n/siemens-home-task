@@ -18,7 +18,7 @@ osdata/
 
 # Batch-eval output (regenerable). To showcase a run:
 #   git add -f eval_results/summary.md
-eval_results/
+# eval_results/
 
 # IDE / OS noise
 .vscode/

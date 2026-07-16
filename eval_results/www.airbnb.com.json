@@ -1,0 +1,415 @@
+{
+  "url": "https://www.airbnb.com/",
+  "profile": {
+    "company_name": "Airbnb",
+    "summary": "Airbnb is an online platform that lists vacation and residential homes, monthly/extended stays, and local Experiences, enabling people to find and book places to stay and activities.",
+    "products": [
+      "Homes and vacation rental listings (short-term and monthly/extended stays)",
+      "Experiences (local activities and tours)",
+      "Services (supporting listings and stays)"
+    ],
+    "technologies": [
+      "Online marketplace / web platform for listings and booking"
+    ],
+    "target_industries": [
+      "Travel & Tourism",
+      "Hospitality / Short-term rentals",
+      "Local tours and activities"
+    ],
+    "evidence_urls": [
+      "https://www.airbnb.com/",
+      "https://www.airbnb.com/homes",
+      "https://www.airbnb.com/experiences"
+    ]
+  },
+  "report": {
+    "comparison": "Airbnb operates a large-scale B2C travel and hospitality marketplace for lodging and experiences, while Siemens DISW focuses on B2B industrial software (PLM, CAD, simulation, MES, IIoT, automation). There is almost no direct product overlap: Airbnb’s core assets are matching supply/demand for short-term rentals and activities, trust/safety mechanisms, and consumer booking UX; Siemens DISW’s are engineering, manufacturing, and industrial operations platforms. The weak correlations to Xcelerator, Insights Hub, and Mendix likely reflect generic platform/marketplace and cloud capabilities, not substantive alignment.\n\nComplementarity is minimal: Siemens customers may use corporate travel and accommodation services, but that is outside DISW’s value proposition. Potential integration points to Siemens Xcelerator are vague (e.g., Mendix used by hospitality firms building apps that touch Airbnb APIs) and would be built by mutual customers, not as a Siemens–Airbnb productized integration. No meaningful shared industrial workflows or data flows exist that would justify a strategic technology partnership.\n\nExisting partner similarities are low and correspond to industrial/enterprise tech partners; Airbnb is structurally different (consumer marketplace, travel vertical). Overall, Airbnb is neither a relevant industrial technology complement nor a close analog to current DISW partners.",
+    "partnership_score": 2,
+    "partnership_justification": "Business is consumer travel/hospitality with no industrial engineering or operations focus; Siemens DISW products target manufacturing, product development, and industrial IoT. Correlations to Siemens products and models are low and generic. There is no clear pathway to embed Airbnb into Siemens Xcelerator, no obvious shared industrial customer workflows, and partnership would not strengthen Siemens’ core portfolio. Any collaboration would be tangential (e.g., corporate travel) and outside DISW’s remit.",
+    "partner_similarity_score": 2,
+    "partner_similarity_justification": "Similarity scores to existing partners are low and cluster around industrial/enterprise tech firms (Teamviewer, ScopeAR, Instrumental, etc.), while Airbnb is a mature consumer marketplace with different customers, sales motion, and technology stack focus. It does not resemble portfolio or ecosystem partners that extend Siemens DISW in CAD/PLM, simulation, manufacturing, or IIoT.",
+    "dimensions": [
+      {
+        "name": "technology_overlap",
+        "score": 2,
+        "explanation": "Airbnb provides a consumer web/mobile marketplace and booking engine, whereas Siemens DISW delivers industrial engineering and operations platforms. Very limited overlap beyond generic cloud, data, and marketplace concepts reflected in modest similarity to Xcelerator, Insights Hub, and Mendix."
+      },
+      {
+        "name": "market_fit",
+        "score": 1,
+        "explanation": "Airbnb serves travel, tourism, and hospitality consumers and hosts; Siemens DISW targets industrial manufacturers, OEMs, and engineering organizations. Markets, buyers, and use cases are essentially disjoint."
+      },
+      {
+        "name": "integration_potential",
+        "score": 3,
+        "explanation": "No natural Xcelerator integration: Airbnb data and workflows are not part of design, manufacturing, or industrial operations. Any linkage (e.g., Mendix apps calling Airbnb APIs for travel) would be peripheral and customer-specific, not a Siemens–Airbnb product integration."
+      },
+      {
+        "name": "competitive_risk",
+        "score": 9,
+        "explanation": "Airbnb is not an industrial software or engineering tools vendor and does not compete with Siemens DISW. Competitive risk is very low, but this also reflects low strategic relevance rather than positive complementarity."
+      },
+      {
+        "name": "maturity_signals",
+        "score": 9,
+        "explanation": "Extremely mature, global public company with large user base and robust tech operations. From a scale and reliability standpoint it is highly mature, but this does not translate into a good fit for Siemens DISW’s partnership goals."
+      }
+    ]
+  },
+  "metrics": {
+    "product_correlation": [
+      {
+        "product": "Insights Hub (Industrial IoT, formerly MindSphere)",
+        "similarity": 0.271
+      },
+      {
+        "product": "Dynamo focus areas",
+        "similarity": 0.256
+      },
+      {
+        "product": "Strategic technology directions (public statements)",
+        "similarity": 0.251
+      },
+      {
+        "product": "Xcelerator Platform",
+        "similarity": 0.25
+      },
+      {
+        "product": "Mendix (Low-Code Application Platform)",
+        "similarity": 0.231
+      },
+      {
+        "product": "Collaboration model: Portfolio Partners",
+        "similarity": 0.229
+      },
+      {
+        "product": "Altair (Simulation, HPC & AI — acquired 2025)",
+        "similarity": 0.213
+      },
+      {
+        "product": "Eligibility and engagement process",
+        "similarity": 0.209
+      },
+      {
+        "product": "Collaboration model: Ecosystem Partners",
+        "similarity": 0.189
+      },
+      {
+        "product": "Polarion (Application Lifecycle Management)",
+        "similarity": 0.183
+      },
+      {
+        "product": "Tecnomatix (Digital Manufacturing)",
+        "similarity": 0.169
+      },
+      {
+        "product": "Collaboration model: Startups as Suppliers",
+        "similarity": 0.167
+      },
+      {
+        "product": "Collaboration model: Investment Opportunities",
+        "similarity": 0.166
+      },
+      {
+        "product": "Capital (Electrical / E-E Systems)",
+        "similarity": 0.166
+      },
+      {
+        "product": "Collaboration model: Research Partners",
+        "similarity": 0.164
+      },
+      {
+        "product": "Siemens EDA (Electronic Design Automation, formerly Mentor Graphics)",
+        "similarity": 0.153
+      },
+      {
+        "product": "Opcenter (MES / Manufacturing Operations)",
+        "similarity": 0.141
+      },
+      {
+        "product": "Siemens Dynamo program",
+        "similarity": 0.129
+      },
+      {
+        "product": "Solid Edge (Mainstream CAD)",
+        "similarity": 0.115
+      },
+      {
+        "product": "Simcenter (Simulation & Test)",
+        "similarity": 0.106
+      },
+      {
+        "product": "NX (CAD / Product Engineering)",
+        "similarity": 0.098
+      },
+      {
+        "product": "Teamcenter (PLM)",
+        "similarity": 0.08
+      }
+    ],
+    "partner_similarity": [
+      {
+        "name": "Teamviewer",
+        "similarity": 0.318
+      },
+      {
+        "name": "Boardera",
+        "similarity": 0.273
+      },
+      {
+        "name": "ScopeAR",
+        "similarity": 0.268
+      },
+      {
+        "name": "Portcast",
+        "similarity": 0.264
+      },
+      {
+        "name": "Artiminds",
+        "similarity": 0.234
+      },
+      {
+        "name": "SkillReal",
+        "similarity": 0.23
+      },
+      {
+        "name": "Instrumental",
+        "similarity": 0.217
+      },
+      {
+        "name": "Goodly Innovation",
+        "similarity": 0.214
+      },
+      {
+        "name": "Realtime Robotics",
+        "similarity": 0.2
+      },
+      {
+        "name": "Updates on the latest technology trends",
+        "similarity": 0.199
+      },
+      {
+        "name": "Inspekto",
+        "similarity": 0.184
+      },
+      {
+        "name": "Early-stage investment opportunities",
+        "similarity": 0.182
+      },
+      {
+        "name": "First to market with innovative solutions",
+        "similarity": 0.179
+      },
+      {
+        "name": "Hands-on support with: Ventures validation, startups scouting and building first prototypes",
+        "similarity": 0.173
+      },
+      {
+        "name": "Access to Siemens' ecosystem of customers and partners",
+        "similarity": 0.171
+      },
+      {
+        "name": "Razor Labs",
+        "similarity": 0.171
+      },
+      {
+        "name": "Cybord",
+        "similarity": 0.169
+      },
+      {
+        "name": "Percepto",
+        "similarity": 0.159
+      },
+      {
+        "name": "Cybellum",
+        "similarity": 0.155
+      },
+      {
+        "name": "Access to Siemens' internal network of experts",
+        "similarity": 0.154
+      },
+      {
+        "name": "ioTech",
+        "similarity": 0.147
+      },
+      {
+        "name": "Ability to expand your product portfolio with external solutions",
+        "similarity": 0.143
+      },
+      {
+        "name": "Retrocausal",
+        "similarity": 0.135
+      },
+      {
+        "name": "Early product validation and use of Siemens technology",
+        "similarity": 0.112
+      },
+      {
+        "name": "Innovation leadership",
+        "similarity": 0.086
+      }
+    ],
+    "heatmap": {
+      "rows": [
+        "Airbnb: Vacation Rentals, Cabins, Beach  #0",
+        "Airbnb: Vacation Rentals, Cabins, Beach  #1",
+        "Airbnb: Vacation Rentals, Cabins, Beach  #2",
+        "Airbnb: Vacation Rentals, Cabins, Beach  #3",
+        "Airbnb: Vacation Rentals, Cabins, Beach  #0",
+        "Airbnb: Vacation Rentals, Cabins, Beach  #1",
+        "Airbnb: Vacation Rentals, Cabins, Beach  #2",
+        "Airbnb: Vacation Rentals, Cabins, Beach  #0",
+        "Airbnb: Vacation Rentals, Cabins, Beach  #1",
+        "Airbnb: Vacation Rentals, Cabins, Beach  #2",
+        "Airbnb: Vacation Rentals, Cabins, Beach  #0",
+        "Airbnb: Vacation Rentals, Cabins, Beach  #1"
+      ],
+      "cols": [
+        "Insights Hub (Industrial IoT, formerly MindSphere)",
+        "Dynamo focus areas",
+        "Strategic technology directions (public statements)",
+        "Xcelerator Platform",
+        "Mendix (Low-Code Application Platform)",
+        "Collaboration model: Portfolio Partners",
+        "Altair (Simulation, HPC & AI — acquired 2025)",
+        "Eligibility and engagement process"
+      ],
+      "values": [
+        [
+          0.143,
+          0.236,
+          0.175,
+          0.114,
+          0.104,
+          0.168,
+          0.151,
+          0.155
+        ],
+        [
+          0.072,
+          0.153,
+          0.106,
+          0.087,
+          0.098,
+          0.162,
+          0.127,
+          0.083
+        ],
+        [
+          0.045,
+          0.131,
+          0.069,
+          0.078,
+          0.109,
+          0.15,
+          0.078,
+          0.074
+        ],
+        [
+          0.062,
+          0.13,
+          0.082,
+          0.096,
+          0.111,
+          0.163,
+          0.103,
+          0.046
+        ],
+        [
+          0.131,
+          0.226,
+          0.177,
+          0.124,
+          0.137,
+          0.166,
+          0.14,
+          0.131
+        ],
+        [
+          0.086,
+          0.151,
+          0.105,
+          0.097,
+          0.078,
+          0.16,
+          0.117,
+          0.072
+        ],
+        [
+          0.051,
+          0.132,
+          0.08,
+          0.081,
+          0.086,
+          0.142,
+          0.088,
+          0.064
+        ],
+        [
+          0.131,
+          0.226,
+          0.177,
+          0.124,
+          0.137,
+          0.166,
+          0.14,
+          0.131
+        ],
+        [
+          0.086,
+          0.151,
+          0.105,
+          0.097,
+          0.078,
+          0.16,
+          0.117,
+          0.072
+        ],
+        [
+          0.051,
+          0.132,
+          0.08,
+          0.081,
+          0.086,
+          0.142,
+          0.088,
+          0.064
+        ],
+        [
+          0.131,
+          0.226,
+          0.177,
+          0.124,
+          0.137,
+          0.166,
+          0.14,
+          0.131
+        ],
+        [
+          0.086,
+          0.151,
+          0.105,
+          0.097,
+          0.078,
+          0.16,
+          0.117,
+          0.072
+        ]
+      ]
+    }
+  },
+  "ingest": {
+    "group_id": "www.airbnb.com",
+    "new": 6,
+    "updated": 0,
+    "unchanged": 0
+  },
+  "runtime_s": 36.8,
+  "cost_usd": 0.0134,
+  "cached": false,
+  "_eval": {
+    "category": "bad",
+    "note": "Consumer travel marketplace. Clearly out of domain. Expect fit 1-2 (discrimination sanity check).",
+    "wall_s": 37.1
+  }
+}
