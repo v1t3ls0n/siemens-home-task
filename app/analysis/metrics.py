@@ -34,12 +34,19 @@ def compute_metrics(store: VectorStore, profile_vec: list[float],
     )
 
     # --- partner similarity ------------------------------------------------
-    partners = store.get_chunks(doc_type="partner", with_vectors=True)
+    # A partner's reference text may span several chunks (long descriptions,
+    # site excerpts). Aggregate by partner name (max over its chunks), exactly
+    # like product_correlation above — otherwise a partner appears multiple
+    # times and longer descriptions are over-represented.
+    partner_chunks = store.get_chunks(doc_type="partner", with_vectors=True)
+    partner_vecs: dict[str, list[np.ndarray]] = {}
+    for p in partner_chunks:
+        partner_vecs.setdefault(p["title"], []).append(np.array(p["embedding"]))
     partner_similarity = sorted(
         (
-            {"name": p["title"],
-             "similarity": round(float(_norm(np.array(p["embedding"])) @ q), 3)}
-            for p in partners
+            {"name": name,
+             "similarity": round(float(max(_norm(np.stack(vs)) @ q)), 3)}
+            for name, vs in partner_vecs.items()
         ),
         key=lambda d: -d["similarity"],
     )
