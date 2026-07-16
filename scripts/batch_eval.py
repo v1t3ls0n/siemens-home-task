@@ -40,12 +40,23 @@ OUT_DIR = ROOT / "eval_results"
 
 # Expected score bands per category: (fit_min, fit_max, sim_min, sim_max).
 # None = unconstrained. Used only to FLAG anomalies for review, not to pass/fail.
+# partner "sim" band is wide: an existing partner in a niche category (e.g.
+# Portcast, logistics) can legitimately score low on RESEMBLING the mostly
+# computer-vision partner cloud. The load-bearing partner check is instead the
+# self-match peak below (the partner must recognise ITSELF as the top hit).
 BANDS = {
-    "partner": {"fit": (6, 10), "sim": (7, 10)},
+    "partner": {"fit": (6, 10), "sim": (4, 10)},
     "good":    {"fit": (6, 10), "sim": (4, 10)},
-    "weak":    {"fit": (1, 5),  "sim": (1, 7)},
+    "weak":    {"fit": (2, 6),  "sim": (1, 7)},
     "bad":     {"fit": (1, 4),  "sim": (1, 6)},
 }
+
+# An existing partner, analysed against a list that contains it, should show a
+# clear self-match: the top partner similarity is a separated PEAK. Two
+# different texts about the same company embed to ~0.75-0.85 (not ~1.0), so an
+# absolute threshold is the wrong test — a dominant, separated peak is right.
+SELF_PEAK_MIN = 0.70      # top hit must be at least this
+SELF_PEAK_MARGIN = 0.08   # ...and this far above the next (different) partner
 
 
 def slug(url: str) -> str:
@@ -88,14 +99,21 @@ def check_anomalies(cat: str, res: dict) -> list[str]:
         if not (lo <= sim <= hi):
             flags.append(f"partner-similarity {sim} outside expected {lo}-{hi}")
 
-    # partner self-match sanity: an existing partner should match itself ~1.0
+    # partner self-match sanity: an existing partner should surface itself as a
+    # dominant, separated peak in the partner-similarity ranking.
     if cat == "partner":
-        top = self_similarity(res)
-        if top is None:
+        sims = [p["similarity"] for p in
+                res.get("metrics", {}).get("partner_similarity", [])]
+        if len(sims) < 2:
             flags.append("no partner_similarity metrics produced")
-        elif top < 0.85:
-            flags.append(f"self-similarity only {top} (<0.85) — "
-                         "embedding/metric path may be broken")
+        else:
+            top, second = sims[0], sims[1]
+            if top < SELF_PEAK_MIN:
+                flags.append(f"self-match peak {top} < {SELF_PEAK_MIN} — "
+                             "embedding/metric path may be broken")
+            elif top - second < SELF_PEAK_MARGIN:
+                flags.append(f"self-match not separated (top {top}, "
+                             f"next {second}) — dedup or embedding issue")
 
     # structural sanity
     prof = res.get("profile", {})
