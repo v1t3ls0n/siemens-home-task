@@ -1,30 +1,303 @@
 [
   {
-    "name": "NVIDIA",
-    "description": "GPU computing and AI platforms. Partners with Siemens on the industrial metaverse: NVIDIA Omniverse integrated with Siemens Xcelerator for photorealistic, physics-based digital twins of factories and products."
+    "name": "Ability to expand your product portfolio with external solutions",
+    "description": "Dynamo focus areas: If you're with Siemens.",
+    "url": null,
+    "models": [],
+    "focus_areas": [
+      "If you're with Siemens"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
   },
   {
-    "name": "AWS (Amazon Web Services)",
-    "description": "Cloud infrastructure provider. Siemens delivers Xcelerator as a Service and Insights Hub industrial IoT workloads on AWS; joint go-to-market for cloud PLM and manufacturing analytics."
+    "name": "Access to Siemens' ecosystem of customers and partners",
+    "description": "Dynamo focus areas: If you're a start-up.",
+    "url": null,
+    "models": [],
+    "focus_areas": [
+      "If you're a start-up"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
   },
   {
-    "name": "Microsoft",
-    "description": "Cloud (Azure) and productivity software. Teamcenter integrates with Microsoft Teams and Azure OpenAI for industrial AI copilots; Azure hosts Siemens cloud offerings."
+    "name": "Access to Siemens' internal network of experts",
+    "description": "Dynamo focus areas: If you're a start-up.",
+    "url": null,
+    "models": [],
+    "focus_areas": [
+      "If you're a start-up"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
   },
   {
-    "name": "SAP",
-    "description": "Enterprise ERP software. Long-standing integration partner: Teamcenter PLM connected to SAP ERP/S4HANA so engineering BOMs flow into manufacturing, procurement and finance processes."
+    "name": "Artiminds",
+    "description": "Robot programming and force-controlled automation software. Dynamo focus areas: Robotics & Automation. From their website: Xoilac TV | Trực Tiếp Bóng Đá HD - Link Xôi Lạc TV #1 Hôm Nay CƯỢC VSBET LIÊN HỆ KM Xoilac TV | Trực Tiếp Bóng Đá HD - Link Xôi Lạc TV #1 Hôm Nay Livescore Tất cả Đang Live Trận HOT Hôm Nay Ngày Mai Mục Lục Table of Contents Toggle Bóng đá ngày càng trở thành một phần không thể thiếu trong đời sống tinh thần của người Việt Nam. Nhu cầu theo dõi các giải đấu lớn nhỏ với chất lượng hình ảnh cao, đường truyền ổn định và khả năng truy cập linh hoạt đang tăng mạnh hơn bao giờ hết. Trong bối cảnh nhiều nền tảng trực tuyến vẫn tồn tại hạn chế về băng thông, độ trễ hay quảng cáo gây gián đoạn, Xoilac TV xuất hiện như một giải pháp toàn diện, đáp ứng đầy đủ những yêu cầu khắt khe của người xem hiện đại. Với hệ thống công nghệ được đầu tư bài bản và khả năng cung cấp dữ liệu phong phú, Xoilac TV không chỉ là một website xem bóng đá, mà còn là một trung tâm thông tin chuyên sâu dành cho người hâm mộ bóng đá tại Việt Nam. Giới thiệu về Xoilac TV Xoilac TV là gì? Xoilac TV là một nền tảng trực tiếp bóng đá trực tuyến được phát triển nhằm đáp ứng nhu cầu xem bóng đá chất lượng cao cho khán giả tại Việt Nam. Trong bối cảnh nhu cầu theo dõi các giải đấu ngày càng tăng, đặc biệt là Ngoại hạng Anh,",
+    "url": "https://www.artiminds.com/",
+    "models": [],
+    "focus_areas": [
+      "Robotics & Automation"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
   },
   {
-    "name": "IBM",
-    "description": "Enterprise software and services. Collaboration around service lifecycle management and systems engineering, connecting IBM's asset management (Maximo) with Siemens Xcelerator."
+    "name": "Boardera",
+    "description": "Boardera Software is focused on helping PCB manufacturers and EMS assemblers bring their services online with cutting edge e-commerce tooling built specifically for the PCB industry. Using smart design and automation results in drastic reductions in overhead, costs and lead times. Since August 2022, Boardera’s services are also available via Siemens’ PCB Flow platform. Collaboration with Siemens: Ecosystem Partners. Dynamo focus areas: Supply Chain & Logistics. From their website: Boardera Software Inc. | PCB Costing & Quoting Automation Software top of page BOOK A DEMO Frictionless PCB Costing & Quoting Automation Software Choose the option that best describes your company PCB FABRICATION PCB ASSEMBLY OEM Boardera's DECODE API Explore Boardera's all-new DECODE API, built to analyze PCB manufacturing packages and return structured board specs, DFM, BOM, and pricing data — accessible in the DECODE platform or extracted as JSON to integrate into any system or existing workflow without disruption. Get Started For Free Takes you to boardera.io Leverage the latest software automation powered by AI to review and respond to RFQs and orders quickly. ​ You can onboard projects and customers, procure materials, and provide next-level customer service at a pace only imagined. BOOK A DEMO 10-15% 75% 50% PROFIT INCREASE RESPONSE TIME IMPROVEMENT QUOTING COST SAVINGS Manufacturing Quote Software for Fabrication & Assembly Fabrication Assembly PCB Assembly Manufacturing Software Boardera offers powerful AI quoting software that transforms how EMS teams handle the CPQ process. Once a project package is uploaded, the platform automatically parses the files, scrubs the BOM, a",
+    "url": "https://www.boardera.ca/",
+    "models": [
+      "Ecosystem Partners"
+    ],
+    "focus_areas": [
+      "Supply Chain & Logistics"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
   },
   {
-    "name": "Sony",
-    "description": "Consumer electronics and imaging. Partnered with Siemens on an immersive engineering solution: NX combined with Sony's XR head-mounted display for immersive product design."
+    "name": "Cybellum",
+    "description": "Cybellum's Product Security Platform and services enables device manufacturers to manage the main aspects of their cybersecurity operations across business units and lifecycle stages. From SBOM to Vulnerability Management, Compliance Validation, and Incident Response, teams ensure their connected products are fundamentally secure and compliant – and stay that way. Cybellum’s combined offering with Siemens’ Polarion Application Lifecycle Management solution (ALM) enables users to manage cybersecurity and safety threats throughout the engineering cycle. Cybellum was acquired by LG Electronics in 2021. Collaboration with Siemens: Ecosystem Partners. Dynamo focus areas: Digital Twin & Simulation. From their website: HOME - Cybellum Zum Inhalt springen Cybellum English Deutsch 日本語 RISIKOWERT Your browser does not support the video tag. SICHERHEITSHIGHLIGHTS Your browser does not support the video tag. REQUIREMENTS Your browser does not support the video tag. AFFECTED PRODUCTS Your browser does not support the video tag. Der Weg, wie -Teams die Produktsicherheit verwalten Cybellum vereint den gesamten Produktsicherheits-Workflow in einer speziellen Plattform, die es Geräteherstellern ermöglicht, die von ihnen hergestellten vernetzten Produkte cyber-sicher und cyber-konform zu halten. Request a Demo Why Cybellum? Cybellum vereint den gesamten Produktsicherheits-Workflow in einer speziellen Plattform, die es Geräteherstellern ermöglicht, die von ihnen hergestellten vernetzten Produkte cyber-sicher und cyber-konform zu halten. Request a Demo Why Cybellum? Top-Hersteller sind bereits an Bord Die Produktsicherheits plattform Produkt-SBOM-Management Orchestrate the entire SBOM process, from merging multiple SBOMs, to validation and collaboration, for all business units and product lines Mehr erfahren Management von Produktschwachstellen Automatically detect and prioritize vulnerabilities in the contex",
+    "url": "https://cybellum.com/de/",
+    "models": [
+      "Ecosystem Partners"
+    ],
+    "focus_areas": [
+      "Digital Twin & Simulation"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
   },
   {
-    "name": "Zel X / startup ecosystem examples",
-    "description": "Illustrative placeholder for smaller technology partners: niche simulation, AI quality inspection, robotics orchestration and IIoT-sensor startups that integrate with Xcelerator via APIs and are validated through pilots and POCs."
+    "name": "Cybord",
+    "description": "Cybord provides Electronic Components Analytics solution that improves confidence in the reliability of products. Cybord’s visual AI analytics ensures the quality, authenticity, and traceability of 100% of electronic components. It reduces scrap, failure rates and waste, and ultimately increases customer profits. Cybord’s solution is part of Siemens’ offering in the electronics market. Collaboration with Siemens: Portfolio Partners, Research Partners. Dynamo focus areas: Artificial Intelligence & Computer Vision, Supply Chain & Logistics. From their website: Inspect. Trace. Secure: AI-Driven Component Inspection | Cybord Inspect. Trace. Secure Supply Chain Resilience with Vision-AI Talk to an Expert Trusted by global leading organizations The growing demand for high-performance electronics is exposing manufacturers to new risks and vulnerabilities. Vision-AI Turns Your Supply Chain’s Black Box Transparent From Blind Trust To Full Visibility Bottom-side Inspection Learn more > > Top-side Inspection Learn more > > Full PCBA Inspection Learn more > > Bottom-side Inspection Learn more > > Top-side Inspection Learn more > > Full PCBA Inspection Learn more > > Authenticate every component before, during, and after assembly Enforce BOM and AVL policies in real time Ensure product integrity across lines, suppliers, and regions Detect counterfeits, tampering, and sourcing errors Significantly reduce quality failures, recalls, and warranty claims Use Cases Hardware Threat Detection Supply Chain Repository AVL Enforcement Micro Traceability Failure Investigation & Root Cause Automated visual verification Detecting embedded hardware threats, such as rogue chips or components designed to disrupt operations or leak data Detecting embedded hardware t",
+    "url": "https://cybord.ai/",
+    "models": [
+      "Portfolio Partners",
+      "Research Partners"
+    ],
+    "focus_areas": [
+      "Artificial Intelligence & Computer Vision",
+      "Supply Chain & Logistics"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
+  },
+  {
+    "name": "Early product validation and use of Siemens technology",
+    "description": "Dynamo focus areas: If you're a start-up.",
+    "url": null,
+    "models": [],
+    "focus_areas": [
+      "If you're a start-up"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
+  },
+  {
+    "name": "Early-stage investment opportunities",
+    "description": "Dynamo focus areas: If you're a customer.",
+    "url": null,
+    "models": [],
+    "focus_areas": [
+      "If you're a customer"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
+  },
+  {
+    "name": "First to market with innovative solutions",
+    "description": "Dynamo focus areas: If you're a customer.",
+    "url": null,
+    "models": [],
+    "focus_areas": [
+      "If you're a customer"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
+  },
+  {
+    "name": "Goodly Innovation",
+    "description": "AR-supported workflow optimization for pharma/biotech operations (Siemens LivingLab collaboration). Dynamo focus areas: AR/VR & Industrial Metaverse.",
+    "url": "https://www.goodly-innovations.com/",
+    "models": [],
+    "focus_areas": [
+      "AR/VR & Industrial Metaverse"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
+  },
+  {
+    "name": "Hands-on support with: Ventures validation, startups scouting and building first prototypes",
+    "description": "Dynamo focus areas: If you're with Siemens.",
+    "url": null,
+    "models": [],
+    "focus_areas": [
+      "If you're with Siemens"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
+  },
+  {
+    "name": "Innovation leadership",
+    "description": "Dynamo focus areas: If you're with Siemens.",
+    "url": null,
+    "models": [],
+    "focus_areas": [
+      "If you're with Siemens"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
+  },
+  {
+    "name": "Inspekto",
+    "description": "Inspekto enables out-of-the-box visual quality inspection and requires no expertise in vision solutions or AI. Inspekto is easy to deploy and use, scalable, and provides the necessary connectivity to existing automation systems. Inspekto joined the Siemens Dynamo program in February 2020, and was acquired by Siemens Digital Industries in February 2024. During this period, it was deployed in different Siemens factories and has been building integration with Siemens Industrial Edge. See also this Inspekto presentation at SPS 2024 . Collaboration with Siemens: Investment Opportunities. Dynamo focus areas: Artificial Intelligence & Computer Vision. From their website: Busting myths on AI-based visual inspection | Siemens Skip to main content Busting myths on AI-based visual inspection Rejects disrupt production and increase costs, while defective parts can harm brand reputation. Manufacturers are adopting AI-based visual inspection, such as Siemens’ Inspekto. Athina Liatsa, Global Marketing Manager for Industrial Apps, addresses five key myths. Myth 1: AI inspection is difficult to install Inspekto is delivered with everything you need – it contains a Siemens Industrial PC, a camera, a light, and all the required cables. That means there are no extra orders to place, no looking around to see if you have the right connectors. Where to install it? That’s totally open too, because the solution has been conceived for a variety of use cases – from production lines to robots. Multi-camera setups are also possible, for example in complex production cells where several inspections are done at the same time. Inspekto can be fully integrated with PLC or MES/ERP systems, which makes it great for the inspection of incoming goods or the final quality inspection of finished products. Once you have decided on the use case and the hardware is in place, AI guide",
+    "url": "https://www.siemens.com/global/en/products/automation/topic-areas/artificial-intelligence-in-industry/ai-on-shopfloor/ai-based-machine-vision/inspekto.html",
+    "models": [
+      "Investment Opportunities"
+    ],
+    "focus_areas": [
+      "Artificial Intelligence & Computer Vision"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
+  },
+  {
+    "name": "Instrumental",
+    "description": "Instrumental has built the leading Manufacturing AI and Data Platform for brands and manufacturers developing and producing consumer and mission-critical electronics. The platform optimizes assembly, operations, and quality control processes to accelerate time-to-market, improve yields, eliminate rework, and save engineering time. When combined with Teamcenter Quality, Instrumental supports Siemens’ closed loop quality approach. This helps electronics OEMs go from Quality Management to Quality Optimization. Instrumental's solutions can be purchased on Siemens Digital Exchange . Collaboration with Siemens: Ecosystem Partners. Dynamo focus areas: Artificial Intelligence & Computer Vision.",
+    "url": "https://instrumental.com/",
+    "models": [
+      "Ecosystem Partners"
+    ],
+    "focus_areas": [
+      "Artificial Intelligence & Computer Vision"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
+  },
+  {
+    "name": "ioTech",
+    "description": "ioTech from Jerusalem has developed a multi-material additive manufacturing technology that can process almost any industry certified material at high resolution and high speed. In 2019 we introduced ioTech to our innovation partner ASM Assembly Systems GmbH & Co. KG. This led to a successful technology collaboration as well as capital investment . Guenter Schindler, COO of ASM SMT Solutions talks here about ASM SMT's collaboration with Siemens Dynamo . Collaboration with Siemens: Investment Opportunities.",
+    "url": null,
+    "models": [
+      "Investment Opportunities"
+    ],
+    "focus_areas": [],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
+  },
+  {
+    "name": "Percepto",
+    "description": "Percepto is revolutionizing the way vital infrastructure and assets are inspected and monitored by providing a holistic fully automated solution. Siemen Energy is using Percepto to monitor power plants since 2022. Collaboration with Siemens: Startups as Suppliers. Dynamo focus areas: Robotics & Automation.",
+    "url": "https://percepto.co/",
+    "models": [
+      "Startups as Suppliers"
+    ],
+    "focus_areas": [
+      "Robotics & Automation"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
+  },
+  {
+    "name": "Portcast",
+    "description": "Portcast , Headquartered in Singapore, provides predictive visibility and demand forecasting for international transportation. Leveraging proprietary machine learning and generative AI, the platform processes over 5 million data points daily from 370+ ocean carriers and airlines, 6,000+ vessels, 1,200 ports, direct integrations with 45+ terminals. Siemens Digital logistics partnered with Portcast in 2023 to enable more resilient and transparent supply chains for shippers and freight forwarders. Portcast is also available in the Siemens Xcelerator Marketplace . Collaboration with Siemens: Portfolio Partners. Dynamo focus areas: Supply Chain & Logistics. From their website: Portcast | Supply Chain Visibility Software | Real-Time Supply Chain Visibility Supply Chain Visibility Software Predict Shipment Delays. Reduce Freight Costs. Portcast connects your shipment data to your orders, contracts, and invoices. Purpose-built AI surfaces risks before they escalate and recommends the right actions to protect your service levels and margins. Book a demo Chosen by these teams and many more The Freight Intelligence Platform for Global Transportation Teams. Portcast combines shipment visibility and freight spend management to offer tailored views and workflows for different teams, helping them act faster and smarter without siloed information. Operations Command Center Freight Audit & Spend Control Planning & Performance Optimization Focus on shipments that need your attention AI-powered alerts highlight shipment delays, terminal issues, and critical operational exceptions, so operational teams start the day with a clear priority list. Live view of high-priority exceptions and risks See downstream impact on costs and SLAs Get alerts and act before issues escalate Learn more Keep your freight costs under control Automatically detect invoice discrepancies, overch",
+    "url": "https://www.portcast.io/",
+    "models": [
+      "Portfolio Partners"
+    ],
+    "focus_areas": [
+      "Supply Chain & Logistics"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
+  },
+  {
+    "name": "Razor Labs",
+    "description": "Razor Labs (TASE: RZR) a leading developer of AI solutions for industrial manufacturing processes, in March 2022 it has announced that it was selected by Siemens Energy to implement a pilot at its O&M site in Israel , for the station’s cooling system. DataMind AI predicts the future power supply of the station, verifies the optimality of the cooling system performance and the optimum output of the station. Collaboration with Siemens: Startups as Suppliers. Dynamo focus areas: Artificial Intelligence & Computer Vision. From their website: Home - Razor Labs EN ES Book Demo Making Machines Smarter Reimagine Predictive Maintenance with Sensor Fusion for Superb Failure Coverage and Root Cause Analysis. Contact Us Built for Every Critical Asset DataMind AI™ is an end-to-end predictive intelligence platform designed to protect every critical asset – across mobile fleets, fixed assets, and AI-powered visual monitoring systems. Mobile Fleet Predict critical fleet failures weeks early using predictive failure analysis. Learn More Fixed Assets Eliminate costly asset risks with deep sensor fusion analysis. Learn More Visual AI™ Detect critical hazards instantly with industrial computer vision. Learn More Why Razor Labs Razor Labs is revolutionizing the mining industry with DataMind AI™ , a cutting-edge all-in-one predictive maintenance solution that reduce unplanned shutdowns, boost productivity, and improve staff safety. AI Sensor Fusion Cutting-edge technology fusing data from a diverse suite of sensors, condition reports, and maintenance records to deliver comprehensive failure coverage and precise diagnostics. Sensors A comprehensive hardware offering for full 24/7 site coverage, connected on a separate network to avoid cy",
+    "url": "https://www.razor-labs.com/",
+    "models": [
+      "Startups as Suppliers"
+    ],
+    "focus_areas": [
+      "Artificial Intelligence & Computer Vision"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
+  },
+  {
+    "name": "Realtime Robotics",
+    "description": "Realtime Robotics provides a powerful suite of software tools for programming robotic arms and the systems they are used in. They automate the programming and execution of robot motions, cutting out difficult and costly aspects of operating robots. Visualize, prioritize and simulate path plans to validate robot programs with a seamless Process Simulate plug-in . Collaboration with Siemens: Portfolio Partners. Dynamo focus areas: Robotics & Automation. From their website: Realtime Robotics Skip to content Contact Us Try Resolver for Free Revolutionizing Manufacturing Automation \"What used to take months to accomplish can now be measured in hours.\" - Marco Bizjak, FFT Try Resolver for Free Your browser does not support HTML video. Trusted by industry leaders. Industrial AI for all robotic applications. Whether you're automating production at a factory or solving a tricky dynamic robotics problem, Realtime Robotics can help. Optimal fast, collision-free paths and interlocks pre-planned in the cloud for your workcells. Learn More Have Realtime help your system perform in a changing environment. Learn More “RTR’s AI optimization technology improved our production cycle time where traditional programming struggled.” “With more than 120,000 weld points and 4 robots in a single application, RTR was our only option.” “RTR’s motion planning and optimization tools are exactly what we need to work more efficiently and be more competitive.” “RTR’s RapidPlan afforded us the flexibility to quickly program a 3-robot application, processing 12 different product SKUs.” Streamline motion planning and control with Realtime Robotics. Resolver: Your Motion Planning Expe",
+    "url": "https://rtr.ai/",
+    "models": [
+      "Portfolio Partners"
+    ],
+    "focus_areas": [
+      "Robotics & Automation"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
+  },
+  {
+    "name": "Retrocausal",
+    "description": "Retrocausal is an industry leader in AI-powered intelligence augmentation systems that helps manufacturing workers avoid assembly mistakes, be more efficient at their daily jobs, and improve the processes they drive. Its Assembly Copilot™ and Kaizen Copilot™ products use machine learning, computer vision and AI to continuously guide, track and analyze assembly processes. Retrocausal joined the Siemens Frontier program in 2021, and developed integration with Siemens Process Simulate Human as part of a funded research project. The next step was to interface Siemens' Opcenter Execution platform, in order to streamline the production and manage quality more effectively. Collaboration with Siemens: Research Partners. Dynamo focus areas: Artificial Intelligence & Computer Vision. From their website: AI Copilots for Smarter Manufacturing Operations | Retrocausal Skip to content Home Retrocausal Powering the next generation of manufacturing So you can power more of the world. Schedule Demo Watch Video Calculate ROI Schedule Demo Watch Video Calculate ROI Retrocausal name to the 2022 CB Insights' Advanced Manufacturing 50 List Retrocausal named top 4 manufacturing software vendors in CB Insights AI 100 list Siemens - Testimonial Human-led, AI-enhance +10% first-time yield -60% quality issues -44% training time Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. Visit LinkedIn Boost the Productivity, Quality, and Safety of your Assembly Processes Our AI Copilots use our patented computer vision and machine-learning technology to empower your operators, industrial engineers, and line leaders to dramatically increase the quality, productivity, and traceability of your manual processes. Minimize Rework and Scrap Costs Real-time feedback for operators and analytics for engineers and managers: AI-Tracked Work Instructions and Poka Yoke Root Ca",
+    "url": "https://retrocausal.ai/",
+    "models": [
+      "Research Partners"
+    ],
+    "focus_areas": [
+      "Artificial Intelligence & Computer Vision"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
+  },
+  {
+    "name": "ScopeAR",
+    "description": "AR work instructions and remote assistance for industrial workers. Dynamo focus areas: AR/VR & Industrial Metaverse. From their website: Productivity Accelerated | Scope AR Scope AR is now part of Flatiron Solutions Learn more Product Industries AI + AR Use Cases News About Us Learn more Scope AR is now part of Flatiron Solutions Learn more Productivity Accelerated Scope AR makes mastery accessible to anyone, at enterprise scale. Schedule a Consultation View work instructions from most mobile devices and AR headsets. See Everything with Scope AR Our customers Say Hello to Frontline Intelligence Artificial Intelligence + Augmented Reality will be the greatest advantage to the frontline worker ever seen Decrease time to value with AI-Enabled Work Instruction Creation Scale expertise across the work force with Next-Gen Wearable Devices Proactively prevent mistakes and rework with Analytic AI Detection & Validation Deliver answers where work happens with AI Knowledge Retrieval Find Out More about AI + AR The ROI is there for AR 99% Reduction in pre-work preparation $2.4M Saved in reduced training travel time 95% Reduced time interpreting work instructions Schedule a demo How the Enterprise Uses Scope AR X Schedule a demo Use Cases See the ways WorkLink, our AR platform, has accelerated, simplified, and streamlined enter",
+    "url": "https://www.scopear.com/",
+    "models": [],
+    "focus_areas": [
+      "AR/VR & Industrial Metaverse"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
+  },
+  {
+    "name": "SkillReal",
+    "description": "SkillReal is realizing its mission to deliver accurate & reliable next-generation Digital Twin technologies across industries, helping global manufacturers to significantly shorten time of serial production, and improve productivity and quality. Through its partnership with Siemens, SkillReal was able to secure funding from the Bird Foundation – a US-Israel fund investing in joint technology research projects. Since 2023, SkillReal is also a portfolio partner of Siemens . Collaboration with Siemens: Portfolio Partners, Research Partners. Dynamo focus areas: AR/VR & Industrial Metaverse, Digital Twin & Simulation. From their website: SkillReal - Digital Twin Technology Designed for the Manufacturing Floor Skip to content Main Menu Flyout Menu The First In-Line 3D AI Dimensional and Quality Inspection Solution Watch Video SCHEDULE A DEMO Fast deployment and ROI >99.7% Reliability Sub-mm Accuracy Patented 3D-AI platform that integrates advanced camera calibration with accurate CAD alignment and leverages accelerated pre-trained large AI models Learn more Dimensional AI Inspection — Verifies presence, tolerance, and quality Rapid Deployment — Pre-trained large AI models support most manufacturing features In-line within the Cycle Time — 100% of parts and features, every cycle CAD-Based Measurement — Aligns physical parts with digital twins Zero Footprint — No robots, jigs, or dedicated cells required Immediate ROI — Cuts manual labor and quality-related costs One Solution. Many Use Cases. Reduce design iterations whilst saving time and prototypes costs with Virtual prototype Virtual prototype Inspect spot welding, studs and manufacturing quality and tolerances. Weld point inspection Ensure real-time alignment of digital and physical twins with faster commissioning times “As Built vs as Designed” SkillReal’s Patent",
+    "url": "https://www.skillreal.com/",
+    "models": [
+      "Portfolio Partners",
+      "Research Partners"
+    ],
+    "focus_areas": [
+      "AR/VR & Industrial Metaverse",
+      "Digital Twin & Simulation"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
+  },
+  {
+    "name": "Teamviewer",
+    "description": "Remote connectivity and AR workflows. Dynamo focus areas: AR/VR & Industrial Metaverse. From their website: TeamViewer—The Digital Workplace Platform Choose TeamViewer ONE to prevent issues long before they turn into tickets. Learn how → ❯❯❯ Go beyond remote support. Automated IT. Powered by AI. Before issues escalate, turn to the platform you can trust. Free business trial View plans and pricing AI Platform TeamViewer ONE The world's first proactive IT platform IT access and support Fix issues remotely Learn more IT access and support Fix issues remotely Digital workplace Find issues and automate fixes Learn more Digital workplace Find issues and automate fixes TeamViewer AI Automate your IT support Learn more TeamViewer AI Automate your IT support Explore the all-in-one platform Explore the all-in-one platform Industrial workflows Optimize logistic, production, and training processes with AR. Learn more Fix it before they feel it Before disruption hits, turn to the technology you trust. Learn more Choose TeamViewer ONE to prevent issues long before they turn into tickets. Learn how → ❯❯❯ Go beyond remote support. Save up to 30% on TeamViewer The same remote technology you trust, discounted for new users. View plans and pricing Free business trial AI Platform TeamViewer ONE The world's",
+    "url": "https://www.teamviewer.com/",
+    "models": [],
+    "focus_areas": [
+      "AR/VR & Industrial Metaverse"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
+  },
+  {
+    "name": "Updates on the latest technology trends",
+    "description": "Dynamo focus areas: If you're a customer.",
+    "url": null,
+    "models": [],
+    "focus_areas": [
+      "If you're a customer"
+    ],
+    "source": "https://www.siemens.com/en-us/company/siemens-software-for-startups/siemens-dynamo/",
+    "scraped_at": "2026-07-16T21:49:37.043420+00:00"
   }
 ]
