@@ -8,7 +8,9 @@
  body{font-family:system-ui,sans-serif;max-width:980px;margin:2rem auto;padding:0 1rem;color:#1c2733}
  input{width:60%;padding:.55rem} button{padding:.55rem 1.2rem}
  .grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem}
- .card{border:1px solid #dde4ea;border-radius:8px;padding:1rem}
+ @media(max-width:640px){.grid{grid-template-columns:1fr}}
+ .card{border:1px solid #dde4ea;border-radius:8px;padding:1rem;margin-top:1.5rem}
+ .chartbox{position:relative;width:100%}
  .score{font-size:2.2rem;font-weight:700}
  table{border-collapse:collapse;font-size:.75rem}
  td,th{border:1px solid #eee;padding:.25rem .4rem;text-align:center}
@@ -32,21 +34,23 @@
     <div class="card"><div class="muted">Similarity to existing partners</div>
       <div class="score" id="sim"></div><p id="simwhy" class="muted"></p></div>
   </div>
-  <div class="card" style="margin-top:1.5rem"><b>Comparison with Siemens DISW</b>
+  <div class="card"><b>Comparison with Siemens DISW</b>
     <p id="comparison"></p></div>
-  <div class="grid">
-    <div class="card"><b>Fit dimensions</b><canvas id="radar"></canvas></div>
-    <div class="card"><b>Correlation per Siemens product (cosine)</b>
-      <canvas id="products"></canvas></div>
-  </div>
-  <div class="card" style="margin-top:1.5rem"><b>Closest existing partners (cosine)</b>
-    <canvas id="partners" height="110"></canvas></div>
-  <div class="card" style="margin-top:1.5rem">
+  <div class="card"><b>Fit dimensions</b>
+    <div class="chartbox" style="height:360px"><canvas id="radar"></canvas></div></div>
+  <div class="card"><b>Correlation per Siemens product (cosine)</b>
+    <div class="muted">how strongly the startup relates to each Siemens offering
+      — 1.0 = identical meaning, ~0.3 = unrelated</div>
+    <div class="chartbox" id="productsBox"><canvas id="products"></canvas></div></div>
+  <div class="card"><b>Closest existing partners (cosine)</b>
+    <div class="muted">which proven Dynamo partners this startup most resembles</div>
+    <div class="chartbox" id="partnersBox"><canvas id="partners"></canvas></div></div>
+  <div class="card">
     <b>Correlation heatmap — startup content &times; Siemens products</b>
     <div class="muted">where exactly the overlap lives: each cell = max cosine
       similarity between a crawled startup chunk and a product's chunks</div>
     <div id="heatmap" style="overflow-x:auto;margin-top:.5rem"></div></div>
-  <div class="card" style="margin-top:1.5rem"><b>Dimension explanations</b>
+  <div class="card"><b>Dimension explanations</b>
     <ul id="dims"></ul>
     <p class="muted" id="meta"></p></div>
 </div>
@@ -89,17 +93,20 @@ function render(d){
       datasets:[{label:'score (1-10)', data: rep.dimensions.map(x=>x.score),
                  fill:true, backgroundColor:'rgba(0,120,180,.18)',
                  borderColor:'rgb(0,120,180)'}]},
-    options:{scales:{r:{min:0,max:10,ticks:{stepSize:2}}}}});
+    options:{responsive:true, maintainAspectRatio:false,
+             scales:{r:{min:0,max:10,ticks:{stepSize:2}}}}});
 
   // horizontal-bar options: truncate long y labels so they don't clip;
-  // the untruncated name is shown in the tooltip title.
+  // the untruncated name is shown in the tooltip title. maintainAspectRatio
+  // is off so the chart fills its box — whose height we set per bar count.
   const hbar = () => ({
+    responsive:true, maintainAspectRatio:false,
     indexAxis:'y',
     scales:{
       x:{min:0,max:1},
       y:{ticks:{autoSkip:false, callback(v){
         const s = this.getLabelForValue(v);
-        return s.length > 26 ? s.slice(0,25)+'…' : s;
+        return s.length > 34 ? s.slice(0,33)+'…' : s;
       }}}
     },
     plugins:{
@@ -107,6 +114,11 @@ function render(d){
       tooltip:{callbacks:{title:items=>items[0].label}}
     }
   });
+
+  // give each horizontal-bar chart ~26px per bar so labels never crowd
+  const boxH = n => Math.max(160, n * 26 + 40) + 'px';
+  document.getElementById('productsBox').style.height = boxH(m.product_correlation.length);
+  document.getElementById('partnersBox').style.height = boxH(m.partner_similarity.length);
 
   chart('products', {type:'bar',
     data:{labels: m.product_correlation.map(x=>x.product),
