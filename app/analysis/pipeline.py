@@ -49,7 +49,17 @@ def list_analyses() -> list[dict]:
              "created_at": t} for u, r, t in rows]
 
 
+def normalize_url(url: str) -> str:
+    """Accept bare domains ('cybord.ai') as well as full URLs. Prepend https://
+    when no scheme is given so a reviewer typing just the domain still works."""
+    url = url.strip()
+    if not url.startswith(("http://", "https://")):
+        url = "https://" + url
+    return url
+
+
 async def analyze(url: str, force: bool = False) -> dict:
+    url = normalize_url(url)
     if not force:
         hit = cached_analysis(url)
         if hit:
