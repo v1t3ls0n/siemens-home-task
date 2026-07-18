@@ -2,260 +2,284 @@
   "url": "https://www.notion.so/",
   "profile": {
     "company_name": "Notion",
-    "summary": "Notion is an AI-native workspace that combines docs, knowledge base, projects, and AI 'Agents' to capture context, find answers, and automate recurring work and workflows across teams and connected tools.",
+    "summary": "Notion is an AI workspace and single platform for teams to capture context, find answers, and automate repetitive work. Its main offering centers on Notion AI and Notion Agents, which can answer questions, route tasks, generate reports, search across work tools, and help teams manage docs, knowledge bases, and projects.",
     "products": [
-      "Notion workspace (Docs, Knowledge Base, Projects)",
-      "Notion Agent (personal AI assistant)",
-      "Custom Agents (team-wide automated agents)",
-      "AI Meeting Notes",
+      "Notion AI workspace",
+      "Notion Agents",
+      "Custom Agents",
+      "Notion Agent",
       "Enterprise Search",
-      "Notion credits (billing for Custom Agents)"
+      "AI Meeting Notes",
+      "Docs",
+      "Knowledge Base",
+      "Projects",
+      "Slack support bot use case",
+      "Product feedback triage use case",
+      "Security alert triage use case",
+      "Weekly reporting automation use case"
     ],
     "technologies": [
-      "AI / Agents",
-      "Natural language / conversational AI",
-      "Integrations (Slack, Mail, Calendar, MCP)",
+      "AI",
+      "Automation",
       "Enterprise search",
-      "Workflow automation"
+      "Natural language processing",
+      "Workflow orchestration",
+      "Knowledge management",
+      "Slack integration",
+      "Email integration",
+      "Calendar integration",
+      "MCP integrations",
+      "Audit logging",
+      "Access control"
     ],
     "target_industries": [
+      "Software teams",
       "Engineering teams",
       "Product teams",
       "Support teams",
-      "Enterprise / Business customers",
-      "Teams that ship (cross-functional teams)"
+      "Security teams",
+      "Detection and response teams",
+      "Operations teams",
+      "Legal teams",
+      "People operations",
+      "Sales teams",
+      "Project management",
+      "Enterprise"
     ],
     "evidence_urls": [
       "https://www.notion.com/",
       "https://www.notion.com/product/agents",
-      "https://www.notion.com/product/ai/use-cases/triage-product-feedback"
+      "https://www.notion.com/product/ai/use-cases/triage-product-feedback",
+      "https://www.notion.com/product/ai/use-cases/resolve-support-tickets-in-slack",
+      "https://www.notion.com/product/ai/use-cases/respond-to-security-alerts-faster",
+      "https://www.notion.com/product/ai/use-cases/automate-weekly-reporting"
     ]
   },
   "report": {
-    "comparison": "Notion is a horizontal AI-native workspace (docs, KB, projects, agents, enterprise search) rather than an engineering/manufacturing-specific tool. Overlap with DISW is mostly around collaboration, documentation, and knowledge management used by engineering/product teams already using NX, Teamcenter, Polarion, Mendix, etc. Correlations to NX, Teamcenter, Opcenter, Mendix, Xcelerator are modest, suggesting relevance as a generic productivity and AI-assistant layer on top of Siemens tools rather than a deep domain integration. Integration points would likely be via APIs/SDKs and enterprise search connectors that surface content from Siemens PLM/ALM/MES and possibly orchestrate lightweight workflows, not core in-the-loop engineering functionality. Competitive risk is low—Siemens DISW does not offer a broad horizontal AI workspace like Notion—but there is some adjacency to Siemens’ collaboration and documentation capabilities in Teamcenter/Xcelerator. Notion is mature and widely adopted, but not vertically focused on industrial or engineering workflows, so partnership value is primarily as a complementary workspace/AI-agent interface for shared enterprise customers, not as a strategic DISW portfolio extension.",
-    "partnership_score": 5,
-    "partnership_justification": "Moderate complementarity as an AI workspace used by engineering/product teams, with plausible integrations (docs/KB around NX/Teamcenter projects, enterprise search across Siemens repositories). However, Notion is horizontal, not industrial-specific, and Siemens already has collaboration/documentation in its stack. Technology correlation scores are mid-range and no specific DISW product fit stands out. Good candidate for light ecosystem/connector partnership rather than a core Xcelerator strategic partner.",
+    "comparison": "Notion is primarily an enterprise knowledge, collaboration, search, and workflow layer rather than an industrial engineering platform. It could complement Teamcenter, NX, Insights Hub, Opcenter, Mendix, and Polarion by surfacing contextual answers, meeting notes, reports, and task workflows. However, the correlations are only modest—highest for Teamcenter (0.378), NX (0.369), and Insights Hub (0.360)—and no specific retrieved Siemens product or proven connector establishes a clear Xcelerator integration path.",
+    "partnership_score": 6,
+    "partnership_justification": "There is credible value in connecting Notion’s AI agents and enterprise search to Siemens engineering and manufacturing knowledge, especially for reporting, support, project coordination, and cross-system discovery. Enterprise controls, audit logging, and MCP integrations improve feasibility. The score is limited by weak industrial-domain specialization, modest product correlations, and no demonstrated Siemens integration or shared-customer evidence.",
     "partner_similarity_score": 4,
-    "partner_similarity_justification": "Nearest existing partners (Goodly Innovation, ScopeAR, TeamViewer, etc.) are more industrial/operations focused (AR, shopfloor guidance, inspection, robotics). Similarity scores are relatively low (~0.35–0.40), indicating Notion is less like current vertical partners and more like a generic productivity/collaboration tool. That suggests lower pattern match to Siemens’ typical co-creation partners but still some alignment around supporting engineering and operations teams with digital tools.",
+    "partner_similarity_justification": "Similarity to listed partners is low to moderate, led by Percepto (0.403) and TeamViewer (0.400). Notion shares broad AI, workflow, and enterprise collaboration themes, but differs from the predominantly industrial inspection, robotics, AR, and operations-focused partner set.",
     "dimensions": [
       {
         "name": "technology_overlap",
         "score": 4,
-        "explanation": "Overlap is limited to collaboration, documentation, search, and workflow/agent orchestration. Siemens products (NX, Teamcenter, Polarion, Mendix, Opcenter) touch these areas but in an engineering-specific way. Notion does not provide CAD/PLM/ALM/MES capabilities; it’s an overlay workspace. Per-product similarities are modest (0.25–0.35), consistent with a supporting tool rather than overlapping core tech."
+        "explanation": "Overlap is mainly in AI, automation, enterprise search, and workflows; Notion does not duplicate Siemens’ core PLM, CAD, MES, simulation, or IoT capabilities."
       },
       {
         "name": "market_fit",
         "score": 6,
-        "explanation": "Target users (engineering, product, support, cross-functional teams) overlap with Siemens’ enterprise customers, and many DISW customers likely already use or could use Notion for project and knowledge management. However, Notion is not industrial-specific and doesn’t directly address manufacturing/engineering compliance, traceability, or regulated workflows, which limits depth of fit for DISW’s core buying centers."
+        "explanation": "Engineering, product, security, operations, and enterprise teams overlap with Siemens customers, although Notion is horizontal rather than industrially specialized."
       },
       {
         "name": "integration_potential",
         "score": 6,
-        "explanation": "Clear but shallow integration paths: connectors to Teamcenter/Polarion/Mendix/Opcenter for documentation, requirements, meeting notes, and enterprise search; agents that trigger workflows or summarize design/manufacturing data. Similarity to Xcelerator platform and Mendix is moderate, indicating feasible API-level integrations. No obvious deep, model-level integration into CAD/CAE/EDA, so impact is mostly productivity and knowledge-management oriented."
+        "explanation": "MCP and workplace integrations could support agents over Teamcenter, NX, Insights Hub, Opcenter, Polarion, or Mendix data. A concrete Siemens connector and governed industrial-data architecture remain unproven."
       },
       {
         "name": "competitive_risk",
-        "score": 3,
-        "explanation": "Notion does not compete with NX, Teamcenter, Simcenter, Opcenter, or EDA. Some overlap with Siemens’ own collaboration/document, task, and knowledge/sharing features inside Teamcenter/Xcelerator, but these are ancillary for Siemens’ value proposition. Risk is primarily that customers may prefer Notion for collaboration instead of native DISW collaboration modules, but this is low strategic risk and could be turned into complementary positioning."
+        "score": 7,
+        "explanation": "Direct competition is limited because Notion operates above core engineering systems, though its projects, knowledge base, automation, and AI functions could overlap with collaboration and workflow features in Teamcenter, Polarion, and Mendix."
       },
       {
         "name": "maturity_signals",
-        "score": 9,
-        "explanation": "Notion is a globally recognized, mature SaaS product with strong enterprise adoption, robust integrations (Slack, email, calendar, MCP), and a developed AI/agent offering and billing model (credits). This far exceeds typical startup maturity. Commercial risk is low; primary question is strategic relevance, not viability."
+        "score": 8,
+        "explanation": "The profile shows a broad enterprise product suite, multiple operational use cases, integrations, access controls, and audit logging, indicating strong product maturity despite absent deployment metrics."
       }
     ]
   },
   "metrics": {
     "product_correlation": [
       {
-        "product": "Strategic technology directions (public statements)",
-        "similarity": 0.362
-      },
-      {
-        "product": "NX (CAD / Product Engineering)",
-        "similarity": 0.354
+        "product": "Teamcenter (PLM)",
+        "similarity": 0.378
       },
       {
         "product": "Dynamo focus areas",
-        "similarity": 0.348
+        "similarity": 0.376
       },
       {
-        "product": "Teamcenter (PLM)",
-        "similarity": 0.348
+        "product": "NX (CAD / Product Engineering)",
+        "similarity": 0.369
       },
       {
         "product": "Insights Hub (Industrial IoT, formerly MindSphere)",
-        "similarity": 0.345
+        "similarity": 0.36
+      },
+      {
+        "product": "Strategic technology directions (public statements)",
+        "similarity": 0.355
       },
       {
         "product": "Collaboration model: Ecosystem Partners",
-        "similarity": 0.343
+        "similarity": 0.346
       },
       {
         "product": "Opcenter (MES / Manufacturing Operations)",
-        "similarity": 0.323
-      },
-      {
-        "product": "Mendix (Low-Code Application Platform)",
-        "similarity": 0.319
+        "similarity": 0.337
       },
       {
         "product": "Altair (Simulation, HPC & AI — acquired 2025)",
-        "similarity": 0.307
+        "similarity": 0.327
       },
       {
-        "product": "Collaboration model: Startups as Suppliers",
-        "similarity": 0.306
-      },
-      {
-        "product": "Collaboration model: Portfolio Partners",
-        "similarity": 0.293
+        "product": "Mendix (Low-Code Application Platform)",
+        "similarity": 0.324
       },
       {
         "product": "Tecnomatix (Digital Manufacturing)",
-        "similarity": 0.292
+        "similarity": 0.319
+      },
+      {
+        "product": "Collaboration model: Startups as Suppliers",
+        "similarity": 0.303
+      },
+      {
+        "product": "Collaboration model: Portfolio Partners",
+        "similarity": 0.299
       },
       {
         "product": "Collaboration model: Research Partners",
-        "similarity": 0.289
-      },
-      {
-        "product": "Siemens Dynamo program",
-        "similarity": 0.272
-      },
-      {
-        "product": "Collaboration model: Investment Opportunities",
-        "similarity": 0.269
+        "similarity": 0.278
       },
       {
         "product": "Polarion (Application Lifecycle Management)",
-        "similarity": 0.257
+        "similarity": 0.274
       },
       {
-        "product": "Xcelerator Platform",
-        "similarity": 0.254
+        "product": "Collaboration model: Investment Opportunities",
+        "similarity": 0.272
       },
       {
-        "product": "Siemens EDA (Electronic Design Automation, formerly Mentor Graphics)",
-        "similarity": 0.249
-      },
-      {
-        "product": "Eligibility and engagement process",
-        "similarity": 0.244
-      },
-      {
-        "product": "Simcenter (Simulation & Test)",
-        "similarity": 0.237
+        "product": "Siemens Dynamo program",
+        "similarity": 0.268
       },
       {
         "product": "Solid Edge (Mainstream CAD)",
-        "similarity": 0.233
+        "similarity": 0.265
+      },
+      {
+        "product": "Xcelerator Platform",
+        "similarity": 0.264
+      },
+      {
+        "product": "Siemens EDA (Electronic Design Automation, formerly Mentor Graphics)",
+        "similarity": 0.264
+      },
+      {
+        "product": "Eligibility and engagement process",
+        "similarity": 0.256
+      },
+      {
+        "product": "Simcenter (Simulation & Test)",
+        "similarity": 0.245
       },
       {
         "product": "Capital (Electrical / E-E Systems)",
-        "similarity": 0.211
+        "similarity": 0.221
       }
     ],
     "partner_similarity": [
       {
-        "name": "Goodly Innovation",
-        "similarity": 0.397
-      },
-      {
-        "name": "ScopeAR",
-        "similarity": 0.387
-      },
-      {
         "name": "Percepto",
-        "similarity": 0.383
-      },
-      {
-        "name": "SkillReal",
-        "similarity": 0.376
+        "similarity": 0.403
       },
       {
         "name": "Teamviewer",
-        "similarity": 0.369
+        "similarity": 0.4
+      },
+      {
+        "name": "SkillReal",
+        "similarity": 0.393
+      },
+      {
+        "name": "ScopeAR",
+        "similarity": 0.392
+      },
+      {
+        "name": "Goodly Innovation",
+        "similarity": 0.389
       },
       {
         "name": "Instrumental",
-        "similarity": 0.35
+        "similarity": 0.381
       },
       {
         "name": "Realtime Robotics",
-        "similarity": 0.343
-      },
-      {
-        "name": "Inspekto",
-        "similarity": 0.341
-      },
-      {
-        "name": "Razor Labs",
-        "similarity": 0.338
+        "similarity": 0.376
       },
       {
         "name": "Retrocausal",
-        "similarity": 0.333
+        "similarity": 0.365
+      },
+      {
+        "name": "Razor Labs",
+        "similarity": 0.356
+      },
+      {
+        "name": "Inspekto",
+        "similarity": 0.355
       },
       {
         "name": "Cybord",
-        "similarity": 0.327
+        "similarity": 0.349
       },
       {
         "name": "Boardera",
-        "similarity": 0.301
+        "similarity": 0.341
       },
       {
         "name": "Hands-on support with: Ventures validation, startups scouting and building first prototypes",
-        "similarity": 0.295
-      },
-      {
-        "name": "Updates on the latest technology trends",
-        "similarity": 0.279
+        "similarity": 0.306
       },
       {
         "name": "Access to Siemens' internal network of experts",
-        "similarity": 0.271
-      },
-      {
-        "name": "Innovation leadership",
-        "similarity": 0.266
-      },
-      {
-        "name": "Ability to expand your product portfolio with external solutions",
-        "similarity": 0.259
-      },
-      {
-        "name": "First to market with innovative solutions",
-        "similarity": 0.259
+        "similarity": 0.28
       },
       {
         "name": "Portcast",
-        "similarity": 0.254
+        "similarity": 0.278
       },
       {
-        "name": "Access to Siemens' ecosystem of customers and partners",
-        "similarity": 0.251
+        "name": "Updates on the latest technology trends",
+        "similarity": 0.274
       },
       {
-        "name": "ioTech",
-        "similarity": 0.249
+        "name": "Innovation leadership",
+        "similarity": 0.269
       },
       {
         "name": "Cybellum",
-        "similarity": 0.239
+        "similarity": 0.265
       },
       {
-        "name": "Early-stage investment opportunities",
-        "similarity": 0.227
+        "name": "First to market with innovative solutions",
+        "similarity": 0.265
+      },
+      {
+        "name": "Ability to expand your product portfolio with external solutions",
+        "similarity": 0.263
+      },
+      {
+        "name": "ioTech",
+        "similarity": 0.263
+      },
+      {
+        "name": "Access to Siemens' ecosystem of customers and partners",
+        "similarity": 0.259
       },
       {
         "name": "Early product validation and use of Siemens technology",
-        "similarity": 0.224
+        "similarity": 0.242
+      },
+      {
+        "name": "Early-stage investment opportunities",
+        "similarity": 0.228
       },
       {
         "name": "Artiminds",
-        "similarity": 0.174
+        "similarity": 0.191
       }
     ],
     "heatmap": {
@@ -274,135 +298,135 @@
         "Meet your 24/7 AI team | Notion #0"
       ],
       "cols": [
-        "Strategic technology directions (public statements)",
-        "NX (CAD / Product Engineering)",
-        "Dynamo focus areas",
         "Teamcenter (PLM)",
+        "Dynamo focus areas",
+        "NX (CAD / Product Engineering)",
         "Insights Hub (Industrial IoT, formerly MindSphere)",
+        "Strategic technology directions (public statements)",
         "Collaboration model: Ecosystem Partners",
         "Opcenter (MES / Manufacturing Operations)",
-        "Mendix (Low-Code Application Platform)"
+        "Altair (Simulation, HPC & AI — acquired 2025)"
       ],
       "values": [
         [
-          0.355,
-          0.304,
-          0.367,
-          0.308,
           0.307,
+          0.367,
+          0.304,
+          0.306,
+          0.354,
           0.292,
           0.249,
-          0.253
+          0.296
         ],
         [
+          0.388,
           0.344,
           0.323,
-          0.344,
-          0.388,
           0.316,
+          0.344,
           0.341,
           0.277,
-          0.29
+          0.276
         ],
         [
-          0.428,
-          0.334,
-          0.393,
           0.311,
+          0.393,
+          0.334,
           0.396,
+          0.427,
           0.318,
           0.251,
-          0.248
+          0.348
         ],
         [
-          0.272,
-          0.235,
-          0.286,
           0.289,
+          0.286,
+          0.235,
           0.232,
+          0.272,
           0.264,
           0.238,
-          0.242
+          0.252
         ],
         [
-          0.227,
-          0.233,
-          0.269,
           0.344,
+          0.269,
+          0.233,
           0.229,
+          0.227,
           0.257,
           0.179,
-          0.249
+          0.215
         ],
         [
-          0.191,
-          0.152,
-          0.249,
           0.208,
+          0.249,
+          0.153,
           0.233,
+          0.191,
           0.207,
           0.171,
-          0.217
+          0.191
         ],
         [
-          0.23,
-          0.224,
-          0.278,
           0.272,
+          0.278,
+          0.224,
           0.246,
+          0.23,
           0.217,
           0.194,
-          0.263
+          0.187
         ],
         [
-          0.239,
-          0.21,
-          0.315,
           0.229,
+          0.315,
+          0.21,
           0.308,
+          0.239,
           0.271,
           0.283,
-          0.203
+          0.277
         ],
         [
-          0.205,
-          0.159,
-          0.306,
           0.231,
+          0.306,
+          0.159,
           0.29,
+          0.205,
           0.267,
           0.235,
-          0.18
+          0.252
         ],
         [
-          0.257,
-          0.186,
-          0.247,
           0.249,
+          0.247,
+          0.186,
           0.216,
+          0.257,
           0.183,
           0.177,
-          0.199
+          0.189
         ],
         [
-          0.239,
-          0.164,
-          0.281,
           0.22,
+          0.281,
+          0.164,
           0.178,
+          0.239,
           0.22,
           0.145,
-          0.19
+          0.171
         ],
         [
-          0.333,
-          0.281,
-          0.331,
           0.274,
+          0.331,
+          0.281,
           0.277,
+          0.333,
           0.25,
           0.204,
-          0.208
+          0.279
         ]
       ]
     }
@@ -413,12 +437,12 @@
     "updated": 0,
     "unchanged": 0
   },
-  "runtime_s": 41.7,
-  "cost_usd": 0.0151,
+  "runtime_s": 29.9,
+  "cost_usd": 0.0321,
   "cached": false,
   "_eval": {
     "category": "weak",
     "note": "B2B productivity SaaS with low-code/AI angles (thin Mendix-adjacent thread) but not industrial. Borderline weak, not fully out-of-domain. Expect fit 3-6.",
-    "wall_s": 42.0
+    "wall_s": 30.0
   }
 }
