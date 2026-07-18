@@ -25,6 +25,7 @@ any of them.
 - [Data & storage layers](#data--storage-layers) — *what is stored where, and what a vector DB even is*
 - [Cost engineering](#cost-engineering)
 - [Grounding: the official Dynamo data](#grounding-the-official-dynamo-data)
+- [How scoring works](#how-scoring-works) — *cosine metrics vs the 1-10 scores, explained*
 - [Match metrics & visualizations](#match-metrics--visualizations)
 - [Evaluation](#evaluation) — *how we verified the system discriminates, with results*
 - [Configuration](#configuration)
@@ -301,10 +302,68 @@ The live parse merges over an embedded snapshot of the same page, so a site
 redesign can degrade freshness but can never leave the app with empty
 reference data. Sites behind aggressive bot protection are skipped gracefully.
 
+## How scoring works
+
+Scoring has **two distinct layers** — keeping them separate is the key to
+reading the output correctly.
+
+### Layer 1 — numeric cosine metrics (deterministic; numpy, no LLM)
+
+The research agent's output is condensed into one **profile vector**: the
+embedding of the startup's summary + technologies. That single vector is then
+compared, by cosine similarity, against the reference corpora:
+
+```
+profile_vec                = embed(profile.summary + technologies)
+product_correlation[p]     = max over p's chunks of  cosine(profile_vec, chunk)   # per Siemens product
+partner_similarity[k]      = max over k's chunks of  cosine(profile_vec, chunk)   # per existing partner
+```
+
+(`max over chunks` because a product or partner may be described by several
+chunks — we take its best-matching one.) These numbers are pure geometry: the
+same input always yields the same value, no model involved.
+
+**Cosine similarity** ranges from -1 to 1 and measures *semantic direction* —
+how close in meaning two texts are. Intuition for the values you'll see here:
+
+| cosine | meaning |
+|---|---|
+| **1.0** | identical text |
+| **0.75–0.85** | same company / topic, different wording — the **self-match** |
+| **0.45–0.60** | same domain or adjacent (e.g. another CV-for-manufacturing startup) |
+| **0.30–0.45** | loosely related industrial tech |
+| **< 0.30** | unrelated (e.g. a consumer travel site) |
+
+**Why an existing partner scores ~0.8 against itself, not 1.0.** When you
+analyse a company that's already in the partner list, its `partner_similarity`
+top hit compares two *different* texts about the same company: (A) the summary
+the agent writes from crawling the **live site today**, and (B) the company's
+**Dynamo-page description** scraped earlier. Same company, different wording →
+~0.8. It would only be 1.0 if the exact same text were embedded twice.
+Unrelated companies sit at ~0.3–0.5, so a ~0.8 top hit that stands clearly
+above the field is a strong, correct self-identification — and a direct sanity
+check that the embedding pipeline works (see [Evaluation](#evaluation)).
+
+### Layer 2 — the 1-10 scores (LLM judgment, grounded in Layer 1)
+
+The analyst agent receives the profile, the retrieved most-relevant Siemens
+products, **and the Layer-1 numbers** (per-partner similarities + per-product
+correlations). It returns `partnership_score`, `partner_similarity_score`, and
+five 1-10 dimensions with written justifications. Its instructions tell it to
+*"treat the numeric similarities as evidence to interpret, not to contradict."*
+
+So the 1-10 scores are a holistic reading **grounded in** the cosine numbers —
+not a formula of them. Example: analysing an existing partner, the model sees a
+0.8 top match (far above the ~0.4 field) and reasonably reports a high
+`partner_similarity_score` (9-10). The number is Layer 1; the 9/10 is Layer 2's
+interpretation of it. The UI shows **both**, so the judgment is always auditable
+against the geometry.
+
 ## Match metrics & visualizations
 
 All similarity numbers are **computed with numpy from embeddings** — the LLM
-interprets them, it does not invent them. The UI shows:
+interprets them, it does not invent them (see [How scoring works](#how-scoring-works)).
+The UI shows:
 
 | Visualization | What it answers |
 |---|---|
