@@ -389,12 +389,12 @@ Single file: [`config.yaml`](config.yaml).
 
 ```yaml
 routing:
-  light:                      # extraction, page reading
-    primary: "openai:gpt-5-mini"
+  light:                      # extraction, page reading — cheap model
+    primary: "openai:gpt-5.4-mini"
     fallbacks: ["anthropic:claude-haiku-4-5", "ollama:qwen2.5:7b"]
-  heavy:                      # comparison, scoring, justification
-    primary: "openai:gpt-5.1"
-    fallbacks: ["anthropic:claude-sonnet-5", "openai:gpt-5-mini"]
+  heavy:                      # comparison, scoring, justification — strongest
+    primary: "openai:gpt-5.6-sol"
+    fallbacks: ["anthropic:claude-opus-4-8", "openai:gpt-5.5"]
 
 embeddings: {provider: openai, model: text-embedding-3-small, dim: 1536}
 prices:     {...}             # $/1M tokens for the /api/usage report
