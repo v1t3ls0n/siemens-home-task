@@ -448,26 +448,26 @@ name (max over chunks). Both are in the git history.
 ### Results
 
 Latest run (`eval_results/summary.md`, 9 sites, ✅ **no anomalies**, total LLM
-cost ≈ $0.17):
+cost ≈ $0.27; heavy tier = `gpt-5.6-sol`):
 
 | Category | Company | Fit /10 | Partner-sim /10 | Self-match peak | Cost |
 |---|---|---|---|---|---|
-| partner | Realtime Robotics | 9 | 9 | 0.79 | $0.019 |
-| partner | Retrocausal | 9 | 9 | 0.82 | $0.023 |
-| partner | Cybord | 8 | 8 | 0.80 | $0.024 |
-| partner | Portcast | 7 | 7 | 0.82 | $0.019 |
-| good | Protex AI | 8 | 7 | — | $0.019 |
-| good | Augury | 7 | 7 | — | $0.018 |
-| weak | Notion | 5 | 4 | — | $0.015 |
-| weak | Viz.ai | 3 | 4 | — | $0.017 |
-| bad | Airbnb | 2 | 2 | — | $0.013 |
+| partner | Cybord | 8 | 8 | 0.82 | $0.030 |
+| partner | Realtime Robotics | 8 | 9 | 0.84 | $0.026 |
+| partner | Portcast | 7 | 8 | 0.83 | $0.031 |
+| partner | Retrocausal | 8 | 8 | 0.84 | $0.029 |
+| good | Protex AI | 8 | 6 | — | $0.032 |
+| good | Augury | 8 | 7 | — | $0.034 |
+| weak | Viz.ai | 4 | 5 | — | $0.031 |
+| weak | Notion | 6 | 4 | — | $0.030 |
+| bad | Airbnb | 2 | 2 | — | $0.024 |
 
 The scores form a clean monotonic gradient — **existing partners and strong
 candidates 7–9, out-of-domain tech in the low single digits, Airbnb at the
 floor.** The system rewards genuine Industry-4.0 fit and is not fooled into
 producing a high score for a consumer travel site. Note the nuance between the
-two "weak" cases: Notion (a B2B tool with a thin low-code thread) lands at 5
-with a measured justification, correctly *above* Viz.ai's healthcare-AI 3 and
+two "weak" cases: Notion (a B2B tool with a thin low-code thread) lands at 6
+with a measured justification, correctly *above* Viz.ai's healthcare-AI 4 and
 well above Airbnb's 2.
 
 Reproduce with `python -m scripts.batch_eval` (app running); per-site JSON and
