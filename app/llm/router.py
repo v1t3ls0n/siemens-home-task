@@ -17,7 +17,7 @@ import os
 import threading
 from typing import Any
 
-from agents import Agent, Runner, set_tracing_disabled
+from agents import Agent, ModelSettings, Runner, set_tracing_disabled
 from agents.extensions.models.litellm_model import LitellmModel
 
 from app.config import OLLAMA_BASE_URL, cfg
@@ -75,23 +75,45 @@ def usage_report() -> dict:
 # Tier-routed agent execution with fallback chain
 # --------------------------------------------------------------------------
 
+# Models that rejected the `temperature` parameter (e.g. reasoning models that
+# don't expose it). Remembered per process so we skip the wasted attempt on the
+# next call instead of 400-ing every time.
+_no_temperature: set[str] = set()
+
+
 async def run_agent(tier: str, build_agent, input_text: str, max_turns: int = 10):
-    """build_agent(model) -> Agent. Tries primary then fallbacks."""
+    """build_agent(model, model_settings) -> Agent. Tries primary then fallbacks.
+
+    For each model we first try temperature=0 (reproducible output); if the model
+    rejects `temperature` (reasoning models do), we retry the SAME model without
+    it and remember that for next time. So temperature-capable models get
+    determinism, and models that don't expose it still work.
+    """
     tier_cfg = cfg()["routing"][tier]
     specs = [tier_cfg["primary"], *tier_cfg.get("fallbacks", [])]
 
     last_err: Exception | None = None
     for spec in specs:
-        try:
-            agent: Agent = build_agent(resolve_model(spec))
-            result = await Runner.run(agent, input_text, max_turns=max_turns)
-            try:  # usage accounting (best-effort)
-                u = result.context_wrapper.usage
-                record_usage(_model_name(spec), u.input_tokens, u.output_tokens)
-            except Exception:
-                pass
-            return result
-        except Exception as e:  # provider down / rate limit / model error
-            log.warning("tier=%s model=%s failed: %s — trying fallback", tier, spec, e)
-            last_err = e
+        # settings to try, in order: temperature=0 (unless known-unsupported), then plain
+        attempts = ([None] if spec in _no_temperature
+                    else [ModelSettings(temperature=0.0), None])
+        for settings in attempts:
+            try:
+                agent: Agent = build_agent(resolve_model(spec), settings)
+                result = await Runner.run(agent, input_text, max_turns=max_turns)
+                try:  # usage accounting (best-effort)
+                    u = result.context_wrapper.usage
+                    record_usage(_model_name(spec), u.input_tokens, u.output_tokens)
+                except Exception:
+                    pass
+                return result
+            except Exception as e:
+                if settings is not None and "temperature" in str(e).lower():
+                    _no_temperature.add(spec)   # remember; retry same model plain
+                    log.info("model %s rejects temperature — retrying without", spec)
+                    continue
+                log.warning("tier=%s model=%s failed: %s — trying fallback",
+                            tier, spec, e)
+                last_err = e
+                break   # not a temperature issue → move to next model
     raise RuntimeError(f"all models failed for tier '{tier}': {last_err}")

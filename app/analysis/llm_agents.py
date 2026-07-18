@@ -10,7 +10,7 @@ the numeric metrics, returns a MatchReport. Structured outputs on both
 (`output_type=` pydantic models) — no JSON parsing by hand.
 """
 
-from agents import Agent, function_tool
+from agents import Agent, ModelSettings, function_tool
 
 from app.models import MatchReport, StartupProfile
 from app.search.store import get_store
@@ -43,7 +43,7 @@ def read_page(source_url: str) -> str:
     return "\n".join(c["chunk"] for c in chunks) or f"no page at {source_url}"
 
 
-def build_researcher(model) -> Agent:
+def build_researcher(model, model_settings: ModelSettings | None = None) -> Agent:
     return Agent(
         name="researcher",
         model=model,
@@ -54,11 +54,12 @@ def build_researcher(model) -> Agent:
             "— no outside knowledge. Cite the pages you used in evidence_urls."
         ),
         tools=[list_startup_pages, read_page],
+        model_settings=model_settings or ModelSettings(),
         output_type=StartupProfile,
     )
 
 
-def build_analyst(model) -> Agent:
+def build_analyst(model, model_settings: ModelSettings | None = None) -> Agent:
     return Agent(
         name="analyst",
         model=model,
@@ -79,5 +80,6 @@ def build_analyst(model) -> Agent:
             "competitive_complementarity: 10 = purely complementary, fills a gap "
             "Siemens lacks; 1 = directly competes with a Siemens product."
         ),
+        model_settings=model_settings or ModelSettings(),
         output_type=MatchReport,
     )
