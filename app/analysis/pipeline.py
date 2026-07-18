@@ -58,39 +58,65 @@ def normalize_url(url: str) -> str:
     return url
 
 
-async def analyze(url: str, force: bool = False) -> dict:
+async def analyze_events(url: str, force: bool = False):
+    """Run the pipeline as an async generator, yielding real progress events
+    so the UI can show what the agent is actually doing (cache hit vs crawl,
+    which stage, which model tier). The terminal event is {stage:'done',
+    result:{...}}; errors surface as {stage:'error', message:...}. `analyze()`
+    below drains this to a plain result for the POST API and the batch eval."""
     url = normalize_url(url)
+    yield {"stage": "start", "message": f"Analyzing {url}"}
+
     if not force:
         hit = cached_analysis(url)
         if hit:
             hit["cached"] = True
-            return hit
+            yield {"stage": "cache", "message": "Found a cached analysis — "
+                   "returning it instantly (no crawl, no LLM cost)"}
+            yield {"stage": "done", "result": hit}
+            return
 
     store = get_store()
     t0 = time.time()
     usage_before = usage_report()["total_cost_usd"]
 
-    seed_reference_data(store)                       # idempotent (checksums)
+    yield {"stage": "seed", "message": "Preparing Siemens reference data "
+           "(re-embedding only what changed)"}
+    seed_reference_data(store)                        # idempotent (checksums)
 
     # 1. ingest ------------------------------------------------------------
+    yield {"stage": "crawl", "message": f"Crawling {url} — fetching product "
+           "and about pages"}
     pages = crawl(url)
+    yield {"stage": "crawled", "message": f"Read {len(pages)} page(s); "
+           "chunking and embedding"}
     ingest_stats = index_startup_pages(store, pages)
+    yield {"stage": "indexed", "message": "Indexed "
+           f"({ingest_stats['new']} new, {ingest_stats['updated']} updated, "
+           f"{ingest_stats['unchanged']} unchanged)"}
     group_id = ingest_stats["group_id"]
 
     # 2. research (light tier) ----------------------------------------------
+    yield {"stage": "research", "message": "Research agent reading the pages "
+           "to build a product profile (fast model)"}
     set_research_target(group_id)
     research = await run_agent(
         "light", build_researcher,
         f"Research the startup whose pages are indexed (site: {url}).")
     profile = research.final_output          # StartupProfile
+    yield {"stage": "profiled", "message": f"Profiled: {profile.company_name}"}
 
     # 3. numeric metrics -----------------------------------------------------
+    yield {"stage": "metrics", "message": "Computing cosine similarity vs the "
+           "Siemens portfolio and existing partners"}
     profile_vec = embed([f"{profile.summary} "
                          f"Technologies: {', '.join(profile.technologies)}"])[0]
     metrics = compute_metrics(store, profile_vec, group_id)
     siemens_hits = store.search(profile_vec, doc_type="siemens", k=6)
 
     # 4. analysis (heavy tier) ----------------------------------------------
+    yield {"stage": "analyze", "message": "Analyst agent scoring the "
+           "partnership fit and writing justifications (frontier model)"}
     analyst_input = json.dumps({
         "startup_profile": profile.model_dump(),
         "relevant_siemens_products": [
@@ -114,4 +140,13 @@ async def analyze(url: str, force: bool = False) -> dict:
     with _conn() as c:
         c.execute("INSERT OR REPLACE INTO analyses VALUES (?, ?, ?)",
                   (url, json.dumps(result, ensure_ascii=False), time.time()))
+    yield {"stage": "done", "result": result}
+
+
+async def analyze(url: str, force: bool = False) -> dict:
+    """Plain result (used by the POST API and the batch eval)."""
+    result = None
+    async for ev in analyze_events(url, force):
+        if ev["stage"] == "done":
+            result = ev["result"]
     return result

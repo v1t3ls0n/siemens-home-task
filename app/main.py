@@ -1,12 +1,13 @@
 """FastAPI entry point."""
 
+import json
 import logging
 from pathlib import Path
 
 from fastapi import Depends, FastAPI, HTTPException
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, StreamingResponse
 
-from app.analysis.pipeline import analyze, list_analyses
+from app.analysis.pipeline import analyze, analyze_events, list_analyses
 from app.auth import require_auth
 from app.llm.router import usage_report
 from app.models import AnalyzeRequest
@@ -29,6 +30,25 @@ async def api_analyze(req: AnalyzeRequest, _: None = Depends(require_auth)):
     except Exception as e:
         logging.exception("analysis failed")
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/analyze/stream")
+async def api_analyze_stream(url: str, force: bool = False,
+                            _: None = Depends(require_auth)):
+    """Server-Sent Events: streams live pipeline progress, then the result.
+    The browser's EventSource carries the Basic-auth credentials automatically
+    once the user has logged in, so this stays behind the same auth."""
+    async def gen():
+        try:
+            async for ev in analyze_events(url.strip(), force=force):
+                yield f"data: {json.dumps(ev, ensure_ascii=False)}\n\n"
+        except Exception as e:
+            logging.exception("analysis failed")
+            yield f"data: {json.dumps({'stage': 'error', 'message': str(e)})}\n\n"
+
+    return StreamingResponse(gen(), media_type="text/event-stream",
+                             headers={"Cache-Control": "no-cache",
+                                      "X-Accel-Buffering": "no"})
 
 
 @app.get("/api/analyses")

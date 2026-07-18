@@ -58,20 +58,49 @@
 let charts = [];
 function chart(id, cfg){ charts.push(new Chart(document.getElementById(id), cfg)); }
 
-async function run(){
+let es = null;
+function run(){
   const st = document.getElementById('status');
   document.getElementById('result').style.display = 'none';
   charts.forEach(c => c.destroy()); charts = [];
-  st.textContent = 'Crawling site → research agent → metrics → analyst agent... (1-2 min)';
-  const r = await fetch('/api/analyze', {method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({url: document.getElementById('url').value.trim(),
-                          force: document.getElementById('force').checked})});
-  const d = await r.json();
-  if (!r.ok){ st.textContent = 'Error: ' + (d.detail || JSON.stringify(d)); return; }
-  st.textContent = d.cached ? 'Served from cache.' :
-    `Done in ${d.runtime_s}s, LLM cost ≈ $${d.cost_usd}`;
-  render(d);
+  if (es) es.close();
+
+  const url = document.getElementById('url').value.trim();
+  const force = document.getElementById('force').checked;
+  if (!url){ st.textContent = 'Enter a startup URL.'; return; }
+
+  // live progress feed via Server-Sent Events — shows what the agent is
+  // actually doing (cache hit vs crawl, which stage, which model tier).
+  const log = [];
+  let finished = false;
+  const q = '/api/analyze/stream?url=' + encodeURIComponent(url) + '&force=' + force;
+  es = new EventSource(q);
+
+  es.onmessage = (e) => {
+    const ev = JSON.parse(e.data);
+    if (ev.stage === 'done'){
+      finished = true; es.close();
+      const d = ev.result;
+      st.innerHTML = (d.cached ? '✓ Served from cache (instant, $0)'
+        : `✓ Done in ${d.runtime_s}s · LLM cost ≈ $${d.cost_usd}`);
+      render(d);
+      return;
+    }
+    if (ev.stage === 'error'){
+      finished = true; es.close();
+      st.innerHTML = '⚠ Error: ' + ev.message;
+      return;
+    }
+    // running stage — show a small timeline of steps, newest highlighted
+    log.push(ev.message);
+    st.innerHTML = log.map((m,i) =>
+      (i === log.length-1 ? '▶ <b>'+m+'</b>' : '✓ '+m)).join('<br>');
+  };
+  es.onerror = () => {
+    if (finished) return;              // normal close after 'done'
+    finished = true; es.close();
+    st.innerHTML = '⚠ Connection lost — please retry.';
+  };
 }
 
 function render(d){
