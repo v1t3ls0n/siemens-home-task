@@ -321,7 +321,7 @@ reference data. Sites behind aggressive bot protection are skipped gracefully.
 Scoring has **two distinct layers** — keeping them separate is the key to
 reading the output correctly.
 
-### Layer 1 — numeric cosine metrics (deterministic; numpy, no LLM)
+### Layer 1 — numeric cosine metrics (numpy geometry, no LLM in the maths)
 
 The research agent's output is condensed into one **profile vector**: the
 embedding of the startup's summary + technologies. That single vector is then
@@ -334,8 +334,22 @@ partner_similarity[k]      = max over k's chunks of  cosine(profile_vec, chunk) 
 ```
 
 (`max over chunks` because a product or partner may be described by several
-chunks — we take its best-matching one.) These numbers are pure geometry: the
-same input always yields the same value, no model involved.
+chunks — we take its best-matching one.) The cosine maths itself is pure
+geometry — given a fixed `profile_vec`, the same vectors always produce the same
+numbers, no model in the loop.
+
+**An honest caveat about "deterministic".** The `profile_vec` is the embedding
+of an **LLM-written summary**, and LLM output is not deterministic — the same
+site can yield a slightly different summary on another run, so the Layer-1
+numbers can move a little run-to-run. What *is* strictly deterministic is (a) the
+embedding function (identical text → identical vector) and (b) the cosine
+computation (fixed vectors → fixed numbers). In practice the drift is small: two
+runs on Cybord gave a self-match of **0.828 vs 0.831**. The value of Layer 1
+isn't that the whole pipeline is reproducible — it's that **the LLM never
+invents the similarity numbers; they are measured**, and they anchor the model's
+judgment in Layer 2. (`temperature=0` would tighten this further, but the
+reasoning models used here don't expose that parameter — see
+[Design decisions](#design-decisions).)
 
 **Cosine similarity** ranges from -1 to 1 and measures *semantic direction* —
 how close in meaning two texts are. Intuition for the values you'll see here:
@@ -566,10 +580,18 @@ data/                    reference data (versioned, regenerable)
    decides *what exists*, the agents decide *what it means*. Runs are
    reproducible and debuggable, and the index is a persistent asset — every
    re-run gets cheaper.
-2. **Tier routing, not one model.** Reading web pages doesn't need a frontier
-   model; scoring a partnership does. Splitting the pipeline by required
-   capability is the single biggest LLM cost lever, and the fallback chains
-   double as availability engineering.
+2. **Tier routing, not one model — and why profiling stays on the cheap tier.**
+   Reading web pages and summarizing them is *extraction*; scoring a partnership
+   is *judgment*. Splitting the pipeline by required capability is the single
+   biggest LLM cost lever, and the fallback chains double as availability
+   engineering. This was checked, not assumed: the profile is load-bearing (every
+   downstream metric derives from it), so I A/B-tested running the profiling step
+   on the **frontier** model instead of the cheap one. The result on Cybord — a
+   near-identical summary and downstream metrics (self-match 0.818 vs 0.828, same
+   top-2 products EDA/Tecnomatix, correlations within ~0.015) at **~2× the cost**
+   (the profiling step is the token-heavy one, as it reads whole pages). So
+   extraction stays on the light tier and only the reasoning-heavy scoring pays
+   for the strong model.
 3. **Checksums + dual timestamps on every document.** "Has the source changed
    since we looked?" is O(1), and unchanged content costs zero tokens.
 4. **Numbers before narrative.** Cosine similarities are computed outside the
@@ -588,6 +610,14 @@ data/                    reference data (versioned, regenerable)
    (`list_startup_pages` / `read_page`) hit our own store — analysis is
    reproducible against a frozen snapshot, and no LLM decision can trigger
    unbounded crawling.
+9. **Reproducibility where the models allow it.** The router asks for
+   `temperature=0` for reproducible output, but the reasoning models used here
+   reject that parameter (HTTP 400). Rather than hardcode it and crash, the
+   router tries `temperature=0`, falls back to the same model without it when
+   unsupported, and remembers that model — so temperature-capable providers in
+   the fallback chain get determinism while reasoning models still run. Net:
+   run-to-run variance is *bounded* by the deterministic Layer-1 geometry, not
+   fully eliminated, and the README says so plainly rather than overclaiming.
 
 ## Deployment
 
