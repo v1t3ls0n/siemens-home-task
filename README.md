@@ -413,7 +413,7 @@ The UI shows:
 | **Radar** — 5 fit dimensions (technology overlap, market fit, integration potential, competitive complementarity, maturity signals), each 1-10 with an explanation — all use the same polarity, higher is better | *What kind* of fit is this? |
 | **Bar** — cosine correlation per Siemens product | *Which Siemens products* does the offering relate to, and how strongly? |
 | **Bar** — cosine similarity per existing Dynamo partner | *Which proven partners* does this startup resemble? |
-| **Heatmap** — startup content chunks × Siemens products | *Where exactly* in the startup's own material does the overlap live? |
+| **Heatmap** — startup content chunks × top 8 Siemens products (the bar chart above shows the full ranking; the heatmap is capped for readability) | *Where exactly* in the startup's own material does the overlap live? |
 
 Each analysis also reports runtime, LLM cost, and ingest stats
 (new / updated / unchanged pages).

@@ -46,9 +46,11 @@
     <div class="muted">which proven Dynamo partners this startup most resembles</div>
     <div class="chartbox" id="partnersBox"><canvas id="partners"></canvas></div></div>
   <div class="card">
-    <b>Correlation heatmap — startup content &times; Siemens products</b>
+    <b>Correlation heatmap — startup content &times; top 8 Siemens products</b>
     <div class="muted">where exactly the overlap lives: each cell = max cosine
-      similarity between a crawled startup chunk and a product's chunks</div>
+      similarity between a crawled startup chunk and a product's chunks. Limited
+      to the 8 highest-correlating products (the full ranking is in the bar chart
+      above) to keep the grid readable.</div>
     <div id="heatmap" style="overflow-x:auto;margin-top:.5rem"></div></div>
   <div class="card"><b>Dimension explanations</b>
     <ul id="dims"></ul>
