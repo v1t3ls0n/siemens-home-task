@@ -27,15 +27,13 @@ embeddings:
   model: text-embedding-3-small
   dim: 1536
 
-# USD per 1M tokens — used ONLY for the /api/usage cost report. A model not
-# listed here is counted as $0 (e.g. local ollama). The gpt-5.4/5.5/5.6 rows
-# are PLACEHOLDERS — verify them against platform.openai.com/docs/pricing so
-# the cost report is accurate; getting them wrong only skews the report, not
-# the analysis.
+# USD per 1M tokens (standard tier, short context) — used ONLY for the
+# /api/usage cost report. A model not listed here is counted as $0 (e.g. local
+# ollama). Verified against platform.openai.com/docs/pricing (2026-07).
 prices:
-  "gpt-5.6-sol":        {input: 1.25, output: 10.0}   # VERIFY
-  "gpt-5.5":            {input: 1.25, output: 10.0}   # VERIFY
-  "gpt-5.4-mini":       {input: 0.25, output: 2.0}    # VERIFY
+  "gpt-5.6-sol":        {input: 5.0,  output: 30.0}
+  "gpt-5.5":            {input: 5.0,  output: 30.0}
+  "gpt-5.4-mini":       {input: 0.75, output: 4.5}
   "claude-opus-4-8":    {input: 5.0,  output: 25.0}
   "claude-haiku-4-5":   {input: 1.0,  output: 5.0}
   "text-embedding-3-small": {input: 0.02, output: 0.0}
