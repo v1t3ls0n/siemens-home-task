@@ -33,8 +33,12 @@ class VectorStore(Protocol):
 
 
 def get_store() -> VectorStore:
+    import os
     from app.config import cfg
-    if cfg()["search"]["backend"] == "opensearch":
+    # SEARCH_BACKEND env var overrides config.yaml — lets a PaaS deploy pick the
+    # numpy 'local' backend (no OpenSearch service needed) without editing files.
+    backend = os.environ.get("SEARCH_BACKEND") or cfg()["search"]["backend"]
+    if backend == "opensearch":
         from app.search.opensearch_store import OpenSearchStore
         return OpenSearchStore()
     from app.search.local_store import LocalStore

@@ -489,14 +489,60 @@ data/                    reference data (versioned, regenerable)
 
 ## Deployment
 
+### Access control
+
+The deployed instance is wired to real (paid) LLM API keys and this repo is
+public, so the app supports **optional HTTP Basic Auth**: set `APP_USER` and
+`APP_PASSWORD` and the whole app is locked behind a browser login; leave them
+unset (local dev) and it stays open. `GET /api/health` is always open for the
+platform's health check. **Always set these in any public deployment** — see
+[app/auth.py](app/auth.py).
+
+### Railway (paid, single service — recommended for a demo)
+
+Deploys straight from the `Dockerfile`. The container honours Railway's
+injected `$PORT`.
+
+1. New Project → Deploy from GitHub repo.
+2. Variables: `OPENAI_API_KEY`, `APP_USER`, `APP_PASSWORD`, `SEARCH_BACKEND=local`,
+   and `STATE_DIR=/data`.
+3. Attach a volume mounted at `/data` so the SQLite caches persist across
+   redeploys (optional for a short-lived demo — it re-seeds on first request).
+
+`SEARCH_BACKEND=local` uses the built-in numpy vector store — at this scale
+(~hundreds of vectors) it is functionally identical to OpenSearch and needs no
+second service.
+
+### Railway with OpenSearch (faithful to the production architecture)
+
+If you want the live demo to run the real vector DB (e.g. to mirror what you
+describe as the architecture), add OpenSearch as a second Railway service:
+
+1. Add Service → Docker Image → `opensearchproject/opensearch:2.17.0`.
+2. Its variables: `discovery.type=single-node`,
+   `plugins.security.disabled=true`, `OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m`,
+   `OPENSEARCH_INITIAL_ADMIN_PASSWORD=<something-strong>`; attach a volume at
+   `/usr/share/opensearch/data`. Give the service ~1 GB RAM (OpenSearch is a
+   JVM service and will OOM below that).
+3. On the app service, drop `SEARCH_BACKEND` (or set it to `opensearch`) and
+   set `OPENSEARCH_URL=http://<opensearch-service>.railway.internal:9200`
+   (Railway private networking).
+
+Tradeoff: more faithful and more impressive if inspected, but costs more RAM
+and adds a service. For a few-days demo the single-service `local` path is the
+pragmatic choice; the OpenSearch integration is fully present in the codebase
+either way.
+
+### Other targets
+
 | Path | How |
 |---|---|
-| **VM (full stack)** | Any small VM (e.g. Oracle Cloud free tier): clone → `.env` → `docker compose up -d` |
-| **Free PaaS (no OpenSearch)** | Set `search.backend: local`, deploy the `Dockerfile` to Render/Railway, add `OPENAI_API_KEY`. Same app — the store interface swaps the backend |
-| **Managed OpenSearch** | Point `OPENSEARCH_URL` at any hosted cluster, deploy the app anywhere |
+| **VM (full stack)** | Any small VM (e.g. Oracle Cloud free tier): clone → `.env` → `docker compose up -d` (runs app + OpenSearch together) |
+| **Managed OpenSearch** | Point `OPENSEARCH_URL` at any hosted cluster (Aiven, AWS OpenSearch), deploy the app anywhere |
 
-Caches (SQLite/localstore) are ephemeral on free tiers — acceptable for a POC:
-they are performance optimizations, not data.
+Caches (SQLite/localstore) are performance optimizations, not data — safe to
+lose. With a mounted volume + `STATE_DIR` they persist; without one they
+rebuild on the next request.
 
 ## Known limitations
 
@@ -511,3 +557,6 @@ Deliberate scope cuts, in the spirit of an honest POC:
 - **Local models must support tool calling** (qwen2.5 and llama3.1 do).
 - **Scores are decision support, not decisions** — the justifications and raw
   metrics exist precisely so a human can disagree with the model.
+- **Auth is a single shared HTTP Basic credential** — enough to keep a public
+  demo's API keys from being abused; a production system would use real
+  per-user auth (OAuth/SSO). See [Deployment → Access control](#access-control).
