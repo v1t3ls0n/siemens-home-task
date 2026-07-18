@@ -220,20 +220,33 @@ def parse_live_page() -> tuple[dict[str, dict], dict[str, list[str]]]:
             if desc and len(desc) > len(entry["description"]):
                 entry["description"] = desc
 
-    # focus-area tiles: category h3 + linked startup names
+    # focus-area tiles: category h3 + linked startup names.
+    # IMPORTANT: the "Why should you join Dynamo?" section reuses the same
+    # .three-column-tile markup, but its <li>s are plain-text benefit bullets
+    # ("Early product validation…") with NO link. Rule: a tile whose <li>s
+    # exist but none are links is a benefit tile — skip it entirely. A
+    # focus-area tile either lists linked partners or is empty (e.g. "Climate
+    # tech", a real focus area with no example partners yet).
     focus: dict[str, list[str]] = {}
     for wrapper in soup.select(".three-column-tile .tile-flex-wrapper"):
         h3 = wrapper.find("h3")
         if not h3:
             continue
+        lis = wrapper.select("li")
+        linked = [li for li in lis if li.find("a", href=True)]
+        if lis and not linked:
+            continue                         # "Why join Dynamo?" benefit tile
         cat = h3.get_text(strip=True)
-        names = [li.get_text(strip=True) for li in wrapper.select("li")]
-        if cat in FALLBACK_FOCUS_AREAS or names:
-            focus[cat] = names
-            for n in names:
-                key = _norm(n)
-                partners.setdefault(key, {
-                    "name": n, "url": None, "models": [], "description": ""})
+        names = []
+        for li in linked:
+            name = li.get_text(strip=True)
+            if not name:
+                continue
+            names.append(name)
+            entry = partners.setdefault(_norm(name), {
+                "name": name, "url": None, "models": [], "description": ""})
+            entry["url"] = entry.get("url") or _clean_url(li.find("a")["href"])
+        focus[cat] = names                    # may be empty (e.g. Climate tech)
     return partners, focus
 
 
@@ -289,8 +302,14 @@ def main(fetch_sites: bool) -> None:
             time.sleep(0.5)
 
     # 3. write partners.json (description = full embeddable text) -----------
+    # Defence in depth: a real partner always has a link or a collaboration
+    # model. Anything with neither is page furniture (e.g. a stray benefit
+    # bullet) — drop it so it never lands in the partner corpus.
     out = []
     for p in sorted(partners.values(), key=lambda x: x["name"].lower()):
+        if not (p.get("url") or p.get("models")):
+            print(f"skip non-partner entry: {p['name']!r}")
+            continue
         text = p["description"]
         if p.get("models"):
             text += f" Collaboration with Siemens: {', '.join(p['models'])}."
