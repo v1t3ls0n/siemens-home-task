@@ -2,34 +2,34 @@
   "url": "https://www.protex.ai/",
   "profile": {
     "company_name": "Protex AI",
-    "summary": "Protex AI provides an AI-powered site intelligence platform for safety and operations teams. It connects existing CCTV, EHS, and operational systems to detect unsafe behaviors and operational issues, surface leading indicators, and generate reports, alerts, and actionable insights in real time.",
+    "summary": "Protex AI provides an AI-powered site intelligence platform that connects existing cameras, systems, and operational data to detect safety and operational risks, surface leading indicators, and generate actionable insights for EHS and operations teams.",
     "products": [
       "Protex Intelligence",
-      "Safety risk detection from CCTV",
-      "Reporting & Integrations platform",
-      "Strategic Reporting & Agentic Workflows",
+      "Reporting & Integrations",
+      "Safety solution",
+      "EHS Management System integrations",
       "Protex Signal",
       "Protex Pocket",
-      "Alerts & Notifications",
-      "EHS management system integrations"
+      "Alerts & Notifications"
     ],
     "technologies": [
       "AI",
-      "computer vision",
       "video analytics",
+      "computer vision",
+      "data integrations",
       "on-premises processing",
       "anonymization",
       "edge-first architecture",
       "agentic workflows",
       "IoT",
-      "PLC integrations",
-      "systems-of-record integrations"
+      "sensor data",
+      "PLC integrations"
     ],
     "target_industries": [
       "Logistics & supply-chain",
-      "Industrial manufacturing",
-      "Retail & wholesale",
-      "Food & beverage manufacturing",
+      "Industrial Manufacturing",
+      "Retail & Wholesale",
+      "Food & Beverage Manufacturing",
       "Warehousing",
       "Ports"
     ],
@@ -41,36 +41,36 @@
     ]
   },
   "report": {
-    "comparison": "Protex AI complements Siemens DISW by adding edge-first computer vision for workplace safety and operational-risk detection. The strongest indicated integration targets are Insights Hub (0.447), Tecnomatix (0.434), Xcelerator (0.359), Mendix (0.354), and Opcenter (0.335): CCTV-derived events could enrich industrial IoT and manufacturing workflows, dashboards, alerts, and digital-manufacturing analysis. Direct overlap is limited because Protex specializes in safety intelligence rather than core PLM, MES, CAD, or simulation.",
+    "comparison": "Protex AI complements Siemens DISW with edge-first computer vision for workplace safety and operational-risk detection. The strongest indicated fit is with Insights Hub (0.462) for IoT, sensor, camera, and PLC data; Tecnomatix (0.432) for production-context insights; and Opcenter (0.330) for operational workflows. Mendix (0.364) and Xcelerator (0.362) offer plausible application and platform integration paths. It overlaps somewhat with Siemens industrial AI/analytics capabilities but is more specialized in EHS video intelligence.",
     "partnership_score": 8,
-    "partnership_justification": "Strong industrial-market alignment and a credible Xcelerator integration path through IoT, MES, low-code, PLC, and system-of-record connectors. Protex fills a safety-analytics gap with limited competitive conflict. The score is constrained by moderate—not high—product correlations and the absence of retrieved Siemens products or evidence of an existing Siemens integration.",
+    "partnership_justification": "Strong industrial-market alignment and a clear complementary safety use case across manufacturing, logistics, warehousing, food and beverage, and ports. Integration through IoT, PLC, MES, and low-code layers could add leading safety indicators to Xcelerator workflows. The score is moderated by only midrange product correlations and limited supplied evidence about commercial scale, deployment footprint, or validated Siemens integrations.",
     "partner_similarity_score": 6,
-    "partner_similarity_justification": "Moderate resemblance to Siemens partners in industrial AI and machine vision, led by Razor Labs (0.546), Inspekto (0.495), and Percepto (0.454). Protex remains differentiated by focusing on human safety and leading indicators rather than equipment health, inspection, or autonomous monitoring.",
+    "partner_similarity_justification": "Similarity to existing partners is moderate, led by Razor Labs (0.558) and Inspekto (0.507), reflecting shared industrial AI and computer-vision foundations. Lower similarities to Percepto (0.448), Retrocausal (0.439), and Instrumental (0.412) suggest Protex occupies a differentiated EHS and operational-safety niche rather than duplicating a partner exactly.",
     "dimensions": [
       {
         "name": "technology_overlap",
         "score": 6,
-        "explanation": "Shares industrial AI, computer vision, edge processing, IoT, and operational analytics themes, but does not substantially duplicate Siemens' core engineering software."
+        "explanation": "Computer vision, AI, IoT, edge processing, and PLC connectivity overlap with Siemens industrial analytics, while Protex's EHS-focused risk detection is differentiated."
       },
       {
         "name": "market_fit",
         "score": 9,
-        "explanation": "Manufacturing, logistics, warehousing, food and beverage, and ports closely match Siemens' industrial customer base and safety priorities."
+        "explanation": "Its manufacturing, logistics, warehousing, food and beverage, and port customers closely match Siemens industrial markets and safety priorities."
       },
       {
         "name": "integration_potential",
         "score": 8,
-        "explanation": "CCTV and PLC events could feed Insights Hub, Opcenter, Mendix applications, Tecnomatix workflows, and Xcelerator services; Protex already emphasizes integrations and on-premises processing."
+        "explanation": "Strongest paths are Insights Hub, Tecnomatix, Opcenter, Mendix, and Xcelerator through camera, sensor, PLC, alert, and EHS-system integrations."
       },
       {
         "name": "competitive_risk",
-        "score": 3,
-        "explanation": "Low competitive risk: Protex is chiefly an adjacent safety-intelligence layer, although some operational analytics could overlap with Siemens IoT or manufacturing applications."
+        "score": 4,
+        "explanation": "Some competition with Siemens and partner AI analytics is possible, but the specialized workplace-safety layer is primarily complementary."
       },
       {
         "name": "maturity_signals",
-        "score": 7,
-        "explanation": "A multi-product platform, edge architecture, anonymization, alerts, reporting, and EHS integrations suggest deployment readiness, but no customer, scale, funding, or Siemens-validation evidence was provided."
+        "score": 6,
+        "explanation": "A multi-product platform, on-premises architecture, anonymization, and existing integration capabilities indicate readiness, but no customer scale, funding, certifications, or production metrics were supplied."
       }
     ]
   },
@@ -78,79 +78,79 @@
     "product_correlation": [
       {
         "product": "Insights Hub (Industrial IoT, formerly MindSphere)",
-        "similarity": 0.447
+        "similarity": 0.462
       },
       {
         "product": "Strategic technology directions (public statements)",
-        "similarity": 0.441
+        "similarity": 0.447
       },
       {
         "product": "Tecnomatix (Digital Manufacturing)",
-        "similarity": 0.434
+        "similarity": 0.432
       },
       {
         "product": "Dynamo focus areas",
-        "similarity": 0.402
-      },
-      {
-        "product": "NX (CAD / Product Engineering)",
-        "similarity": 0.385
+        "similarity": 0.409
       },
       {
         "product": "Altair (Simulation, HPC & AI — acquired 2025)",
-        "similarity": 0.385
+        "similarity": 0.4
       },
       {
-        "product": "Xcelerator Platform",
-        "similarity": 0.359
-      },
-      {
-        "product": "Collaboration model: Startups as Suppliers",
-        "similarity": 0.354
+        "product": "NX (CAD / Product Engineering)",
+        "similarity": 0.386
       },
       {
         "product": "Mendix (Low-Code Application Platform)",
-        "similarity": 0.354
+        "similarity": 0.364
+      },
+      {
+        "product": "Xcelerator Platform",
+        "similarity": 0.362
+      },
+      {
+        "product": "Collaboration model: Startups as Suppliers",
+        "similarity": 0.349
       },
       {
         "product": "Polarion (Application Lifecycle Management)",
-        "similarity": 0.346
+        "similarity": 0.341
       },
       {
         "product": "Opcenter (MES / Manufacturing Operations)",
-        "similarity": 0.335
-      },
-      {
-        "product": "Teamcenter (PLM)",
-        "similarity": 0.332
+        "similarity": 0.33
       },
       {
         "product": "Siemens EDA (Electronic Design Automation, formerly Mentor Graphics)",
-        "similarity": 0.324
+        "similarity": 0.326
       },
       {
-        "product": "Collaboration model: Portfolio Partners",
+        "product": "Teamcenter (PLM)",
         "similarity": 0.32
       },
       {
-        "product": "Collaboration model: Research Partners",
-        "similarity": 0.315
+        "product": "Collaboration model: Portfolio Partners",
+        "similarity": 0.314
       },
       {
-        "product": "Solid Edge (Mainstream CAD)",
-        "similarity": 0.292
+        "product": "Collaboration model: Research Partners",
+        "similarity": 0.308
       },
       {
         "product": "Eligibility and engagement process",
-        "similarity": 0.289
+        "similarity": 0.3
       },
       {
-        "product": "Collaboration model: Ecosystem Partners",
-        "similarity": 0.262
+        "product": "Solid Edge (Mainstream CAD)",
+        "similarity": 0.3
       },
       {
         "product": "Capital (Electrical / E-E Systems)",
-        "similarity": 0.258
+        "similarity": 0.271
+      },
+      {
+        "product": "Collaboration model: Ecosystem Partners",
+        "similarity": 0.261
       },
       {
         "product": "Simcenter (Simulation & Test)",
@@ -158,113 +158,77 @@
       },
       {
         "product": "Collaboration model: Investment Opportunities",
-        "similarity": 0.239
+        "similarity": 0.248
       },
       {
         "product": "Siemens Dynamo program",
-        "similarity": 0.219
+        "similarity": 0.226
       }
     ],
     "partner_similarity": [
       {
         "name": "Razor Labs",
-        "similarity": 0.546
+        "similarity": 0.558
       },
       {
         "name": "Inspekto",
-        "similarity": 0.495
-      },
-      {
-        "name": "Percepto",
-        "similarity": 0.454
-      },
-      {
-        "name": "Realtime Robotics",
-        "similarity": 0.454
+        "similarity": 0.507
       },
       {
         "name": "SkillReal",
-        "similarity": 0.452
+        "similarity": 0.464
+      },
+      {
+        "name": "Realtime Robotics",
+        "similarity": 0.453
+      },
+      {
+        "name": "Percepto",
+        "similarity": 0.448
       },
       {
         "name": "Retrocausal",
-        "similarity": 0.441
-      },
-      {
-        "name": "Cybord",
-        "similarity": 0.434
+        "similarity": 0.439
       },
       {
         "name": "Teamviewer",
-        "similarity": 0.421
+        "similarity": 0.418
       },
       {
-        "name": "ScopeAR",
+        "name": "Cybord",
         "similarity": 0.416
       },
       {
-        "name": "Instrumental",
-        "similarity": 0.409
+        "name": "ScopeAR",
+        "similarity": 0.413
       },
       {
-        "name": "Portcast",
-        "similarity": 0.391
+        "name": "Instrumental",
+        "similarity": 0.412
       },
       {
         "name": "Goodly Innovation",
-        "similarity": 0.391
+        "similarity": 0.397
+      },
+      {
+        "name": "Portcast",
+        "similarity": 0.393
       },
       {
         "name": "ioTech",
-        "similarity": 0.335
-      },
-      {
-        "name": "Cybellum",
-        "similarity": 0.326
+        "similarity": 0.332
       },
       {
         "name": "Boardera",
+        "similarity": 0.315
+      },
+      {
+        "name": "Cybellum",
         "similarity": 0.314
       },
       {
-        "name": "Ability to expand your product portfolio with external solutions",
-        "similarity": 0.283
-      },
-      {
-        "name": "Early product validation and use of Siemens technology",
-        "similarity": 0.278
-      },
-      {
-        "name": "Hands-on support with: Ventures validation, startups scouting and building first prototypes",
-        "similarity": 0.266
-      },
-      {
-        "name": "Updates on the latest technology trends",
-        "similarity": 0.266
-      },
-      {
-        "name": "First to market with innovative solutions",
-        "similarity": 0.265
-      },
-      {
-        "name": "Access to Siemens' internal network of experts",
-        "similarity": 0.263
-      },
-      {
         "name": "Artiminds",
-        "similarity": 0.259
-      },
-      {
-        "name": "Access to Siemens' ecosystem of customers and partners",
-        "similarity": 0.237
-      },
-      {
-        "name": "Innovation leadership",
-        "similarity": 0.237
-      },
-      {
-        "name": "Early-stage investment opportunities",
-        "similarity": 0.205
+        "similarity": 0.249
       }
     ],
     "heatmap": {
@@ -287,10 +251,10 @@
         "Strategic technology directions (public statements)",
         "Tecnomatix (Digital Manufacturing)",
         "Dynamo focus areas",
-        "NX (CAD / Product Engineering)",
         "Altair (Simulation, HPC & AI — acquired 2025)",
-        "Xcelerator Platform",
-        "Collaboration model: Startups as Suppliers"
+        "NX (CAD / Product Engineering)",
+        "Mendix (Low-Code Application Platform)",
+        "Xcelerator Platform"
       ],
       "values": [
         [
@@ -298,120 +262,120 @@
           0.422,
           0.416,
           0.415,
-          0.34,
           0.352,
-          0.327,
-          0.344
+          0.34,
+          0.328,
+          0.327
         ],
         [
           0.53,
-          0.415,
+          0.416,
           0.475,
           0.452,
-          0.383,
           0.341,
-          0.41,
-          0.446
+          0.383,
+          0.355,
+          0.41
         ],
         [
           0.461,
           0.373,
           0.427,
           0.364,
-          0.289,
           0.26,
-          0.32,
-          0.376
+          0.289,
+          0.311,
+          0.32
         ],
         [
           0.497,
           0.436,
           0.491,
           0.38,
-          0.336,
           0.35,
-          0.349,
-          0.379
+          0.336,
+          0.362,
+          0.349
         ],
         [
           0.423,
           0.365,
           0.406,
           0.34,
-          0.329,
           0.316,
-          0.277,
-          0.342
+          0.329,
+          0.293,
+          0.277
         ],
         [
           0.418,
           0.43,
           0.451,
           0.399,
-          0.329,
           0.34,
-          0.316,
-          0.395
+          0.329,
+          0.319,
+          0.316
         ],
         [
           0.453,
           0.424,
           0.393,
           0.392,
-          0.321,
           0.346,
-          0.306,
-          0.352
+          0.321,
+          0.314,
+          0.306
         ],
         [
           0.328,
           0.306,
           0.364,
           0.317,
-          0.278,
           0.254,
-          0.233,
-          0.32
+          0.278,
+          0.288,
+          0.233
         ],
         [
           0.438,
           0.403,
           0.465,
           0.381,
-          0.361,
           0.348,
-          0.343,
-          0.432
+          0.361,
+          0.36,
+          0.343
         ],
         [
           0.426,
           0.373,
           0.413,
           0.353,
-          0.32,
           0.336,
-          0.279,
-          0.335
+          0.32,
+          0.307,
+          0.279
         ],
         [
           0.417,
           0.432,
           0.46,
           0.387,
+          0.345,
           0.352,
-          0.346,
-          0.336,
-          0.357
+          0.343,
+          0.336
         ],
         [
           0.446,
           0.431,
           0.455,
           0.382,
-          0.331,
           0.318,
-          0.324,
-          0.375
+          0.331,
+          0.334,
+          0.324
         ]
       ]
     }
@@ -422,12 +386,12 @@
     "updated": 0,
     "unchanged": 0
   },
-  "runtime_s": 26.0,
-  "cost_usd": 0.033,
+  "runtime_s": 21.9,
+  "cost_usd": 0.0323,
   "cached": false,
   "_eval": {
     "category": "good",
     "note": "Strong non-listed candidate: AI safety/EHS video analytics for industrial ops. Expect fit 7-9.",
-    "wall_s": 26.2
+    "wall_s": 22.2
   }
 }

@@ -2,36 +2,40 @@
   "url": "https://viz.ai/",
   "profile": {
     "company_name": "Viz.ai",
-    "summary": "Viz.ai provides an AI-powered care coordination platform for healthcare organizations. Its main offering, Viz.ai One, uses more than 50 FDA-cleared AI algorithms to analyze medical imaging and other clinical data, generate real-time insights, and help teams detect suspected disease, coordinate care, and accelerate treatment decisions.",
+    "summary": "Viz.ai provides an AI-powered care coordination platform that helps detect suspected diseases from medical imaging and EHR data, alert care teams in real time, and streamline workflows so patients can get diagnosed, treated, and followed up faster.",
     "products": [
       "Viz.ai One",
       "Viz Assist",
       "Viz Neuro",
       "Viz Aneurysm",
-      "Viz Connect"
+      "Viz Connect",
+      "Viz 3D CTA",
+      "CT Perfusion (CTP)",
+      "Hemorrhage / Intracranial Hemorrhage detection and measurements",
+      "Large Vessel Occlusion (LVO) detection",
+      "Post Acute Stroke workflows"
     ],
     "technologies": [
       "Artificial intelligence",
       "Generative AI",
       "Agentic AI",
       "Medical imaging analysis",
-      "Automated detection",
+      "Computer vision",
       "Real-time alerts",
       "EHR integration",
       "PACS integration",
-      "Mobile/desktop workflow tools",
-      "HIPAA-compliant messaging"
+      "Mobile and desktop workflow tools",
+      "Automated measurement and summarization"
     ],
     "target_industries": [
-      "Healthcare",
+      "Healthcare providers",
       "Hospitals",
-      "Neurology",
+      "Neurology / neurovascular care",
       "Cardiology",
       "Vascular medicine",
       "Trauma care",
       "Radiology",
-      "Pulmonary care",
-      "Life sciences"
+      "Pharmaceutical and medical device companies"
     ],
     "evidence_urls": [
       "https://www.viz.ai/",
@@ -42,377 +46,341 @@
     ]
   },
   "report": {
-    "comparison": "Viz.ai's regulated clinical imaging and care-coordination platform has limited direct overlap with DISW's industrial engineering portfolio. Its AI, real-time analytics, integration, and workflow capabilities conceptually align with Altair, Insights Hub, Mendix, and Xcelerator, but no relevant Siemens product was retrieved and correlations are modest (0.265–0.355). A partnership would likely center on life-sciences innovation, AI infrastructure, workflow prototyping, or regulated software lifecycle support rather than a native DISW portfolio extension.",
-    "partnership_score": 5,
-    "partnership_justification": "Viz.ai is differentiated and mature, with plausible technical integration points, but its hospital-centric clinical workflows sit outside DISW's core industrial software market. Shared life-sciences customers may support a focused pilot, though the supplied evidence does not establish a clear Xcelerator integration path.",
+    "comparison": "Viz.ai specializes in clinical AI, medical-image interpretation, EHR/PACS connectivity, and care coordination. DISW focuses on industrial engineering, simulation, PLM, manufacturing, and IoT. AI and platform concepts provide limited overlap, but no relevant Siemens product was retrieved and correlations are modest: Insights Hub 0.354, Altair 0.327, and Xcelerator 0.277. Potential integration is mainly indirect—using Altair for AI/HPC or Mendix/Xcelerator for workflow applications—rather than a natural DISW portfolio extension.",
+    "partnership_score": 4,
+    "partnership_justification": "Viz.ai is a mature, differentiated AI platform, but its hospital-care workflows sit outside DISW’s core industrial software market. A healthcare-specific innovation or technical-supplier engagement is plausible, yet shared customers and a clear Xcelerator integration path are not demonstrated.",
     "partner_similarity_score": 5,
-    "partner_similarity_justification": "The highest existing-partner similarities are moderate: Razor Labs at 0.474, SkillReal at 0.441, and Goodly Innovation at 0.426. These indicate general affinity around AI, analytics, and operational workflows, but none demonstrates close healthcare or clinical-imaging equivalence.",
+    "partner_similarity_justification": "Moderate similarity to AI and computer-vision partners such as Razor Labs (0.479), SkillReal (0.455), and Inspekto (0.408) supports technical adjacency. However, those partners primarily address industrial operations, inspection, or workforce workflows, whereas Viz.ai targets regulated clinical care.",
     "dimensions": [
       {
         "name": "technology_overlap",
         "score": 5,
-        "explanation": "Both sides use AI, analytics, integration, and workflow technologies, but Viz.ai's medical-imaging algorithms and clinical coordination differ substantially from DISW's engineering and industrial applications."
+        "explanation": "Shared AI, computer vision, real-time data, and workflow automation capabilities, but Viz.ai’s clinical imaging and EHR/PACS stack differs from DISW’s industrial engineering stack."
       },
       {
         "name": "market_fit",
-        "score": 4,
-        "explanation": "Potential fit exists in life sciences and regulated software, but Viz.ai primarily targets hospitals and clinical specialties rather than DISW's core design, manufacturing, and industrial operations buyers."
+        "score": 3,
+        "explanation": "Viz.ai serves hospitals and clinical specialists, with limited direct alignment to DISW’s manufacturing and product-engineering customers."
       },
       {
         "name": "integration_potential",
-        "score": 5,
-        "explanation": "Possible touchpoints include Altair AI/HPC (0.348), Insights Hub (0.355), Xcelerator (0.287), and Mendix (0.265), although no concrete connector, joint architecture, or retrieved Siemens product match is provided."
+        "score": 4,
+        "explanation": "Possible links to Altair AI/HPC, Mendix, Insights Hub, or Xcelerator exist, but correlations are only 0.254–0.354 and no concrete integration point was retrieved."
       },
       {
         "name": "competitive_risk",
         "score": 8,
-        "explanation": "Direct competitive risk is low because Viz.ai delivers clinical decision support and care coordination, not CAD, PLM, simulation, MES, or industrial IoT software."
+        "explanation": "Low direct competitive risk because Viz.ai does not materially compete with DISW’s CAD, PLM, simulation, EDA, MES, or industrial IoT products."
       },
       {
         "name": "maturity_signals",
-        "score": 8,
-        "explanation": "Viz.ai One reportedly includes more than 50 FDA-cleared algorithms plus EHR/PACS integration and HIPAA-compliant workflows, indicating substantial regulatory and deployment maturity."
+        "score": 7,
+        "explanation": "A broad named product suite, multiple clinical specialties, enterprise integrations, and real-time operational workflows indicate meaningful product maturity, though supplied evidence lacks commercial metrics."
       }
     ]
   },
   "metrics": {
     "product_correlation": [
       {
-        "product": "Strategic technology directions (public statements)",
-        "similarity": 0.392
+        "product": "Dynamo focus areas",
+        "similarity": 0.396
       },
       {
-        "product": "Dynamo focus areas",
-        "similarity": 0.387
+        "product": "Strategic technology directions (public statements)",
+        "similarity": 0.39
       },
       {
         "product": "Insights Hub (Industrial IoT, formerly MindSphere)",
-        "similarity": 0.355
+        "similarity": 0.354
       },
       {
         "product": "Altair (Simulation, HPC & AI — acquired 2025)",
-        "similarity": 0.348
-      },
-      {
-        "product": "NX (CAD / Product Engineering)",
-        "similarity": 0.288
-      },
-      {
-        "product": "Xcelerator Platform",
-        "similarity": 0.287
+        "similarity": 0.327
       },
       {
         "product": "Siemens EDA (Electronic Design Automation, formerly Mentor Graphics)",
-        "similarity": 0.282
+        "similarity": 0.292
       },
       {
-        "product": "Collaboration model: Startups as Suppliers",
-        "similarity": 0.28
+        "product": "NX (CAD / Product Engineering)",
+        "similarity": 0.283
       },
       {
-        "product": "Collaboration model: Ecosystem Partners",
-        "similarity": 0.27
-      },
-      {
-        "product": "Tecnomatix (Digital Manufacturing)",
-        "similarity": 0.269
+        "product": "Xcelerator Platform",
+        "similarity": 0.277
       },
       {
         "product": "Teamcenter (PLM)",
-        "similarity": 0.267
+        "similarity": 0.276
       },
       {
-        "product": "Mendix (Low-Code Application Platform)",
-        "similarity": 0.265
-      },
-      {
-        "product": "Opcenter (MES / Manufacturing Operations)",
+        "product": "Collaboration model: Startups as Suppliers",
         "similarity": 0.263
       },
       {
-        "product": "Eligibility and engagement process",
-        "similarity": 0.257
-      },
-      {
-        "product": "Collaboration model: Portfolio Partners",
-        "similarity": 0.249
-      },
-      {
-        "product": "Collaboration model: Research Partners",
-        "similarity": 0.239
-      },
-      {
-        "product": "Polarion (Application Lifecycle Management)",
-        "similarity": 0.237
+        "product": "Collaboration model: Ecosystem Partners",
+        "similarity": 0.262
       },
       {
         "product": "Capital (Electrical / E-E Systems)",
-        "similarity": 0.235
+        "similarity": 0.256
       },
       {
-        "product": "Siemens Dynamo program",
-        "similarity": 0.23
+        "product": "Tecnomatix (Digital Manufacturing)",
+        "similarity": 0.255
+      },
+      {
+        "product": "Mendix (Low-Code Application Platform)",
+        "similarity": 0.254
+      },
+      {
+        "product": "Eligibility and engagement process",
+        "similarity": 0.252
+      },
+      {
+        "product": "Opcenter (MES / Manufacturing Operations)",
+        "similarity": 0.245
+      },
+      {
+        "product": "Collaboration model: Research Partners",
+        "similarity": 0.242
+      },
+      {
+        "product": "Collaboration model: Portfolio Partners",
+        "similarity": 0.238
+      },
+      {
+        "product": "Polarion (Application Lifecycle Management)",
+        "similarity": 0.236
       },
       {
         "product": "Simcenter (Simulation & Test)",
-        "similarity": 0.228
+        "similarity": 0.231
+      },
+      {
+        "product": "Siemens Dynamo program",
+        "similarity": 0.223
       },
       {
         "product": "Collaboration model: Investment Opportunities",
-        "similarity": 0.179
+        "similarity": 0.172
       },
       {
         "product": "Solid Edge (Mainstream CAD)",
-        "similarity": 0.179
+        "similarity": 0.153
       }
     ],
     "partner_similarity": [
       {
         "name": "Razor Labs",
-        "similarity": 0.474
+        "similarity": 0.479
       },
       {
         "name": "SkillReal",
-        "similarity": 0.441
+        "similarity": 0.455
       },
       {
         "name": "Goodly Innovation",
-        "similarity": 0.426
+        "similarity": 0.44
       },
       {
-        "name": "Teamviewer",
-        "similarity": 0.416
+        "name": "ScopeAR",
+        "similarity": 0.411
       },
       {
         "name": "Inspekto",
         "similarity": 0.408
       },
       {
+        "name": "Teamviewer",
+        "similarity": 0.401
+      },
+      {
         "name": "Retrocausal",
-        "similarity": 0.4
+        "similarity": 0.395
       },
       {
         "name": "Cybord",
-        "similarity": 0.396
-      },
-      {
-        "name": "ScopeAR",
-        "similarity": 0.391
-      },
-      {
-        "name": "Instrumental",
-        "similarity": 0.369
+        "similarity": 0.39
       },
       {
         "name": "Realtime Robotics",
-        "similarity": 0.364
+        "similarity": 0.358
+      },
+      {
+        "name": "Instrumental",
+        "similarity": 0.351
       },
       {
         "name": "Percepto",
-        "similarity": 0.322
+        "similarity": 0.333
       },
       {
         "name": "Portcast",
-        "similarity": 0.31
+        "similarity": 0.307
       },
       {
         "name": "Boardera",
-        "similarity": 0.297
+        "similarity": 0.285
       },
       {
         "name": "Cybellum",
-        "similarity": 0.275
-      },
-      {
-        "name": "Hands-on support with: Ventures validation, startups scouting and building first prototypes",
-        "similarity": 0.275
+        "similarity": 0.271
       },
       {
         "name": "ioTech",
-        "similarity": 0.263
-      },
-      {
-        "name": "Updates on the latest technology trends",
         "similarity": 0.254
       },
       {
-        "name": "First to market with innovative solutions",
-        "similarity": 0.251
-      },
-      {
-        "name": "Early product validation and use of Siemens technology",
-        "similarity": 0.244
-      },
-      {
-        "name": "Ability to expand your product portfolio with external solutions",
-        "similarity": 0.225
-      },
-      {
-        "name": "Innovation leadership",
-        "similarity": 0.222
-      },
-      {
         "name": "Artiminds",
-        "similarity": 0.216
-      },
-      {
-        "name": "Early-stage investment opportunities",
-        "similarity": 0.21
-      },
-      {
-        "name": "Access to Siemens' internal network of experts",
-        "similarity": 0.203
-      },
-      {
-        "name": "Access to Siemens' ecosystem of customers and partners",
-        "similarity": 0.202
+        "similarity": 0.197
       }
     ],
     "heatmap": {
       "rows": [
-        "Viz™ Neuro | AI-Powered Neurovascular Ca #0",
-        "Viz™ Neuro | AI-Powered Neurovascular Ca #1",
-        "Viz™ Neuro | AI-Powered Neurovascular Ca #2",
-        "Viz™ Neuro | AI-Powered Neurovascular Ca #3",
-        "Viz™ Neuro | AI-Powered Neurovascular Ca #4",
-        "Viz™ Neuro | AI-Powered Neurovascular Ca #5",
-        "Viz™ Neuro | AI-Powered Neurovascular Ca #6",
-        "Viz™ Neuro | AI-Powered Neurovascular Ca #7",
+        "Viz.ai, the proven AI-powered care coord #0",
+        "Viz.ai, the proven AI-powered care coord #1",
+        "Viz.ai, the proven AI-powered care coord #2",
+        "Viz.ai, the proven AI-powered care coord #3",
+        "Viz.ai, the proven AI-powered care coord #4",
+        "Viz.ai, the proven AI-powered care coord #5",
+        "Viz.ai, the proven AI-powered care coord #6",
+        "Contact us | Viz.ai #0",
+        "Contact us | Viz.ai #1",
         "Viz.ai® One | AI-Powered Care Coordinati #0",
         "Viz.ai® One | AI-Powered Care Coordinati #1",
-        "Viz.ai® One | AI-Powered Care Coordinati #2",
-        "Viz.ai® One | AI-Powered Care Coordinati #3"
+        "Viz.ai® One | AI-Powered Care Coordinati #2"
       ],
       "cols": [
-        "Strategic technology directions (public statements)",
         "Dynamo focus areas",
+        "Strategic technology directions (public statements)",
         "Insights Hub (Industrial IoT, formerly MindSphere)",
         "Altair (Simulation, HPC & AI — acquired 2025)",
+        "Siemens EDA (Electronic Design Automation, formerly Mentor Graphics)",
         "NX (CAD / Product Engineering)",
         "Xcelerator Platform",
-        "Siemens EDA (Electronic Design Automation, formerly Mentor Graphics)",
-        "Collaboration model: Startups as Suppliers"
+        "Teamcenter (PLM)"
       ],
       "values": [
         [
-          0.387,
-          0.412,
-          0.318,
-          0.357,
-          0.322,
-          0.32,
-          0.303,
-          0.316
-        ],
-        [
-          0.375,
-          0.395,
-          0.331,
-          0.329,
-          0.334,
+          0.439,
+          0.402,
           0.338,
-          0.312,
-          0.292
-        ],
-        [
-          0.38,
-          0.367,
-          0.297,
-          0.274,
-          0.278,
-          0.305,
-          0.245,
-          0.31
-        ],
-        [
-          0.288,
-          0.261,
-          0.237,
-          0.298,
-          0.291,
-          0.231,
-          0.251,
-          0.225
-        ],
-        [
-          0.205,
-          0.256,
-          0.275,
-          0.21,
-          0.235,
-          0.209,
-          0.209,
-          0.207
-        ],
-        [
-          0.306,
-          0.327,
-          0.297,
-          0.288,
-          0.277,
-          0.246,
-          0.243,
-          0.226
-        ],
-        [
-          0.315,
-          0.335,
-          0.272,
-          0.322,
-          0.268,
-          0.241,
-          0.251,
-          0.221
-        ],
-        [
-          0.38,
+          0.365,
+          0.307,
           0.314,
-          0.33,
-          0.352,
-          0.25,
-          0.224,
-          0.249,
-          0.221
+          0.338,
+          0.321
         ],
         [
-          0.395,
-          0.431,
+          0.428,
+          0.367,
           0.326,
-          0.356,
-          0.303,
-          0.328,
-          0.296,
-          0.324
-        ],
-        [
-          0.385,
-          0.412,
-          0.319,
-          0.305,
-          0.293,
-          0.325,
-          0.272,
-          0.298
-        ],
-        [
-          0.412,
-          0.412,
-          0.339,
-          0.383,
-          0.339,
-          0.319,
-          0.308,
+          0.291,
+          0.276,
+          0.275,
+          0.329,
           0.311
         ],
         [
-          0.403,
+          0.421,
+          0.384,
+          0.337,
+          0.356,
+          0.289,
+          0.316,
+          0.317,
+          0.292
+        ],
+        [
+          0.443,
+          0.417,
+          0.333,
           0.37,
-          0.29,
-          0.302,
-          0.241,
-          0.256,
-          0.228,
-          0.28
+          0.304,
+          0.328,
+          0.339,
+          0.293
+        ],
+        [
+          0.415,
+          0.346,
+          0.304,
+          0.305,
+          0.26,
+          0.274,
+          0.277,
+          0.252
+        ],
+        [
+          0.387,
+          0.388,
+          0.277,
+          0.31,
+          0.277,
+          0.259,
+          0.301,
+          0.302
+        ],
+        [
+          0.404,
+          0.347,
+          0.307,
+          0.276,
+          0.258,
+          0.254,
+          0.272,
+          0.261
+        ],
+        [
+          0.452,
+          0.373,
+          0.33,
+          0.325,
+          0.298,
+          0.297,
+          0.322,
+          0.331
+        ],
+        [
+          0.342,
+          0.326,
+          0.259,
+          0.26,
+          0.21,
+          0.202,
+          0.237,
+          0.251
+        ],
+        [
+          0.431,
+          0.395,
+          0.326,
+          0.356,
+          0.296,
+          0.303,
+          0.328,
+          0.319
+        ],
+        [
+          0.412,
+          0.385,
+          0.319,
+          0.305,
+          0.272,
+          0.293,
+          0.325,
+          0.299
+        ],
+        [
+          0.411,
+          0.411,
+          0.339,
+          0.382,
+          0.307,
+          0.338,
+          0.318,
+          0.27
         ]
       ]
     }
@@ -423,12 +391,12 @@
     "updated": 0,
     "unchanged": 0
   },
-  "runtime_s": 26.4,
-  "cost_usd": 0.0322,
+  "runtime_s": 25.7,
+  "cost_usd": 0.0308,
   "cached": false,
   "_eval": {
     "category": "weak",
     "note": "AI in healthcare (stroke triage). Real AI, but NOT Industry 4.0 / manufacturing. Expect fit 2-4.",
-    "wall_s": 26.5
+    "wall_s": 26.0
   }
 }

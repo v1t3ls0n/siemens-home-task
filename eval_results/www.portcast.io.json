@@ -2,73 +2,75 @@
   "url": "https://www.portcast.io/",
   "profile": {
     "company_name": "Portcast",
-    "summary": "Portcast provides ocean supply chain visibility and freight intelligence software. Its platform connects shipment data with orders, contracts, and invoices to predict delays, surface operational risks, automate freight audits, and support planning and procurement decisions.",
+    "summary": "Portcast provides ocean supply chain visibility and freight intelligence software. Its platform connects shipment data with orders, contracts, and invoices to predict delays, surface risks, automate freight audits, and support planning and procurement decisions.",
     "products": [
-      "Real-Time Supply Chain Visibility",
-      "Command Center",
-      "Freight Audit Software",
-      "Supply Chain KPI Dashboard",
-      "Container Tracking API",
-      "Predictive Visibility",
-      "Demand Forecasting"
+      "Real-time / predictive container visibility",
+      "Command Center for live shipment exceptions",
+      "AI-powered freight audit software",
+      "Supply chain KPI dashboard / analytics",
+      "Ocean container tracking API for logistics tech companies",
+      "Port congestion tracker",
+      "Port terminal visibility",
+      "CO2e emissions dashboard",
+      "Sailing schedules",
+      "Demand forecasting"
     ],
     "technologies": [
-      "AI",
+      "Artificial Intelligence",
       "Machine Learning",
-      "Predictive Analytics",
-      "Data Integration",
+      "Predictive analytics",
+      "Data integration",
       "API",
-      "Document Processing"
+      "Automation",
+      "Data science"
     ],
     "target_industries": [
-      "Logistics",
-      "Ocean Shipping",
-      "Manufacturers",
-      "Freight Forwarders",
-      "Logistics Technology Companies",
-      "Procurement Teams",
-      "Operations Teams"
+      "Logistics and supply chain",
+      "Manufacturers and BCOs",
+      "Logistics service providers",
+      "Logistics technology companies",
+      "Freight forwarding / transportation"
     ],
     "evidence_urls": [
       "https://www.portcast.io/",
       "https://www.portcast.io/command-center",
       "https://www.portcast.io/freight-audit",
       "https://www.portcast.io/supply-chain-analytics",
-      "https://www.portcast.io/about-us",
-      "https://www.portcast.io/real-time-visibility-for-logistics-technology-companies"
+      "https://www.portcast.io/real-time-visibility-for-logistics-technology-companies",
+      "https://www.portcast.io/about-us"
     ]
   },
   "report": {
-    "comparison": "Portcast extends Siemens DISW from factory operations into inbound/outbound ocean logistics. Its shipment intelligence could enrich Opcenter planning and execution, Insights Hub analytics, and Mendix-built control towers through its tracking API. Direct technology overlap is limited, but no retrieved Siemens product is explicitly focused on ocean freight visibility or freight auditing.",
+    "comparison": "Portcast complements DISW’s manufacturing portfolio by adding inbound/outbound ocean-logistics visibility, delay prediction, freight auditing, emissions data, and demand signals. The strongest indicated touchpoints are Opcenter (0.396) and Insights Hub (0.374), with APIs potentially feeding logistics exceptions into manufacturing operations. Mendix (0.303) could support workflow applications, while Xcelerator (0.293) offers a broader ecosystem route. No directly relevant Siemens products were retrieved, so the fit is adjacent rather than core.",
     "partnership_score": 7,
-    "partnership_justification": "Strong complement for manufacturing customers exposed to ocean-freight disruption, with practical API and data-integration paths into Xcelerator. Opcenter has the highest product correlation (0.400), followed by Insights Hub (0.368), while Xcelerator itself is moderate (0.288). The missing retrieved-product match and limited evidence of existing Siemens integrations constrain the score.",
+    "partnership_justification": "Portcast could connect shipment intelligence to production planning and operational workflows for shared manufacturing customers. Its API and data-integration model provide a credible integration path, although modest product correlations and no retrieved direct match limit confidence.",
     "partner_similarity_score": 8,
-    "partner_similarity_justification": "Portcast is the strongest listed partner match at 0.828, far above the next result, Razor Labs at 0.399. This strongly supports partner-pattern similarity, although the apparent same-name match may reflect an existing or duplicate Portcast record.",
+    "partner_similarity_justification": "The supplied similarity evidence lists Portcast itself at 0.827, far above the next company, Razor Labs at 0.403. This strongly suggests alignment with the partner corpus, though it may partly reflect an exact-name/self-match.",
     "dimensions": [
       {
         "name": "technology_overlap",
-        "score": 4,
-        "explanation": "Both sides use industrial data, AI, analytics, and APIs, but Portcast specializes in ocean logistics rather than Siemens' core engineering and manufacturing software."
+        "score": 5,
+        "explanation": "Both use AI, analytics, integration, and automation, but Portcast focuses on ocean logistics rather than DISW’s core engineering and manufacturing software."
       },
       {
         "name": "market_fit",
         "score": 8,
-        "explanation": "Manufacturers are a direct Portcast segment, and supply-chain disruption, procurement, and operations are relevant to Siemens' industrial customer base."
+        "explanation": "Manufacturers and BCOs overlap well with Siemens’ industrial customer base, especially where shipment disruption affects production."
       },
       {
         "name": "integration_potential",
-        "score": 8,
-        "explanation": "Container Tracking APIs and integrated order, contract, and invoice data could feed Opcenter, Insights Hub, Mendix, and Xcelerator workflows and dashboards."
+        "score": 7,
+        "explanation": "Portcast’s tracking API and exception data could integrate with Opcenter, Insights Hub, Mendix, and Xcelerator workflows."
       },
       {
         "name": "competitive_risk",
         "score": 8,
-        "explanation": "Low direct competitive risk: Portcast fills a logistics-visibility and freight-audit gap rather than replacing MES, PLM, CAD, simulation, or IIoT offerings."
+        "explanation": "The offering is largely complementary; limited direct competition is apparent with Siemens’ listed PLM, MES, IoT, and engineering products."
       },
       {
         "name": "maturity_signals",
-        "score": 7,
-        "explanation": "The profile shows a multi-product platform, production-oriented APIs, predictive capabilities, and several buyer groups; however, deployment scale and enterprise proof points are not provided."
+        "score": 6,
+        "explanation": "A broad product suite, APIs, automation, and enterprise use cases indicate commercialization, but no customer, funding, scale, or deployment metrics were provided."
       }
     ]
   },
@@ -76,105 +78,105 @@
     "product_correlation": [
       {
         "product": "Opcenter (MES / Manufacturing Operations)",
-        "similarity": 0.4
+        "similarity": 0.396
       },
       {
         "product": "Collaboration model: Portfolio Partners",
-        "similarity": 0.393
+        "similarity": 0.395
       },
       {
         "product": "Strategic technology directions (public statements)",
-        "similarity": 0.388
+        "similarity": 0.39
       },
       {
         "product": "Insights Hub (Industrial IoT, formerly MindSphere)",
-        "similarity": 0.368
+        "similarity": 0.374
       },
       {
         "product": "Polarion (Application Lifecycle Management)",
-        "similarity": 0.365
+        "similarity": 0.359
       },
       {
         "product": "Altair (Simulation, HPC & AI — acquired 2025)",
-        "similarity": 0.346
+        "similarity": 0.353
       },
       {
         "product": "Dynamo focus areas",
-        "similarity": 0.304
+        "similarity": 0.314
       },
       {
         "product": "Mendix (Low-Code Application Platform)",
-        "similarity": 0.304
+        "similarity": 0.303
       },
       {
         "product": "Xcelerator Platform",
-        "similarity": 0.288
+        "similarity": 0.293
       },
       {
         "product": "Tecnomatix (Digital Manufacturing)",
-        "similarity": 0.288
+        "similarity": 0.292
       },
       {
         "product": "Capital (Electrical / E-E Systems)",
         "similarity": 0.265
       },
       {
-        "product": "Teamcenter (PLM)",
-        "similarity": 0.261
+        "product": "Collaboration model: Startups as Suppliers",
+        "similarity": 0.263
       },
       {
-        "product": "Collaboration model: Startups as Suppliers",
-        "similarity": 0.259
+        "product": "Teamcenter (PLM)",
+        "similarity": 0.258
       },
       {
         "product": "Collaboration model: Ecosystem Partners",
-        "similarity": 0.252
+        "similarity": 0.256
       },
       {
         "product": "Collaboration model: Research Partners",
-        "similarity": 0.246
+        "similarity": 0.249
       },
       {
         "product": "Eligibility and engagement process",
-        "similarity": 0.242
+        "similarity": 0.246
       },
       {
         "product": "Simcenter (Simulation & Test)",
-        "similarity": 0.241
-      },
-      {
-        "product": "NX (CAD / Product Engineering)",
-        "similarity": 0.239
+        "similarity": 0.246
       },
       {
         "product": "Solid Edge (Mainstream CAD)",
-        "similarity": 0.237
+        "similarity": 0.235
+      },
+      {
+        "product": "NX (CAD / Product Engineering)",
+        "similarity": 0.234
       },
       {
         "product": "Siemens EDA (Electronic Design Automation, formerly Mentor Graphics)",
-        "similarity": 0.219
+        "similarity": 0.218
+      },
+      {
+        "product": "Siemens Dynamo program",
+        "similarity": 0.199
       },
       {
         "product": "Collaboration model: Investment Opportunities",
         "similarity": 0.198
-      },
-      {
-        "product": "Siemens Dynamo program",
-        "similarity": 0.194
       }
     ],
     "partner_similarity": [
       {
         "name": "Portcast",
-        "similarity": 0.828
+        "similarity": 0.827
       },
       {
         "name": "Razor Labs",
-        "similarity": 0.399
+        "similarity": 0.403
       },
       {
         "name": "Cybord",
-        "similarity": 0.385
+        "similarity": 0.389
       },
       {
         "name": "Retrocausal",
@@ -182,7 +184,7 @@
       },
       {
         "name": "Boardera",
-        "similarity": 0.362
+        "similarity": 0.365
       },
       {
         "name": "ScopeAR",
@@ -190,79 +192,43 @@
       },
       {
         "name": "Realtime Robotics",
-        "similarity": 0.329
+        "similarity": 0.328
       },
       {
         "name": "Percepto",
-        "similarity": 0.319
+        "similarity": 0.322
       },
       {
         "name": "SkillReal",
-        "similarity": 0.305
+        "similarity": 0.309
       },
       {
         "name": "Instrumental",
-        "similarity": 0.299
-      },
-      {
-        "name": "Updates on the latest technology trends",
-        "similarity": 0.283
-      },
-      {
-        "name": "First to market with innovative solutions",
-        "similarity": 0.282
+        "similarity": 0.307
       },
       {
         "name": "Goodly Innovation",
-        "similarity": 0.277
-      },
-      {
-        "name": "Teamviewer",
-        "similarity": 0.271
+        "similarity": 0.281
       },
       {
         "name": "Inspekto",
-        "similarity": 0.27
+        "similarity": 0.275
       },
       {
-        "name": "Ability to expand your product portfolio with external solutions",
-        "similarity": 0.267
+        "name": "Teamviewer",
+        "similarity": 0.273
       },
       {
         "name": "Cybellum",
-        "similarity": 0.241
-      },
-      {
-        "name": "Early-stage investment opportunities",
-        "similarity": 0.237
+        "similarity": 0.239
       },
       {
         "name": "ioTech",
         "similarity": 0.231
       },
       {
-        "name": "Access to Siemens' internal network of experts",
-        "similarity": 0.215
-      },
-      {
-        "name": "Early product validation and use of Siemens technology",
-        "similarity": 0.214
-      },
-      {
         "name": "Artiminds",
-        "similarity": 0.21
-      },
-      {
-        "name": "Access to Siemens' ecosystem of customers and partners",
-        "similarity": 0.207
-      },
-      {
-        "name": "Innovation leadership",
-        "similarity": 0.202
-      },
-      {
-        "name": "Hands-on support with: Ventures validation, startups scouting and building first prototypes",
-        "similarity": 0.192
+        "similarity": 0.205
       }
     ],
     "heatmap": {
@@ -297,7 +263,7 @@
           0.354,
           0.32,
           0.335,
-          0.31,
+          0.311,
           0.311,
           0.262
         ],
@@ -344,9 +310,9 @@
         [
           0.321,
           0.371,
-          0.264,
+          0.263,
           0.273,
-          0.257,
+          0.258,
           0.214,
           0.285,
           0.233
@@ -377,7 +343,7 @@
           0.349,
           0.339,
           0.309,
-          0.259,
+          0.26,
           0.321,
           0.304
         ],
@@ -387,7 +353,7 @@
           0.321,
           0.289,
           0.309,
-          0.258,
+          0.259,
           0.288,
           0.274
         ],
@@ -420,12 +386,12 @@
     "updated": 0,
     "unchanged": 0
   },
-  "runtime_s": 27.6,
-  "cost_usd": 0.0326,
+  "runtime_s": 25.4,
+  "cost_usd": 0.0313,
   "cached": false,
   "_eval": {
     "category": "partner",
     "note": "Existing Dynamo partner (supply-chain predictive visibility). High similarity.",
-    "wall_s": 27.8
+    "wall_s": 25.8
   }
 }

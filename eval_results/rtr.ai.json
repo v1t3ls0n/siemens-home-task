@@ -2,13 +2,10 @@
   "url": "https://rtr.ai/",
   "profile": {
     "company_name": "Realtime Robotics",
-    "summary": "Realtime Robotics provides industrial AI software for robotic motion planning, optimization, and control. Its main offerings help users design, program, and commission robot workcells faster by generating collision-free paths, interlocks, task allocation, and optimized cycle times in the cloud or in real time.",
+    "summary": "Realtime Robotics provides industrial AI software for robotic automation, focused on fast motion planning, collision-free path generation, interlock creation, and real-time robot control. Its main products, Resolver and RapidPlan, help users design, validate, program, and deploy robotic workcells faster and with less engineering effort.",
     "products": [
       "Resolver",
-      "RapidPlan",
-      "Industrial AI motion planning and optimization software",
-      "Cloud-based path planning and AI optimization for robot workcells",
-      "Real-time robotic control and autohoming"
+      "RapidPlan"
     ],
     "technologies": [
       "Industrial AI",
@@ -17,14 +14,11 @@
       "Collision avoidance",
       "Real-time control",
       "Optimization",
-      "Simulation integration",
-      "Robot-agnostic signaling",
-      "Sensor data integration"
+      "3D sensing/data"
     ],
     "target_industries": [
       "Manufacturing",
-      "Industrial automation",
-      "Robotics",
+      "Industrial robotics",
       "Factory automation"
     ],
     "evidence_urls": [
@@ -34,36 +28,36 @@
     ]
   },
   "report": {
-    "comparison": "Realtime Robotics complements Siemens DISW with specialized, robot-agnostic motion planning, collision avoidance, task allocation, and cycle-time optimization. The strongest fit is Tecnomatix (0.484), where RapidPlan/Resolver could enhance virtual workcell design and commissioning. Additional integration paths include Insights Hub for operational data, Opcenter for production orchestration, Simcenter/Altair for simulation and optimization, and Xcelerator packaging. Some overlap exists with Tecnomatix robotics simulation, but Realtime Robotics adds differentiated real-time control and automated path generation.",
+    "comparison": "Realtime Robotics complements Siemens DISW with specialized robot motion planning, collision avoidance, interlock generation, and real-time control. The clearest fit is Tecnomatix (0.477): RapidPlan/Resolver could extend digital workcell design and validation into automated, deployable robot paths. Additional integration opportunities exist with Simcenter, Opcenter, Insights Hub, and the Xcelerator Platform, though their correlations are moderate. Competitive overlap is limited mainly to manufacturing simulation and optimization.",
     "partnership_score": 8,
-    "partnership_justification": "Strong manufacturing customer alignment and a credible Xcelerator integration path make this a high-value complement. The main constraint is potential functional overlap with Tecnomatix and the absence of detailed retrieved Siemens product evidence. The exact-name existing-partner similarity of 0.807 is strong evidence of partner fit or prior ecosystem alignment.",
+    "partnership_justification": "Strong manufacturing and factory-automation alignment, with a credible Tecnomatix-to-shop-floor integration path. The startup supplies specialized robotics capabilities rather than replacing Siemens' broader portfolio. The score is moderated by only mid-range product correlations and the absence of retrieved Siemens products or concrete integration evidence.",
     "partner_similarity_score": 9,
-    "partner_similarity_justification": "Realtime Robotics is the top existing-partner match at 0.807, substantially above Razor Labs (0.554) and Retrocausal (0.541). This indicates unusually close alignment with the partner corpus.",
+    "partner_similarity_justification": "Realtime Robotics appears in the existing-partner set with a very high cosine similarity of 0.839, substantially above the next result, Razor Labs at 0.548. This is strong evidence of partner-pattern similarity.",
     "dimensions": [
       {
         "name": "technology_overlap",
         "score": 7,
-        "explanation": "Strong adjacency to Tecnomatix robotics simulation and Altair/Simcenter optimization; overlap is meaningful but Realtime Robotics differentiates through robot-agnostic, real-time motion control."
+        "explanation": "Moderate overlap with Tecnomatix, Simcenter, and Altair in simulation and optimization, but distinctive real-time robot planning and control capabilities."
       },
       {
         "name": "market_fit",
         "score": 9,
-        "explanation": "Direct alignment with Siemens’ manufacturing, robotics, industrial automation, and factory digitalization customers."
+        "explanation": "Direct alignment with Siemens' manufacturing, industrial robotics, and factory-automation customers."
       },
       {
         "name": "integration_potential",
-        "score": 9,
-        "explanation": "Clear opportunities across Tecnomatix, Xcelerator, Insights Hub, Opcenter, and simulation tooling, spanning virtual commissioning through runtime optimization."
+        "score": 8,
+        "explanation": "Strongest path is embedding robot path generation and validation into Tecnomatix workflows, with possible links to Opcenter, Insights Hub, and Xcelerator."
       },
       {
         "name": "competitive_risk",
-        "score": 6,
-        "explanation": "Moderate risk because automated robot programming, collision checking, and workcell optimization can overlap with Tecnomatix capabilities; partnership positioning should emphasize embedded enhancement rather than replacement."
+        "score": 3,
+        "explanation": "Low-to-moderate risk: some overlap in manufacturing simulation exists, but the offering is primarily a specialized complement."
       },
       {
         "name": "maturity_signals",
-        "score": 8,
-        "explanation": "Named commercial products, cloud and real-time deployment modes, and the 0.807 exact partner match indicate solid maturity, though customer deployments and scale metrics were not supplied."
+        "score": 7,
+        "explanation": "Two defined products spanning design through deployment and a very high existing-partner similarity suggest maturity, though deployment scale and customer evidence were not provided."
       }
     ]
   },
@@ -71,193 +65,157 @@
     "product_correlation": [
       {
         "product": "Strategic technology directions (public statements)",
-        "similarity": 0.519
+        "similarity": 0.495
       },
       {
         "product": "Tecnomatix (Digital Manufacturing)",
-        "similarity": 0.484
+        "similarity": 0.477
       },
       {
         "product": "Dynamo focus areas",
-        "similarity": 0.453
-      },
-      {
-        "product": "Altair (Simulation, HPC & AI — acquired 2025)",
         "similarity": 0.438
       },
       {
+        "product": "Altair (Simulation, HPC & AI — acquired 2025)",
+        "similarity": 0.418
+      },
+      {
         "product": "Collaboration model: Portfolio Partners",
-        "similarity": 0.427
-      },
-      {
-        "product": "Insights Hub (Industrial IoT, formerly MindSphere)",
-        "similarity": 0.414
-      },
-      {
-        "product": "Teamcenter (PLM)",
-        "similarity": 0.393
+        "similarity": 0.409
       },
       {
         "product": "Collaboration model: Startups as Suppliers",
-        "similarity": 0.382
+        "similarity": 0.391
       },
       {
         "product": "Collaboration model: Research Partners",
-        "similarity": 0.382
+        "similarity": 0.385
+      },
+      {
+        "product": "Teamcenter (PLM)",
+        "similarity": 0.384
+      },
+      {
+        "product": "Insights Hub (Industrial IoT, formerly MindSphere)",
+        "similarity": 0.376
       },
       {
         "product": "NX (CAD / Product Engineering)",
-        "similarity": 0.35
+        "similarity": 0.362
       },
       {
         "product": "Polarion (Application Lifecycle Management)",
-        "similarity": 0.338
+        "similarity": 0.352
       },
       {
         "product": "Xcelerator Platform",
-        "similarity": 0.337
-      },
-      {
-        "product": "Simcenter (Simulation & Test)",
-        "similarity": 0.333
-      },
-      {
-        "product": "Opcenter (MES / Manufacturing Operations)",
-        "similarity": 0.331
-      },
-      {
-        "product": "Collaboration model: Ecosystem Partners",
-        "similarity": 0.321
+        "similarity": 0.348
       },
       {
         "product": "Solid Edge (Mainstream CAD)",
+        "similarity": 0.335
+      },
+      {
+        "product": "Simcenter (Simulation & Test)",
+        "similarity": 0.326
+      },
+      {
+        "product": "Opcenter (MES / Manufacturing Operations)",
         "similarity": 0.318
       },
       {
         "product": "Eligibility and engagement process",
-        "similarity": 0.316
+        "similarity": 0.311
       },
       {
-        "product": "Capital (Electrical / E-E Systems)",
-        "similarity": 0.306
-      },
-      {
-        "product": "Mendix (Low-Code Application Platform)",
-        "similarity": 0.297
+        "product": "Collaboration model: Ecosystem Partners",
+        "similarity": 0.305
       },
       {
         "product": "Siemens EDA (Electronic Design Automation, formerly Mentor Graphics)",
-        "similarity": 0.292
+        "similarity": 0.289
       },
       {
-        "product": "Siemens Dynamo program",
+        "product": "Mendix (Low-Code Application Platform)",
         "similarity": 0.285
       },
       {
+        "product": "Siemens Dynamo program",
+        "similarity": 0.282
+      },
+      {
+        "product": "Capital (Electrical / E-E Systems)",
+        "similarity": 0.277
+      },
+      {
         "product": "Collaboration model: Investment Opportunities",
-        "similarity": 0.24
+        "similarity": 0.235
       }
     ],
     "partner_similarity": [
       {
         "name": "Realtime Robotics",
-        "similarity": 0.807
+        "similarity": 0.839
       },
       {
         "name": "Razor Labs",
-        "similarity": 0.554
+        "similarity": 0.548
+      },
+      {
+        "name": "SkillReal",
+        "similarity": 0.541
       },
       {
         "name": "Retrocausal",
         "similarity": 0.541
       },
       {
-        "name": "SkillReal",
-        "similarity": 0.53
-      },
-      {
         "name": "ScopeAR",
-        "similarity": 0.489
-      },
-      {
-        "name": "Goodly Innovation",
-        "similarity": 0.477
+        "similarity": 0.5
       },
       {
         "name": "Teamviewer",
-        "similarity": 0.468
+        "similarity": 0.459
       },
       {
-        "name": "Instrumental",
+        "name": "Goodly Innovation",
         "similarity": 0.454
       },
       {
-        "name": "Inspekto",
-        "similarity": 0.442
+        "name": "Instrumental",
+        "similarity": 0.452
       },
       {
-        "name": "Cybord",
-        "similarity": 0.424
+        "name": "Inspekto",
+        "similarity": 0.438
       },
       {
         "name": "Boardera",
-        "similarity": 0.414
+        "similarity": 0.416
+      },
+      {
+        "name": "Cybord",
+        "similarity": 0.416
       },
       {
         "name": "Percepto",
-        "similarity": 0.341
+        "similarity": 0.368
       },
       {
         "name": "ioTech",
-        "similarity": 0.336
+        "similarity": 0.322
       },
       {
         "name": "Portcast",
-        "similarity": 0.333
-      },
-      {
-        "name": "Early product validation and use of Siemens technology",
-        "similarity": 0.312
-      },
-      {
-        "name": "Updates on the latest technology trends",
-        "similarity": 0.311
+        "similarity": 0.298
       },
       {
         "name": "Cybellum",
-        "similarity": 0.309
-      },
-      {
-        "name": "Ability to expand your product portfolio with external solutions",
-        "similarity": 0.303
-      },
-      {
-        "name": "Access to Siemens' internal network of experts",
-        "similarity": 0.291
-      },
-      {
-        "name": "Innovation leadership",
-        "similarity": 0.29
+        "similarity": 0.296
       },
       {
         "name": "Artiminds",
-        "similarity": 0.286
-      },
-      {
-        "name": "Hands-on support with: Ventures validation, startups scouting and building first prototypes",
-        "similarity": 0.281
-      },
-      {
-        "name": "Access to Siemens' ecosystem of customers and partners",
-        "similarity": 0.273
-      },
-      {
-        "name": "First to market with innovative solutions",
-        "similarity": 0.273
-      },
-      {
-        "name": "Early-stage investment opportunities",
-        "similarity": 0.249
+        "similarity": 0.27
       }
     ],
     "heatmap": {
@@ -281,9 +239,9 @@
         "Dynamo focus areas",
         "Altair (Simulation, HPC & AI — acquired 2025)",
         "Collaboration model: Portfolio Partners",
-        "Insights Hub (Industrial IoT, formerly MindSphere)",
-        "Teamcenter (PLM)",
-        "Collaboration model: Startups as Suppliers"
+        "Collaboration model: Startups as Suppliers",
+        "Collaboration model: Research Partners",
+        "Teamcenter (PLM)"
       ],
       "values": [
         [
@@ -292,9 +250,9 @@
           0.405,
           0.36,
           0.384,
-          0.313,
-          0.398,
-          0.354
+          0.354,
+          0.356,
+          0.398
         ],
         [
           0.497,
@@ -302,9 +260,9 @@
           0.465,
           0.406,
           0.45,
-          0.36,
-          0.391,
-          0.396
+          0.396,
+          0.37,
+          0.391
         ],
         [
           0.487,
@@ -312,9 +270,9 @@
           0.419,
           0.441,
           0.401,
-          0.374,
-          0.368,
-          0.378
+          0.378,
+          0.316,
+          0.369
         ],
         [
           0.386,
@@ -322,9 +280,9 @@
           0.413,
           0.317,
           0.382,
-          0.308,
-          0.302,
-          0.354
+          0.353,
+          0.348,
+          0.302
         ],
         [
           0.382,
@@ -332,9 +290,9 @@
           0.382,
           0.319,
           0.336,
-          0.305,
-          0.327,
-          0.333
+          0.334,
+          0.29,
+          0.327
         ],
         [
           0.335,
@@ -342,19 +300,19 @@
           0.374,
           0.255,
           0.336,
-          0.248,
-          0.306,
-          0.341
+          0.341,
+          0.326,
+          0.307
         ],
         [
           0.376,
           0.401,
           0.421,
-          0.307,
+          0.306,
           0.399,
-          0.292,
-          0.297,
-          0.351
+          0.351,
+          0.345,
+          0.298
         ],
         [
           0.43,
@@ -362,29 +320,29 @@
           0.4,
           0.337,
           0.356,
-          0.326,
-          0.357,
-          0.356
+          0.356,
+          0.287,
+          0.358
         ],
         [
           0.384,
-          0.467,
+          0.468,
           0.428,
           0.391,
           0.397,
-          0.346,
-          0.368,
-          0.393
+          0.393,
+          0.387,
+          0.369
         ],
         [
-          0.417,
+          0.416,
           0.497,
           0.456,
           0.432,
           0.45,
-          0.33,
-          0.418,
-          0.411
+          0.411,
+          0.394,
+          0.418
         ],
         [
           0.363,
@@ -392,9 +350,9 @@
           0.399,
           0.364,
           0.406,
-          0.286,
-          0.38,
-          0.366
+          0.366,
+          0.354,
+          0.38
         ],
         [
           0.351,
@@ -402,9 +360,9 @@
           0.374,
           0.368,
           0.387,
-          0.255,
-          0.35,
-          0.372
+          0.372,
+          0.357,
+          0.35
         ]
       ]
     }
@@ -415,12 +373,12 @@
     "updated": 0,
     "unchanged": 0
   },
-  "runtime_s": 26.0,
-  "cost_usd": 0.0293,
+  "runtime_s": 20.3,
+  "cost_usd": 0.0263,
   "cached": false,
   "_eval": {
     "category": "partner",
     "note": "Existing Dynamo partner (robot motion planning, Process Simulate plug-in). High fit, high similarity.",
-    "wall_s": 26.2
+    "wall_s": 20.6
   }
 }

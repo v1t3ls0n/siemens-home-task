@@ -2,14 +2,15 @@
   "url": "https://www.airbnb.com/",
   "profile": {
     "company_name": "Airbnb",
-    "summary": "Airbnb offers a marketplace for booking vacation rentals and other unique stays, plus experiences and services. The site highlights homes, cabins, beach houses, apartments, villas, and monthly rentals across many destinations.",
+    "summary": "Airbnb is a marketplace for booking and hosting stays, with additional offerings for experiences and services. Its homepage highlights vacation rentals, cabins, beach houses, unique homes, and curated activities/services.",
     "products": [
       "Homes",
       "Experiences",
       "Services",
       "Vacation rentals",
-      "Unique homes",
-      "Monthly rentals"
+      "Cabins",
+      "Beach houses",
+      "Unique homes"
     ],
     "technologies": [
       "Online marketplace",
@@ -18,7 +19,7 @@
     "target_industries": [
       "Travel",
       "Hospitality",
-      "Short-term lodging"
+      "Tourism"
     ],
     "evidence_urls": [
       "https://www.airbnb.com/",
@@ -28,36 +29,36 @@
     ]
   },
   "report": {
-    "comparison": "Airbnb is a consumer travel and lodging marketplace, while Siemens DISW focuses on industrial engineering, manufacturing, lifecycle management, simulation, and IoT. No relevant Siemens products were retrieved, and correlations are weak: Insights Hub 0.235, Mendix 0.210, and Xcelerator 0.193. A limited integration could use Mendix or Insights Hub for property operations, but this is outside Airbnb's stated offering and DISW's core customer workflows.",
+    "comparison": "Airbnb’s consumer travel marketplace has negligible overlap with Siemens DISW’s industrial software portfolio. No relevant Siemens products were retrieved, and correlations are weak: Insights Hub 0.266, Xcelerator 0.225, and Mendix 0.220. A speculative Mendix-based hospitality workflow or smart-property data connection is possible, but it is not supported by Airbnb’s stated offering.",
     "partnership_score": 2,
-    "partnership_justification": "Airbnb is mature and technically capable, but there is no clear Xcelerator integration, industrial use case, or strong shared-customer proposition. Any collaboration would likely be peripheral rather than a technology partnership.",
+    "partnership_justification": "Airbnb is mature and could share some hospitality customers with Siemens broadly, but there is no clear DISW integration, industrial use case, or complementary technology demonstrated. The low product correlations and absence of retrieved product matches indicate poor partnership fit.",
     "partner_similarity_score": 2,
-    "partner_similarity_justification": "Similarities to existing partners are uniformly low; the highest is TeamViewer at 0.293, followed by Portcast at 0.258. These partners generally provide industrial software or operational capabilities, unlike Airbnb's travel marketplace.",
+    "partner_similarity_justification": "Similarity to existing partners is uniformly low; the highest is TeamViewer at 0.299, followed by Boardera at 0.293 and Portcast at 0.278. Airbnb does not resemble the industrial software, automation, AR, robotics, or quality-technology partner set.",
     "dimensions": [
       {
         "name": "technology_overlap",
         "score": 1,
-        "explanation": "Online search and booking have negligible overlap with DISW's CAD, PLM, simulation, MES, EDA, and industrial IoT portfolio."
+        "explanation": "Online accommodation search and booking has almost no overlap with CAD, PLM, MES, simulation, EDA, or industrial IoT."
       },
       {
         "name": "market_fit",
-        "score": 1,
-        "explanation": "Airbnb targets travel, hospitality, and short-term lodging rather than industrial engineering and manufacturing customers."
+        "score": 2,
+        "explanation": "Travel and hospitality sit outside DISW’s core industrial markets, with only indirect smart-building or property-management adjacency."
       },
       {
         "name": "integration_potential",
         "score": 2,
-        "explanation": "Mendix or Insights Hub could theoretically support property workflows, but no concrete integration or relevant Siemens product match is evidenced."
+        "explanation": "Mendix, Xcelerator, or Insights Hub connections are conceivable, but their correlations are only 0.220–0.266 and no concrete integration path is evident."
       },
       {
         "name": "competitive_risk",
-        "score": 1,
-        "explanation": "Airbnb does not materially compete with Siemens DISW; the low score reflects minimal competitive risk."
+        "score": 9,
+        "explanation": "Airbnb is not a meaningful competitor to Siemens DISW; the issue is irrelevance rather than competitive conflict."
       },
       {
         "name": "maturity_signals",
         "score": 10,
-        "explanation": "Airbnb is an established global marketplace with multiple commercial offerings and substantial operating maturity."
+        "explanation": "Airbnb is a large, established platform with multiple commercial offerings and strong market validation."
       }
     ]
   },
@@ -65,193 +66,157 @@
     "product_correlation": [
       {
         "product": "Dynamo focus areas",
-        "similarity": 0.291
-      },
-      {
-        "product": "Collaboration model: Portfolio Partners",
-        "similarity": 0.254
+        "similarity": 0.283
       },
       {
         "product": "Strategic technology directions (public statements)",
-        "similarity": 0.241
+        "similarity": 0.268
       },
       {
         "product": "Insights Hub (Industrial IoT, formerly MindSphere)",
+        "similarity": 0.266
+      },
+      {
+        "product": "Collaboration model: Portfolio Partners",
+        "similarity": 0.257
+      },
+      {
+        "product": "Altair (Simulation, HPC & AI — acquired 2025)",
         "similarity": 0.235
       },
       {
         "product": "Eligibility and engagement process",
-        "similarity": 0.226
-      },
-      {
-        "product": "Collaboration model: Ecosystem Partners",
-        "similarity": 0.214
-      },
-      {
-        "product": "Mendix (Low-Code Application Platform)",
-        "similarity": 0.21
-      },
-      {
-        "product": "Altair (Simulation, HPC & AI — acquired 2025)",
-        "similarity": 0.195
+        "similarity": 0.234
       },
       {
         "product": "Xcelerator Platform",
-        "similarity": 0.193
+        "similarity": 0.225
       },
       {
-        "product": "Collaboration model: Research Partners",
+        "product": "Mendix (Low-Code Application Platform)",
+        "similarity": 0.22
+      },
+      {
+        "product": "Collaboration model: Ecosystem Partners",
+        "similarity": 0.215
+      },
+      {
+        "product": "Polarion (Application Lifecycle Management)",
         "similarity": 0.181
       },
       {
         "product": "Collaboration model: Startups as Suppliers",
-        "similarity": 0.171
-      },
-      {
-        "product": "Collaboration model: Investment Opportunities",
-        "similarity": 0.169
+        "similarity": 0.178
       },
       {
         "product": "Tecnomatix (Digital Manufacturing)",
-        "similarity": 0.16
+        "similarity": 0.172
       },
       {
-        "product": "Polarion (Application Lifecycle Management)",
-        "similarity": 0.149
-      },
-      {
-        "product": "Siemens Dynamo program",
-        "similarity": 0.144
+        "product": "Collaboration model: Investment Opportunities",
+        "similarity": 0.171
       },
       {
         "product": "Capital (Electrical / E-E Systems)",
-        "similarity": 0.144
+        "similarity": 0.167
       },
       {
-        "product": "Siemens EDA (Electronic Design Automation, formerly Mentor Graphics)",
-        "similarity": 0.138
-      },
-      {
-        "product": "Simcenter (Simulation & Test)",
-        "similarity": 0.136
+        "product": "Collaboration model: Research Partners",
+        "similarity": 0.165
       },
       {
         "product": "Opcenter (MES / Manufacturing Operations)",
-        "similarity": 0.122
+        "similarity": 0.151
+      },
+      {
+        "product": "Siemens Dynamo program",
+        "similarity": 0.145
+      },
+      {
+        "product": "Siemens EDA (Electronic Design Automation, formerly Mentor Graphics)",
+        "similarity": 0.145
+      },
+      {
+        "product": "Simcenter (Simulation & Test)",
+        "similarity": 0.13
       },
       {
         "product": "Solid Edge (Mainstream CAD)",
-        "similarity": 0.117
+        "similarity": 0.12
       },
       {
         "product": "NX (CAD / Product Engineering)",
-        "similarity": 0.099
+        "similarity": 0.095
       },
       {
         "product": "Teamcenter (PLM)",
-        "similarity": 0.063
+        "similarity": 0.062
       }
     ],
     "partner_similarity": [
       {
         "name": "Teamviewer",
+        "similarity": 0.299
+      },
+      {
+        "name": "Boardera",
         "similarity": 0.293
       },
       {
         "name": "Portcast",
-        "similarity": 0.258
-      },
-      {
-        "name": "Boardera",
-        "similarity": 0.25
-      },
-      {
-        "name": "Artiminds",
-        "similarity": 0.241
-      },
-      {
-        "name": "SkillReal",
-        "similarity": 0.235
-      },
-      {
-        "name": "First to market with innovative solutions",
-        "similarity": 0.233
-      },
-      {
-        "name": "Goodly Innovation",
-        "similarity": 0.229
+        "similarity": 0.278
       },
       {
         "name": "ScopeAR",
-        "similarity": 0.225
+        "similarity": 0.265
       },
       {
-        "name": "Early-stage investment opportunities",
-        "similarity": 0.209
+        "name": "SkillReal",
+        "similarity": 0.244
       },
       {
-        "name": "Updates on the latest technology trends",
-        "similarity": 0.2
+        "name": "Artiminds",
+        "similarity": 0.236
       },
       {
-        "name": "Access to Siemens' ecosystem of customers and partners",
-        "similarity": 0.198
-      },
-      {
-        "name": "Hands-on support with: Ventures validation, startups scouting and building first prototypes",
-        "similarity": 0.196
-      },
-      {
-        "name": "Realtime Robotics",
-        "similarity": 0.181
+        "name": "Goodly Innovation",
+        "similarity": 0.228
       },
       {
         "name": "Instrumental",
-        "similarity": 0.179
+        "similarity": 0.205
       },
       {
-        "name": "Inspekto",
-        "similarity": 0.176
+        "name": "Realtime Robotics",
+        "similarity": 0.198
       },
       {
         "name": "Cybord",
-        "similarity": 0.171
+        "similarity": 0.191
       },
       {
         "name": "Razor Labs",
-        "similarity": 0.168
+        "similarity": 0.189
       },
       {
-        "name": "Ability to expand your product portfolio with external solutions",
-        "similarity": 0.167
-      },
-      {
-        "name": "Access to Siemens' internal network of experts",
-        "similarity": 0.164
+        "name": "Inspekto",
+        "similarity": 0.188
       },
       {
         "name": "ioTech",
-        "similarity": 0.157
+        "similarity": 0.164
       },
       {
         "name": "Cybellum",
-        "similarity": 0.144
-      },
-      {
-        "name": "Early product validation and use of Siemens technology",
-        "similarity": 0.142
+        "similarity": 0.158
       },
       {
         "name": "Retrocausal",
-        "similarity": 0.139
+        "similarity": 0.153
       },
       {
         "name": "Percepto",
-        "similarity": 0.128
-      },
-      {
-        "name": "Innovation leadership",
-        "similarity": 0.122
+        "similarity": 0.134
       }
     ],
     "heatmap": {
@@ -271,134 +236,134 @@
       ],
       "cols": [
         "Dynamo focus areas",
-        "Collaboration model: Portfolio Partners",
         "Strategic technology directions (public statements)",
         "Insights Hub (Industrial IoT, formerly MindSphere)",
+        "Collaboration model: Portfolio Partners",
+        "Altair (Simulation, HPC & AI — acquired 2025)",
         "Eligibility and engagement process",
-        "Collaboration model: Ecosystem Partners",
-        "Mendix (Low-Code Application Platform)",
-        "Altair (Simulation, HPC & AI — acquired 2025)"
+        "Xcelerator Platform",
+        "Mendix (Low-Code Application Platform)"
       ],
       "values": [
         [
           0.234,
-          0.175,
           0.186,
           0.142,
+          0.175,
+          0.149,
           0.143,
-          0.145,
-          0.143,
-          0.149
+          0.129,
+          0.143
         ],
         [
           0.147,
-          0.149,
           0.104,
           0.062,
+          0.149,
+          0.108,
           0.073,
           0.097,
-          0.091,
-          0.108
+          0.091
         ],
         [
           0.143,
-          0.146,
           0.075,
           0.05,
+          0.146,
+          0.08,
           0.079,
-          0.104,
-          0.099,
-          0.08
+          0.082,
+          0.099
         ],
         [
           0.147,
-          0.163,
           0.093,
           0.064,
+          0.163,
+          0.111,
           0.08,
-          0.107,
-          0.044,
-          0.112
+          0.079,
+          0.044
         ],
         [
           0.234,
-          0.175,
           0.186,
           0.142,
+          0.175,
+          0.149,
           0.143,
-          0.145,
-          0.143,
-          0.149
+          0.129,
+          0.143
         ],
         [
           0.147,
-          0.149,
           0.104,
           0.062,
+          0.149,
+          0.108,
           0.073,
           0.097,
-          0.091,
-          0.108
+          0.091
         ],
         [
           0.143,
-          0.146,
           0.075,
           0.05,
+          0.146,
+          0.08,
           0.079,
-          0.104,
-          0.099,
-          0.08
+          0.082,
+          0.099
         ],
         [
           0.147,
-          0.163,
           0.093,
           0.064,
+          0.163,
+          0.111,
           0.08,
-          0.107,
-          0.044,
-          0.112
+          0.079,
+          0.044
         ],
         [
           0.22,
-          0.154,
           0.173,
           0.133,
+          0.154,
+          0.137,
           0.125,
-          0.132,
-          0.131,
-          0.137
+          0.118,
+          0.131
         ],
         [
           0.147,
-          0.149,
           0.104,
           0.062,
+          0.149,
+          0.108,
           0.073,
           0.097,
-          0.091,
-          0.108
+          0.091
         ],
         [
           0.143,
-          0.146,
           0.075,
           0.05,
+          0.146,
+          0.08,
           0.079,
-          0.104,
-          0.099,
-          0.08
+          0.082,
+          0.099
         ],
         [
           0.147,
-          0.163,
           0.093,
           0.064,
+          0.163,
+          0.111,
           0.08,
-          0.107,
-          0.044,
-          0.112
+          0.079,
+          0.044
         ]
       ]
     }
@@ -409,12 +374,12 @@
     "updated": 0,
     "unchanged": 0
   },
-  "runtime_s": 24.4,
-  "cost_usd": 0.0249,
+  "runtime_s": 23.4,
+  "cost_usd": 0.0242,
   "cached": false,
   "_eval": {
     "category": "bad",
     "note": "Consumer travel marketplace. Clearly out of domain. Expect fit 1-2 (discrimination sanity check).",
-    "wall_s": 24.6
+    "wall_s": 23.5
   }
 }

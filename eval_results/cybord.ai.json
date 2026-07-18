@@ -2,28 +2,30 @@
   "url": "https://cybord.ai/",
   "profile": {
     "company_name": "Cybord",
-    "summary": "Cybord provides visual-AI inspection software for electronics manufacturing that authenticates components, detects defects and tampering, enforces BOM/AVL policies, and creates component-level traceability during assembly.",
+    "summary": "Cybord provides AI-driven visual inspection for electronic components and PCB assemblies, helping manufacturers verify authenticity, detect tampering and defects, enforce BOM/AVL policies, and build component-level traceability at assembly time.",
     "products": [
       "Component-Level Inspection",
       "Unmatched Micro-Traceability",
       "Cybord ShieldScan",
-      "Cyber-Physical Security use case",
-      "Component Micro Traceability use case"
+      "Bottom-side inspection",
+      "Top-side inspection",
+      "Full PCBA inspection"
     ],
     "technologies": [
-      "AI",
-      "Visual AI",
-      "computer vision",
-      "edge computing",
-      "big data"
+      "Vision AI",
+      "Automated visual verification",
+      "High-resolution image analysis",
+      "Pattern recognition",
+      "Edge computing",
+      "Big data analytics"
     ],
     "target_industries": [
-      "electronics manufacturing",
-      "automotive",
-      "aerospace",
-      "data center",
-      "medical devices",
-      "defense"
+      "Electronics manufacturing",
+      "Automotive",
+      "Aerospace",
+      "Medical",
+      "Defense",
+      "Data center"
     ],
     "evidence_urls": [
       "https://cybord.ai/",
@@ -35,36 +37,36 @@
     ]
   },
   "report": {
-    "comparison": "Cybord complements Siemens DISW with production-stage visual-AI inspection, component authentication, BOM/AVL enforcement, and micro-traceability. Strongest indicated adjacencies are Siemens EDA (0.472), Tecnomatix (0.448), NX (0.433), Teamcenter (0.387), and Opcenter (0.329). A practical integration could connect inspection evidence to MES execution, PLM genealogy, and electronic-design/BOM records. No retrieved Siemens product directly duplicates Cybord, although industrial quality and traceability capabilities may partially overlap.",
+    "comparison": "Cybord complements Siemens DISW by connecting physical PCB/component inspection with digital engineering and manufacturing records. Likely integration points are Siemens EDA for design/BOM verification, Tecnomatix and Opcenter for in-line quality workflows, Teamcenter for component genealogy, and Insights Hub for analytics. Correlations are moderate rather than strong (EDA 0.459, Tecnomatix 0.409, Teamcenter 0.355, Opcenter 0.300), indicating a differentiated extension rather than duplication.",
     "partnership_score": 8,
-    "partnership_justification": "Cybord addresses electronics quality, provenance, and cyber-physical supply-chain risk across several Siemens-priority industries. Its strong similarity to an existing partner named Cybord (0.813) is direct ecosystem evidence, while similarities to Instrumental (0.540) and Inspekto (0.531) validate the inspection category. The score is moderated by only midrange Xcelerator and Opcenter correlations and the absence of supplied deployment, customer, or integration evidence.",
-    "partner_similarity_score": 9,
-    "partner_similarity_justification": "The exact-name existing-partner match scores 0.813, substantially above the next comparator, SkillReal at 0.587. Additional similarity to inspection partners Instrumental and Inspekto reinforces a close ecosystem fit.",
+    "partnership_justification": "Strong fit for an Xcelerator electronics-manufacturing quality and traceability solution. Cybord adds component-level authenticity, tamper, defect, and BOM/AVL verification that could bridge design intent and as-built evidence. Shared automotive, aerospace, medical, defense, and electronics customers strengthen the case, though no retrieved Siemens-product match or demonstrated integration is provided.",
+    "partner_similarity_score": 8,
+    "partner_similarity_justification": "The 0.823 similarity to the existing partner named Cybord is exceptionally high and direct evidence of partner alignment. Similarities to adjacent inspection partners are moderate—SkillReal 0.555, Instrumental 0.506, and Inspekto 0.499—supporting ecosystem relevance while highlighting Cybord's specialized PCB focus.",
     "dimensions": [
       {
         "name": "technology_overlap",
-        "score": 6,
-        "explanation": "Moderate adjacency to Siemens EDA, Tecnomatix, NX, Teamcenter, and Opcenter, but Cybord's component-level visual authentication and tamper detection are differentiated."
+        "score": 5,
+        "explanation": "Moderate adjacency to Siemens EDA, Tecnomatix, and industrial AI capabilities, but Cybord's component-level physical inspection and micro-traceability are mostly complementary."
       },
       {
         "name": "market_fit",
         "score": 9,
-        "explanation": "Excellent fit with electronics manufacturing and regulated automotive, aerospace, medical-device, defense, and data-center markets."
+        "explanation": "Excellent alignment with Siemens' electronics, automotive, aerospace, medical, and industrial manufacturing customers."
       },
       {
         "name": "integration_potential",
         "score": 8,
-        "explanation": "Inspection results and component genealogy could flow into Opcenter, Teamcenter, Tecnomatix, Siemens EDA, and Xcelerator workflows."
+        "explanation": "Clear data-flow opportunities across EDA/BOM records, Opcenter execution, Teamcenter genealogy, Tecnomatix quality processes, and Insights Hub analytics; actual APIs or integrations are not evidenced."
       },
       {
         "name": "competitive_risk",
         "score": 3,
-        "explanation": "Mostly complementary; limited risk comes from overlap with Siemens manufacturing quality, analytics, and traceability functions."
+        "explanation": "Low direct competitive risk because Cybord supplies specialized inspection capability rather than a broad PLM, MES, EDA, or manufacturing platform."
       },
       {
         "name": "maturity_signals",
         "score": 7,
-        "explanation": "Multiple named products and use cases plus the exact existing-partner match are positive signals, but no customer scale, certifications, funding, or proven Siemens integration was provided."
+        "explanation": "Multiple production-oriented inspection offerings, broad regulated-industry targeting, and the 0.823 existing-partner similarity indicate maturity, although deployment scale and commercial traction are not supplied."
       }
     ]
   },
@@ -72,193 +74,157 @@
     "product_correlation": [
       {
         "product": "Siemens EDA (Electronic Design Automation, formerly Mentor Graphics)",
-        "similarity": 0.472
+        "similarity": 0.459
       },
       {
         "product": "Strategic technology directions (public statements)",
-        "similarity": 0.462
-      },
-      {
-        "product": "Tecnomatix (Digital Manufacturing)",
-        "similarity": 0.448
-      },
-      {
-        "product": "NX (CAD / Product Engineering)",
-        "similarity": 0.433
-      },
-      {
-        "product": "Dynamo focus areas",
-        "similarity": 0.43
-      },
-      {
-        "product": "Altair (Simulation, HPC & AI — acquired 2025)",
         "similarity": 0.428
       },
       {
+        "product": "Tecnomatix (Digital Manufacturing)",
+        "similarity": 0.409
+      },
+      {
+        "product": "Dynamo focus areas",
+        "similarity": 0.406
+      },
+      {
         "product": "Simcenter (Simulation & Test)",
-        "similarity": 0.424
+        "similarity": 0.399
       },
       {
-        "product": "Collaboration model: Startups as Suppliers",
-        "similarity": 0.388
+        "product": "Altair (Simulation, HPC & AI — acquired 2025)",
+        "similarity": 0.397
       },
       {
-        "product": "Teamcenter (PLM)",
-        "similarity": 0.387
-      },
-      {
-        "product": "Collaboration model: Research Partners",
-        "similarity": 0.383
+        "product": "NX (CAD / Product Engineering)",
+        "similarity": 0.391
       },
       {
         "product": "Capital (Electrical / E-E Systems)",
-        "similarity": 0.38
-      },
-      {
-        "product": "Solid Edge (Mainstream CAD)",
-        "similarity": 0.367
-      },
-      {
-        "product": "Insights Hub (Industrial IoT, formerly MindSphere)",
-        "similarity": 0.366
-      },
-      {
-        "product": "Polarion (Application Lifecycle Management)",
         "similarity": 0.364
       },
       {
+        "product": "Collaboration model: Startups as Suppliers",
+        "similarity": 0.359
+      },
+      {
+        "product": "Teamcenter (PLM)",
+        "similarity": 0.355
+      },
+      {
+        "product": "Collaboration model: Research Partners",
+        "similarity": 0.353
+      },
+      {
+        "product": "Polarion (Application Lifecycle Management)",
+        "similarity": 0.348
+      },
+      {
+        "product": "Solid Edge (Mainstream CAD)",
+        "similarity": 0.336
+      },
+      {
+        "product": "Insights Hub (Industrial IoT, formerly MindSphere)",
+        "similarity": 0.335
+      },
+      {
         "product": "Collaboration model: Portfolio Partners",
-        "similarity": 0.362
+        "similarity": 0.33
       },
       {
         "product": "Collaboration model: Ecosystem Partners",
-        "similarity": 0.352
+        "similarity": 0.327
       },
       {
         "product": "Xcelerator Platform",
-        "similarity": 0.341
+        "similarity": 0.309
       },
       {
         "product": "Opcenter (MES / Manufacturing Operations)",
-        "similarity": 0.329
+        "similarity": 0.3
       },
       {
         "product": "Mendix (Low-Code Application Platform)",
-        "similarity": 0.31
+        "similarity": 0.271
       },
       {
         "product": "Eligibility and engagement process",
-        "similarity": 0.286
+        "similarity": 0.264
       },
       {
         "product": "Siemens Dynamo program",
-        "similarity": 0.258
+        "similarity": 0.221
       },
       {
         "product": "Collaboration model: Investment Opportunities",
-        "similarity": 0.233
+        "similarity": 0.199
       }
     ],
     "partner_similarity": [
       {
         "name": "Cybord",
-        "similarity": 0.813
+        "similarity": 0.823
       },
       {
         "name": "SkillReal",
-        "similarity": 0.587
+        "similarity": 0.555
       },
       {
         "name": "Instrumental",
-        "similarity": 0.54
-      },
-      {
-        "name": "Inspekto",
-        "similarity": 0.531
-      },
-      {
-        "name": "Razor Labs",
-        "similarity": 0.512
-      },
-      {
-        "name": "Retrocausal",
-        "similarity": 0.51
+        "similarity": 0.506
       },
       {
         "name": "Cybellum",
         "similarity": 0.504
       },
       {
-        "name": "Boardera",
-        "similarity": 0.485
+        "name": "Inspekto",
+        "similarity": 0.499
       },
       {
-        "name": "Goodly Innovation",
-        "similarity": 0.43
+        "name": "Boardera",
+        "similarity": 0.499
+      },
+      {
+        "name": "Razor Labs",
+        "similarity": 0.478
+      },
+      {
+        "name": "Retrocausal",
+        "similarity": 0.465
       },
       {
         "name": "Percepto",
-        "similarity": 0.421
-      },
-      {
-        "name": "Realtime Robotics",
-        "similarity": 0.419
+        "similarity": 0.41
       },
       {
         "name": "ScopeAR",
-        "similarity": 0.418
+        "similarity": 0.389
+      },
+      {
+        "name": "Goodly Innovation",
+        "similarity": 0.384
+      },
+      {
+        "name": "Realtime Robotics",
+        "similarity": 0.384
       },
       {
         "name": "ioTech",
-        "similarity": 0.39
-      },
-      {
-        "name": "Teamviewer",
-        "similarity": 0.343
-      },
-      {
-        "name": "Early product validation and use of Siemens technology",
-        "similarity": 0.339
-      },
-      {
-        "name": "Hands-on support with: Ventures validation, startups scouting and building first prototypes",
-        "similarity": 0.325
+        "similarity": 0.37
       },
       {
         "name": "Portcast",
-        "similarity": 0.323
+        "similarity": 0.324
       },
       {
-        "name": "Ability to expand your product portfolio with external solutions",
-        "similarity": 0.294
-      },
-      {
-        "name": "Updates on the latest technology trends",
-        "similarity": 0.273
-      },
-      {
-        "name": "Access to Siemens' internal network of experts",
-        "similarity": 0.269
-      },
-      {
-        "name": "Access to Siemens' ecosystem of customers and partners",
-        "similarity": 0.261
-      },
-      {
-        "name": "Innovation leadership",
-        "similarity": 0.254
+        "name": "Teamviewer",
+        "similarity": 0.307
       },
       {
         "name": "Artiminds",
-        "similarity": 0.248
-      },
-      {
-        "name": "First to market with innovative solutions",
-        "similarity": 0.241
-      },
-      {
-        "name": "Early-stage investment opportunities",
-        "similarity": 0.226
+        "similarity": 0.232
       }
     ],
     "heatmap": {
@@ -280,132 +246,132 @@
         "Siemens EDA (Electronic Design Automation, formerly Mentor Graphics)",
         "Strategic technology directions (public statements)",
         "Tecnomatix (Digital Manufacturing)",
-        "NX (CAD / Product Engineering)",
         "Dynamo focus areas",
-        "Altair (Simulation, HPC & AI — acquired 2025)",
         "Simcenter (Simulation & Test)",
-        "Collaboration model: Startups as Suppliers"
+        "Altair (Simulation, HPC & AI — acquired 2025)",
+        "NX (CAD / Product Engineering)",
+        "Capital (Electrical / E-E Systems)"
       ],
       "values": [
         [
           0.426,
           0.462,
           0.389,
-          0.342,
           0.456,
-          0.383,
           0.315,
-          0.388
+          0.383,
+          0.342,
+          0.364
         ],
         [
           0.362,
           0.312,
           0.348,
-          0.274,
           0.306,
-          0.256,
           0.251,
-          0.29
+          0.256,
+          0.274,
+          0.3
         ],
         [
           0.316,
           0.334,
           0.287,
-          0.25,
           0.296,
-          0.26,
           0.216,
-          0.286
+          0.26,
+          0.25,
+          0.277
         ],
         [
           0.391,
           0.381,
           0.38,
-          0.345,
           0.337,
-          0.293,
           0.365,
-          0.374
+          0.293,
+          0.345,
+          0.325
         ],
         [
           0.465,
           0.511,
           0.417,
-          0.443,
           0.535,
-          0.468,
           0.425,
-          0.456
+          0.468,
+          0.443,
+          0.401
         ],
         [
           0.414,
           0.447,
           0.375,
-          0.386,
           0.411,
-          0.376,
           0.356,
-          0.371
+          0.375,
+          0.386,
+          0.343
         ],
         [
           0.387,
           0.325,
           0.373,
-          0.327,
           0.337,
-          0.29,
           0.358,
-          0.316
+          0.29,
+          0.328,
+          0.347
         ],
         [
           0.464,
           0.437,
           0.463,
-          0.455,
           0.473,
-          0.382,
           0.454,
-          0.452
+          0.382,
+          0.455,
+          0.405
         ],
         [
           0.404,
           0.352,
           0.397,
-          0.35,
           0.363,
-          0.274,
           0.313,
-          0.326
+          0.274,
+          0.35,
+          0.34
         ],
         [
           0.348,
           0.352,
           0.378,
-          0.324,
           0.306,
-          0.263,
           0.309,
-          0.324
+          0.263,
+          0.324,
+          0.3
         ],
         [
           0.425,
           0.404,
           0.381,
-          0.373,
           0.352,
-          0.353,
           0.364,
-          0.344
+          0.353,
+          0.373,
+          0.39
         ],
         [
           0.337,
           0.341,
           0.346,
-          0.284,
           0.327,
-          0.308,
           0.249,
-          0.293
+          0.308,
+          0.284,
+          0.321
         ]
       ]
     }
@@ -416,12 +382,12 @@
     "updated": 0,
     "unchanged": 0
   },
-  "runtime_s": 51.4,
-  "cost_usd": 0.0306,
+  "runtime_s": 44.7,
+  "cost_usd": 0.0296,
   "cached": false,
   "_eval": {
     "category": "partner",
     "note": "Existing Dynamo partner (visual-AI component analytics). Should self-match: very high partner similarity, high fit.",
-    "wall_s": 51.8
+    "wall_s": 45.0
   }
 }
