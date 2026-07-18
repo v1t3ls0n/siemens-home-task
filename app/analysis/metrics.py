@@ -20,7 +20,10 @@ def compute_metrics(store: VectorStore, profile_vec: list[float],
     q = _norm(np.array(profile_vec))
 
     # --- per-product correlation (max over the product's chunks) ----------
-    siemens = store.get_chunks(doc_type="siemens", with_vectors=True)
+    # Only real DISW products (doc_type="product"); Dynamo/strategic context
+    # (doc_type="context") is excluded so this compares the startup strictly
+    # against Siemens offerings, not program descriptions.
+    siemens = store.get_chunks(doc_type="product", with_vectors=True)
     products: dict[str, list[np.ndarray]] = {}
     for c in siemens:
         products.setdefault(c["title"], []).append(np.array(c["embedding"]))

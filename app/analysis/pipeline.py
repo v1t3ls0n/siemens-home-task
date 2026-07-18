@@ -112,7 +112,9 @@ async def analyze_events(url: str, force: bool = False):
     profile_vec = embed([f"{profile.summary} "
                          f"Technologies: {', '.join(profile.technologies)}"])[0]
     metrics = compute_metrics(store, profile_vec, group_id)
-    siemens_hits = store.search(profile_vec, doc_type="siemens", k=6)
+    # retrieve across both product and context (group_id="siemens") so the
+    # analyst still sees Dynamo/strategic material, not just products.
+    siemens_hits = store.search(profile_vec, group_id="siemens", k=6)
 
     # 4. analysis (heavy tier) ----------------------------------------------
     yield {"stage": "analyze", "message": "Analyst agent scoring the "

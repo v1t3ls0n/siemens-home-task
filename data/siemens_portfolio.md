@@ -78,10 +78,3 @@ Altair adds simulation and analysis (structural, electromagnetics,
 multiphysics), high-performance computing orchestration, and data
 analytics/AI tools to the portfolio, deepening simulation-driven design and
 AI-powered engineering.
-
-## Strategic technology directions (public statements)
-Publicly emphasized directions for the portfolio: industrial AI and AI
-assistants/copilots embedded in engineering tools; the industrial metaverse
-and photorealistic digital twins (partnership with NVIDIA Omniverse); cloud
-delivery of the portfolio (Xcelerator as a Service on AWS/Azure); and
-connecting the digital thread from design through manufacturing to operations.

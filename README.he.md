@@ -175,8 +175,20 @@ partner_similarity[k]  = max על ה-chunks של שותף k:   cosine(profile_ve
 לתוך דאטת-הייחוס: `data/partners.json` (השותפים האמיתיים — Instrumental, Cybord,
 Realtime Robotics, SkillReal, Inspekto, Percepto, Portcast… עם מודל-שיתוף ותחומי-מיקוד)
 ו-`data/siemens_dynamo.md` (מה סימנס מחפשת: הפיץ', ששת תחומי-המיקוד, מודלי-השיתוף,
-זכאות). כך ציוני-ההתאמה מעוגנים ב**קריטריונים הרשמיים של התוכנית**. הפרסר החי ממוזג מעל
-snapshot מוטמע, כך שעיצוב-אתר חדש לעולם לא ישאיר את האפליקציה עם דאטה ריק.
+זכאות). הפרסר החי ממוזג מעל snapshot מוטמע, כך שעיצוב-אתר חדש לעולם לא ישאיר את
+האפליקציה עם דאטה ריק.
+
+דאטת-הייחוס מחולקת לשני סוגים — שניהם נגישים ל-analyst ב-RAG, אך המטריקות מתייחסות
+אליהם אחרת:
+
+- **products** (`data/siemens_portfolio.md`, `doc_type="product"`) — 13 המוצרים
+  האמיתיים של DISW. **רק** הם משמשים ל-`product_correlation` ול-heatmap, כך
+  שהוויזואליזציות משוות את הסטארטאפ מול *מוצרי* סימנס בלבד.
+- **context** (`data/siemens_dynamo.md`, `data/siemens_context.md`,
+  `doc_type="context"`) — הקריטריונים של התוכנית והכיוונים האסטרטגיים הפומביים.
+  זה מעגן את ה**נימוק** של ה-analyst (למשל זיהוי שותף Dynamo קיים) אבל הוא אינו
+  מוצר, ולכן מוחרג מ-`product_correlation`/heatmap כדי לשמור אותם כהשוואת
+  מוצר-מול-מוצר הוגנת.
 
 ## אבלואציה — איך ווידאנו שהמערכת *מבחינה*
 

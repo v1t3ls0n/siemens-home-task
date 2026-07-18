@@ -6,7 +6,9 @@ Fallback backend: a small numpy store — same interface — so the app can run
 
 Document model (one record per CHUNK):
   id           deterministic: sha1(source_url)#<chunk_no>
-  doc_type     startup | siemens | partner
+  doc_type     startup | product | context | partner
+               (product = a DISW offering; context = Siemens Dynamo/strategic
+                material — both live under group_id "siemens")
   group_id     startup domain / "siemens" / "partners"
   title        page or product or partner name
   source_url   provenance

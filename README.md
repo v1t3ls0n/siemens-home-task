@@ -296,9 +296,21 @@ into the app's reference data:
   areas**; `--fetch-sites` enriches each with an excerpt of its own website.
 - **`data/siemens_dynamo.md`** — what Siemens states it is looking for:
   program pitch, six focus areas, five collaboration models, eligibility and
-  engagement process. Indexed as Siemens reference chunks, so partner-fit
-  scores are grounded in the **program's own published criteria**, not only
-  the product portfolio.
+  engagement process.
+
+The reference corpus is split into two kinds, both retrievable by the analyst
+but treated differently by the metrics:
+
+- **products** (`data/siemens_portfolio.md`, `doc_type="product"`) — the 13 real
+  DISW offerings (NX, Teamcenter, Simcenter, Tecnomatix, Siemens EDA, …). These
+  are the **only** material used for the per-product correlation and the
+  heatmap, so those visuals compare a startup strictly against Siemens *products*.
+- **context** (`data/siemens_dynamo.md`, `data/siemens_context.md`,
+  `doc_type="context"`) — the program's published criteria (focus areas,
+  collaboration models) and public strategic directions. This grounds the
+  analyst's *reasoning* (e.g. recognising a listed Dynamo partner) but is **not**
+  a product, so it is excluded from the product correlation/heatmap to keep them
+  an honest offering-vs-offering comparison.
 
 The live parse merges over an embedded snapshot of the same page, so a site
 redesign can degrade freshness but can never leave the app with empty
