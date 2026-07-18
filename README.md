@@ -1,5 +1,7 @@
 # partner-scout
 
+**🌐 Language:** **English** · [עברית](README.he.md)
+
 **LLM-agent web application that evaluates a startup as a potential technology
 partner for Siemens Digital Industries Software — from public sources only.**
 
