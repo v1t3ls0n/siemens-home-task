@@ -359,6 +359,35 @@ not a formula of them. Example: analysing an existing partner, the model sees a
 interpretation of it. The UI shows **both**, so the judgment is always auditable
 against the geometry.
 
+### Worked example: analysing one startup, end to end
+
+Take `https://cybord.ai/`:
+
+1. **Crawl** the site → a handful of readable pages (home, product, about…).
+2. **Research agent** reads those pages and writes a structured profile — e.g.
+   *"Cybord provides Visual-AI inspection and analytics for electronic
+   components and PCBA assembly…"* This is text **A**, phrased from Cybord's
+   *own* live site.
+3. **Embed** text A → `profile_vec` (one 1,536-number vector).
+4. **Compare (Layer 1, cosine):**
+   - vs the **Siemens portfolio** → `product_correlation` (which products it
+     relates to, e.g. Opcenter, Insights Hub).
+   - vs the **existing-partner list** → `partner_similarity`. Cybord is already
+     in that list, so its reference entry — text **B**, *Siemens' Dynamo-page
+     description of Cybord* — is there too. A and B describe the same company
+     in **different words**, so `cosine(A, B) ≈ 0.8` (not 1.0), and it's the
+     top hit, far above unrelated partners at ~0.4.
+5. **Score (Layer 2, LLM):** the analyst reads the profile, the most-relevant
+   Siemens products, and those cosine numbers, and returns the 1-10
+   `partnership_score` / `partner_similarity_score` + five dimensions with
+   written justifications.
+6. The UI renders both the **numbers** (bars, heatmap) and the **judgment**
+   (scores, justifications) side by side.
+
+For a startup **not** in the partner list, step 4's partner comparison simply
+has no ~0.8 self-match — it measures how much the newcomer resembles each
+existing partner (typically 0.4–0.6 for a genuine fit, lower for an outsider).
+
 ## Match metrics & visualizations
 
 All similarity numbers are **computed with numpy from embeddings** — the LLM

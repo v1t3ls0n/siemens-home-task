@@ -65,8 +65,13 @@ def slug(url: str) -> str:
 
 
 def analyze(api: str, url: str, force: bool) -> dict:
+    # send Basic-auth if the target app has APP_USER/APP_PASSWORD set (so this
+    # works whether the app is locked down or open).
+    import os
+    user, pw = os.environ.get("APP_USER"), os.environ.get("APP_PASSWORD")
+    auth = (user, pw) if user and pw else None
     r = httpx.post(f"{api}/api/analyze", json={"url": url, "force": force},
-                   timeout=600)
+                   timeout=600, auth=auth)
     if r.status_code != 200:
         return {"error": f"HTTP {r.status_code}: {r.text[:400]}"}
     return r.json()
