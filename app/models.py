@@ -15,8 +15,10 @@ class StartupProfile(BaseModel):
 
 class DimensionScore(BaseModel):
     name: str = Field(description="e.g. technology_overlap, market_fit, "
-                                  "integration_potential, competitive_risk, maturity_signals")
-    score: int = Field(ge=1, le=10)
+                                  "integration_potential, competitive_complementarity, "
+                                  "maturity_signals")
+    score: int = Field(ge=1, le=10, description="1-10, higher is always better "
+                       "(all dimensions share this polarity)")
     explanation: str
 
 
@@ -30,7 +32,8 @@ class MatchReport(BaseModel):
     partner_similarity_justification: str
     dimensions: list[DimensionScore] = Field(
         description="Exactly these five: technology_overlap, market_fit, "
-                    "integration_potential, competitive_risk, maturity_signals")
+                    "integration_potential, competitive_complementarity, "
+                    "maturity_signals")
 
 
 class AnalyzeRequest(BaseModel):

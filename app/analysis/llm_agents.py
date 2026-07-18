@@ -73,7 +73,11 @@ def build_analyst(model) -> Agent:
             "complement, clear integration path into Siemens Xcelerator, "
             "shared customers; 1 = irrelevant or purely competitive. Return "
             "exactly five dimensions: technology_overlap, market_fit, "
-            "integration_potential, competitive_risk, maturity_signals."
+            "integration_potential, competitive_complementarity, "
+            "maturity_signals. ALL five use the SAME polarity — 10 = strongest / "
+            "most favourable for a partnership, 1 = weakest. In particular "
+            "competitive_complementarity: 10 = purely complementary, fills a gap "
+            "Siemens lacks; 1 = directly competes with a Siemens product."
         ),
         output_type=MatchReport,
     )
