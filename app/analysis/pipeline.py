@@ -10,6 +10,7 @@ Stages:
 import json
 import sqlite3
 import time
+from urllib.parse import urlparse
 
 from app.config import STATE_DIR, cfg
 from app.ingest.crawler import crawl
@@ -35,7 +36,7 @@ def _conn():
 def cached_analysis(url: str) -> dict | None:
     with _conn() as c:
         row = c.execute("SELECT result FROM analyses WHERE url=?",
-                        (url,)).fetchone()
+                        (cache_key(url),)).fetchone()
     return json.loads(row[0]) if row else None
 
 
@@ -43,7 +44,8 @@ def list_analyses() -> list[dict]:
     with _conn() as c:
         rows = c.execute("SELECT url, result, created_at FROM analyses "
                          "ORDER BY created_at DESC").fetchall()
-    return [{"url": u,
+    # show the full URL from the stored result (the row's key is the canonical form)
+    return [{"url": json.loads(r).get("url", u),
              "company": json.loads(r)["profile"]["company_name"],
              "score": json.loads(r)["report"]["partnership_score"],
              "created_at": t} for u, r, t in rows]
@@ -53,9 +55,21 @@ def normalize_url(url: str) -> str:
     """Accept bare domains ('cybord.ai') as well as full URLs. Prepend https://
     when no scheme is given so a reviewer typing just the domain still works."""
     url = url.strip()
-    if not url.startswith(("http://", "https://")):
+    if not url.lower().startswith(("http://", "https://")):
         url = "https://" + url
     return url
+
+
+def cache_key(url: str) -> str:
+    """Canonical key for the per-URL analysis cache, so `almetra.ai`,
+    `www.almetra.ai` and `https://almetra.ai/` all resolve to ONE entry.
+    Strips scheme + a leading `www.` + a trailing slash, and lowercases the host.
+    (We still CRAWL the full normalized URL — only the cache lookup is canonical.)"""
+    u = urlparse(normalize_url(url))
+    host = u.netloc.lower()
+    if host.startswith("www."):
+        host = host[4:]
+    return host + u.path.rstrip("/")
 
 
 async def analyze_events(url: str, force: bool = False):
@@ -141,7 +155,7 @@ async def analyze_events(url: str, force: bool = False):
     }
     with _conn() as c:
         c.execute("INSERT OR REPLACE INTO analyses VALUES (?, ?, ?)",
-                  (url, json.dumps(result, ensure_ascii=False), time.time()))
+                  (cache_key(url), json.dumps(result, ensure_ascii=False), time.time()))
     yield {"stage": "done", "result": result}
 
 
