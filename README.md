@@ -283,6 +283,36 @@ marginal cost (with reduced quality — the tradeoff is yours per tier).
 > eliminate is the expensive part — embeddings and LLM calls — for unchanged
 > content.
 
+### Which pages the crawler picks (`app/ingest/crawler.py`)
+
+The crawler is deliberately **shallow and bounded** — it reads a handful of the
+*most product-relevant* pages of the site, not the whole thing. Given a seed URL:
+
+1. **Fetch the seed** (the URL you entered) and collect every `<a href>` on it,
+   resolved to absolute URLs.
+2. **Filter the candidates** to the ones worth reading: keep only **same-domain**
+   links, drop the seed itself, drop **duplicates**, and strip `#anchors`
+   (`example.com/x#top` and `example.com/x` are the same page). Off-site links
+   (LinkedIn, Twitter, a docs subdomain) are ignored — we profile *this* company.
+3. **Rank by product-relevance.** Each candidate gets a score = **how many of a
+   fixed keyword set appear in its URL**:
+   `product, solution, platform, technology, about, use-case, usecase, feature,
+   how-it-works, industries`. So `/products/inspection` scores 2 and sorts above
+   `/careers` or `/blog/2021-recap`, which score 0. It's a cheap, deterministic
+   proxy for "is this page about what the company *does*" — no LLM, no guessing.
+4. **Take the top `max_pages − 1`** (the seed is page 1; `max_pages` defaults to
+   **6**, so up to 5 more), fetched politely with a `delay_seconds` pause between
+   requests and a browser-like User-Agent.
+5. **Clean + drop junk.** Each page has `<script>/<style>/<nav>/<footer>/<svg>`
+   removed and its text truncated to `page_char_limit` (12 000 chars); a page
+   with **< 200 characters** of real text (a JS-only shell that didn't render) is
+   discarded.
+
+The result is a small, high-signal set — typically home + product/solution +
+about — which is exactly what the research agent needs to write the profile.
+Limits live in `config.yaml → crawler` (`max_pages`, `page_char_limit`,
+`delay_seconds`); the keyword list is `KEYWORDS` in `crawler.py`.
+
 ## Grounding: the official Dynamo data
 
 `scripts/scrape_dynamo.py` scrapes the
